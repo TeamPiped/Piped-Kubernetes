@@ -2,5 +2,5 @@
 
 WORK IN PROGRESS
 
-This repo will house an Helm chart for Kubernetes deployments.
+This repo will house a Helm chart for Kubernetes deployments.
 
