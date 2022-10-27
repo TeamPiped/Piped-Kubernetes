@@ -1,0 +1,42 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: An alternative privacy-friendly YouTube frontend which is efficient by design.
+name: piped
+version: 1.0.0
+kubeVersion: ">=1.19.0-0"
+keywords:
+  - YouTube
+  - piped
+home: https://github.com/TeamPiped/Piped-Kubernetes
+icon: https://${CHARTNAME}.org/icon
+sources:
+  - https://github.com/TeamPiped/Piped-Kubernetes
+  - https://github.com/TeamPiped/Piped-Docker
+  - https://github.com/TeamPiped/Piped
+maintainers:
+  - name: samip5
+    url: https://github.com/samip5
+dependencies:
+  - name: common
+    repository: https://bjw-s.github.io/helm-charts/
+    version: 0.2.2
+  - name: common
+    alias: frontend
+    repository: https://bjw-s.github.io/helm-charts/
+    version: 0.2.2
+  - name: common
+    alias: backend
+    repository: https://bjw-s.github.io/helm-charts/
+    version: 0.2.2
+  - name: common
+    alias: ytproxy
+    repository: https://bjw-s.github.io/helm-charts/
+    version: 0.2.2
+  - name: common
+    alias: varnish
+    repository: https://bjw-s.github.io/helm-charts/
+    version: 0.2.2
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial version
