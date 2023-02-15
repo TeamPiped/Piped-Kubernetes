@@ -24,7 +24,7 @@ If release name contains chart name it will be used as a full name.
     {{- if contains $name .Release.Name -}}
       {{- $name = .Release.Name -}}
     {{- else -}}
-      {{- $name = printf "%s-%s" .Release.Name $name -}}
+      {{- $name = printf "%s" $name -}}
     {{- end -}}
   {{- end -}}
   {{- trunc 50 $name | trimSuffix "-" -}}

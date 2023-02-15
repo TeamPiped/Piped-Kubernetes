@@ -11,7 +11,7 @@ global:
 
 controller:
   # -- enable the controller.
-  enabled: true
+  enabled: false
 
 serviceAccount:
   create: false
@@ -33,16 +33,18 @@ frontend:
 
   image:
     # -- image repository
-    repository: 1337kavin/piped
+    repository: 1337kavin/piped-frontend
     # -- image tag
     # @chart.appVersion
     tag:
     # -- image pull policy
     pullPolicy: IfNotPresent
 
-  command: "/bin/ash -c"
-  args:
-    - sed -i s/pipedapi.kavin.rocks/BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh && nginx -g "daemon off;"
+  # Using currently container default
+  #command: "/bin/tail"
+  #args:
+  #  - -c
+#    - "sed -i s/pipedapi.kavin.rocks/BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/*"
 
 backend:
   enabled: true
@@ -57,6 +59,22 @@ backend:
           primary: true
           port: 8080
           protocol: HTTP
+
+  command: "/opt/java/openjdk/bin/java"
+  args:
+    - -server
+    - -Xmx1G
+    - -Xaggressive
+    - -XX:+UnlockExperimentalVMOptions
+    - -XX:+OptimizeStringConcat
+    - -XX:+UseStringDeduplication
+    - -XX:+UseCompressedOops
+    - -XX:+UseNUMA
+    - -Xgcpolicy:gencon
+    - -Xshareclasses:allowClasspaths
+    - -Xtune:virtualized
+    - -jar
+    - /app/piped.jar
 
   image:
     # -- image repository
@@ -82,6 +100,8 @@ ytproxy:
           primary: true
           port: 8080
           protocol: HTTP
+
+  command: "/app/piped-proxy"
 
 
   image:
