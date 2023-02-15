@@ -1,0 +1,13 @@
+---
+apiVersion: v2
+description: A chart to power Piped running on Kubernetes
+name: piped
+version: 0.0.1
+appVersion: latest
+maintainers:
+  - name: Skyler Mäntysaari
+    email: samip5@users.noreply.github.com
+dependencies:
+  - name: common
+    repository: https://bjw-s.github.io/helm-charts
+    version: 0.1.0

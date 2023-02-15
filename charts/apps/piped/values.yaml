@@ -1,0 +1,184 @@
+---
+global:
+  # -- Set an override for the prefix of the fullname
+  nameOverride:
+  # -- Set the entire name definition
+  fullnameOverride:
+  # -- Set additional global labels. Helm templates can be used.
+  labels: { }
+  # -- Set additional global annotations. Helm templates can be used.
+  annotations: { }
+
+controller:
+  # -- enable the controller.
+  enabled: true
+
+serviceAccount:
+  create: false
+
+
+frontend:
+  enabled: true
+  service:
+    main:
+      enabled: true
+      primary: true
+      type: ClusterIP
+      ports:
+        http:
+          enabled: true
+          primary: true
+          port: 80
+          protocol: HTTP
+
+  image:
+    # -- image repository
+    repository: 1337kavin/piped
+    # -- image tag
+    # @chart.appVersion
+    tag:
+    # -- image pull policy
+    pullPolicy: IfNotPresent
+
+  command: "/bin/ash -c"
+  args:
+    - sed -i s/pipedapi.kavin.rocks/BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh && nginx -g "daemon off;"
+
+backend:
+  enabled: true
+  service:
+    main:
+      enabled: true
+      primary: true
+      type: ClusterIP
+      ports:
+        http:
+          enabled: true
+          primary: true
+          port: 8080
+          protocol: HTTP
+
+  image:
+    # -- image repository
+    repository: 1337kavin/piped
+    # -- image tag
+    # @chart.appVersion
+    tag:
+    # -- image pull policy
+    pullPolicy: IfNotPresent
+
+
+
+ytproxy:
+  enabled: true
+  service:
+    main:
+      enabled: true
+      primary: true
+      type: ClusterIP
+      ports:
+        http:
+          enabled: true
+          primary: true
+          port: 8080
+          protocol: HTTP
+
+
+  image:
+    # -- image repository
+    repository: 1337kavin/piped-proxy
+    # -- image tag
+    # @chart.appVersion
+    tag:
+    # -- image pull policy
+    pullPolicy: IfNotPresent
+
+
+ingress:
+  main:
+    enabled: false
+    primary: false
+    hosts:
+      - host: chart-foo.local
+        paths:
+          - path: "/"
+    tls: []
+
+  backend:
+    enabled: false
+    primary: false
+    hosts:
+      - host: be.chart-foo.local
+        paths:
+          - path: "/"
+    tls: []
+
+  ytproxy:
+    enabled: false
+    primary: false
+    hosts:
+      - host: ytproxy.chart-foo.local
+        paths:
+          - path: "/"
+    tls: []
+
+
+
+# -- Probe configuration
+# -- [[ref]](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+# @default -- See below
+probes:
+  # -- Liveness probe configuration
+  # @default -- See below
+  liveness:
+    # -- Enable the liveness probe
+    enabled: true
+    # -- Set this to `true` if you wish to specify your own livenessProbe
+    custom: false
+    # -- The spec field contains the values for the default livenessProbe.
+    # If you selected `custom: true`, this field holds the definition of the livenessProbe.
+    # @default -- See below
+    spec:
+      initialDelaySeconds: 0
+      periodSeconds: 10
+      timeoutSeconds: 1
+      failureThreshold: 3
+
+  # -- Redainess probe configuration
+  # @default -- See below
+  readiness:
+    # -- Enable the readiness probe
+    enabled: true
+    # -- Set this to `true` if you wish to specify your own readinessProbe
+    custom: false
+    # -- The spec field contains the values for the default readinessProbe.
+    # If you selected `custom: true`, this field holds the definition of the readinessProbe.
+    # @default -- See below
+    spec:
+      initialDelaySeconds: 0
+      periodSeconds: 10
+      timeoutSeconds: 1
+      failureThreshold: 3
+
+  # -- Startup probe configuration
+  # @default -- See below
+  startup:
+    # -- Enable the startup probe
+    enabled: true
+    # -- Set this to `true` if you wish to specify your own startupProbe
+    custom: false
+    # -- The spec field contains the values for the default startupProbe.
+    # If you selected `custom: true`, this field holds the definition of the startupProbe.
+    # @default -- See below
+    spec:
+      initialDelaySeconds: 0
+      timeoutSeconds: 1
+      ## This means it has a maximum of 5*30=150 seconds to start up before it fails
+      periodSeconds: 5
+      failureThreshold: 30
+
+termination:
+  gracePeriodSeconds:
+
+
+
