@@ -40,11 +40,13 @@ frontend:
     # -- image pull policy
     pullPolicy: IfNotPresent
 
-  # Using currently container default
-  #command: "/bin/tail"
-  #args:
-  #  - -c
-#    - "sed -i s/pipedapi.kavin.rocks/BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/*"
+  env:
+    BACKEND_HOSTNAME: pipedapi.example.org
+
+  command: "/bin/ash"
+  args:
+    - -c
+    - "sed -i s/pipedapi.kavin.rocks/$BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh && nginx -g 'daemon off;'"
 
 backend:
   enabled: true
@@ -119,7 +121,7 @@ ingress:
     enabled: false
     primary: false
     hosts:
-      - host: chart-foo.local
+      - host: piped.example.com
         paths:
           - path: "/"
     tls: []
@@ -128,7 +130,7 @@ ingress:
     enabled: false
     primary: false
     hosts:
-      - host: be.chart-foo.local
+      - host: pipedapi.example.com
         paths:
           - path: "/"
     tls: []

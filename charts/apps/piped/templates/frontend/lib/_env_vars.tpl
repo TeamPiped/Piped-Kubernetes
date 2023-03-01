@@ -2,7 +2,7 @@
 Environment variables used by containers.
 */}}
 {{- define "frontend.controller.env_vars" -}}
-  {{- $values := merge .Values.frontend.env .Values.common_env  -}}
+  {{- $values := merge .Values.frontend.env  -}}
   {{- if hasKey . "ObjectValues" -}}
     {{- with .ObjectValues.env -}}
       {{- $values = . -}}
