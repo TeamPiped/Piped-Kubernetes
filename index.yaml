@@ -3,7 +3,7 @@ entries:
   piped:
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-02T05:34:07.418656811Z"
+    created: "2023-03-02T18:27:38.575649402Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -14,7 +14,7 @@ entries:
       version: 12.2.0
     description: Piped is an alternative privacy-friendly YouTube frontend which is
       efficient by design.
-    digest: 680161c2944e2466c4f218d8d1abe19ce91662b68bd45adda0621ecacd1bf799
+    digest: c83dc36db5fec289a2d6c0332812cd8b373f36a08255df14a269b4d9b9325604
     home: https://github.com/TeamPiped/Piped-Kubernetes
     keywords:
     - streaming
@@ -27,11 +27,11 @@ entries:
     - https://github.com/TeamPiped/Piped-Backend
     - https://github.com/TeamPiped/piped-proxy
     urls:
-    - https://teampiped.github.io/Piped-Kubernetes/apps/piped-0.0.4.tgz
+    - https://helm.piped.video/apps/piped-0.0.4.tgz
     version: 0.0.4
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-02T05:34:07.407549353Z"
+    created: "2023-03-02T18:27:38.565995972Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -55,11 +55,11 @@ entries:
     - https://github.com/TeamPiped/Piped-Backend
     - https://github.com/TeamPiped/piped-proxy
     urls:
-    - https://teampiped.github.io/Piped-Kubernetes/apps/piped-0.0.3.tgz
+    - https://helm.piped.video/apps/piped-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-02T05:34:07.396995727Z"
+    created: "2023-03-02T18:27:38.556480841Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -83,11 +83,11 @@ entries:
     - https://github.com/TeamPiped/Piped-Backend
     - https://github.com/TeamPiped/piped-proxy
     urls:
-    - https://teampiped.github.io/Piped-Kubernetes/apps/piped-0.0.2.tgz
+    - https://helm.piped.video/apps/piped-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-02T05:34:07.38590867Z"
+    created: "2023-03-02T18:27:38.548331Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -111,6 +111,6 @@ entries:
     - https://github.com/TeamPiped/Piped-Backend
     - https://github.com/TeamPiped/piped-proxy
     urls:
-    - https://teampiped.github.io/Piped-Kubernetes/apps/piped-0.0.1.tgz
+    - https://helm.piped.video/apps/piped-0.0.1.tgz
     version: 0.0.1
-generated: "2023-03-02T05:34:07.376215095Z"
+generated: "2023-03-02T18:27:38.538173674Z"
