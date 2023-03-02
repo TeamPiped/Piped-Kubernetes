@@ -11,8 +11,8 @@ metadata:
   {{- end }}
 data:
   config.properties: |
-    PORT: {{ .Values.backend.config.PORT | default (8080) }}
-    HTTP_WORKERS: {{ .Values.backend.config.HTTP_WORKERS | default (2) }}
+    PORT: {{ .Values.backend.config.PORT | default 8080 }}
+    HTTP_WORKERS: {{ .Values.backend.config.HTTP_WORKERS | default 2 }}
     {{- if .Values.backend.config.HTTP_PROXY }}
     HTTP_PROXY: {{ .Values.backend.config.HTTP_PROXY }}
     {{ end }}

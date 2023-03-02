@@ -23,6 +23,20 @@ tasks:
       - docker run --rm -it --workdir=/data --volume $(pwd):/data {{.CT_IMAGE}} ct lint --config {{.CT_CONFIG_FILE}} --all --excluded-charts "{{.CHARTS_EXCLUDED_FROM_LINT}}"
     silent: true
 
+  helm-docs:
+    desc: generate helm-docs
+    dir: "{{.GIT_ROOT}}/.github/scripts"
+    cmds:
+      - ./gen-helm-docs.sh "{{.CHART_TYPE}}" "{{.CHART}}"
+    deps:
+      - check-chart
+
+  check-chart:
+    cmds:
+      - test ! -z "{{.CHART_TYPE}}" || (echo "Please define CHART_TYPE parameter"; exit 1)
+      - test ! -z "{{.CHART}}" || (echo "Please define CHART parameter"; exit 1)
+    silent: true
+
   dependency-cleanup:
     desc: clean up chart dependencies
     dir: "{{.PROJECT_DIR}}/charts"

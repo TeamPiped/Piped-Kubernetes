@@ -84,9 +84,9 @@ backend:
 #    - sleep infinity
 
   # If the hostnames are not set for backend, proxy and API, they will be automatically fetched from their ingresses.
-  config:
+  #config:
     #PORT: 8080
-    # HTTP_WORKERS: 2
+    #HTTP_WORKERS: 2
     #PROXY_PART: https://PROXY_HOSTNAME
     # Outgoing HTTP Proxy - eg: 127.0.0.1:8118
     #HTTP_PROXY: 127.0.0.1:8118
