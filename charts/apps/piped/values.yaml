@@ -78,6 +78,37 @@ backend:
     - -jar
     - /app/piped.jar
 
+#  command: "/bin/sh"
+#  args:
+#    - -c
+#    - sleep infinity
+
+  # If the hostnames are not set for backend, proxy and API, they will be automatically fetched from their ingresses.
+  config:
+    #PORT: 8080
+    # HTTP_WORKERS: 2
+    #PROXY_PART: https://PROXY_HOSTNAME
+    # Outgoing HTTP Proxy - eg: 127.0.0.1:8118
+    #HTTP_PROXY: 127.0.0.1:8118
+    # Captcha Parameters
+    #CAPTCHA_BASE_URL: https://api.capmonster.cloud/
+    #CAPTCHA_API_KEY: INSERT_HERE
+    #API_URL: https://BACKEND_HOSTNAME
+    #FRONTEND_URL: https://FRONTEND_HOSTNAME
+    # Enable haveibeenpwned compromised password API
+    COMPROMISED_PASSWORD_CHECK: true
+    # Disable Registration
+    DISABLE_REGISTRATION: false
+    # Feed Retention Time in Days
+    FEED_RETENTION: 30
+    #database:
+    #  connection_url: jdbc:postgresql://postgres:5432/piped
+    #  driver_class: org.postgresql.Driver
+    #  dialect: org.hibernate.dialect.PostgreSQLDialect
+    #  username: piped
+    #  password: changeme
+
+
   image:
     # -- image repository
     repository: 1337kavin/piped
@@ -86,8 +117,6 @@ backend:
     tag:
     # -- image pull policy
     pullPolicy: IfNotPresent
-
-
 
 ytproxy:
   enabled: true
@@ -115,36 +144,45 @@ ytproxy:
     # -- image pull policy
     pullPolicy: IfNotPresent
 
-
 ingress:
   main:
-    enabled: false
+    enabled: true
     primary: false
     hosts:
-      - host: piped.example.com
+      - host: piped.video
         paths:
           - path: "/"
     tls: []
 
   backend:
-    enabled: false
+    enabled: true
+    ingressClassName: nginx
     primary: false
     hosts:
-      - host: pipedapi.example.com
+      - host: pipedapi.piped.video
         paths:
           - path: "/"
     tls: []
 
   ytproxy:
-    enabled: false
+    enabled: true
+    ingressClassName: nginx
     primary: false
     hosts:
-      - host: ytproxy.chart-foo.local
+      - host: ytproxy.piped.video
         paths:
           - path: "/"
     tls: []
 
-
+# See options from https://artifacthub.io/packages/helm/bitnami/postgresql#parameters
+postgresql:
+  enabled: true
+  image:
+    tag: 11.19.0-debian-11-r4
+  auth:
+    database: piped
+    username: piped
+    password: changemepiped
 
 # -- Probe configuration
 # -- [[ref]](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
@@ -154,7 +192,7 @@ probes:
   # @default -- See below
   liveness:
     # -- Enable the liveness probe
-    enabled: true
+    enabled: false
     # -- Set this to `true` if you wish to specify your own livenessProbe
     custom: false
     # -- The spec field contains the values for the default livenessProbe.
@@ -170,7 +208,7 @@ probes:
   # @default -- See below
   readiness:
     # -- Enable the readiness probe
-    enabled: true
+    enabled: false
     # -- Set this to `true` if you wish to specify your own readinessProbe
     custom: false
     # -- The spec field contains the values for the default readinessProbe.
@@ -186,7 +224,7 @@ probes:
   # @default -- See below
   startup:
     # -- Enable the startup probe
-    enabled: true
+    enabled: false
     # -- Set this to `true` if you wish to specify your own startupProbe
     custom: false
     # -- The spec field contains the values for the default startupProbe.

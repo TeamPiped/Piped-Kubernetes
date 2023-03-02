@@ -1,7 +1,14 @@
 ---
 apiVersion: v2
-description: A chart to power Piped running on Kubernetes
+description: Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 name: piped
+home: https://github.com/TeamPiped/Piped-Kubernetes
+sources:
+  - https://github.com/TeamPiped/Piped
+  - https://github.com/TeamPiped/Piped-Backend
+  - https://github.com/TeamPiped/piped-proxy
+keywords:
+  - streaming
 version: 0.0.1
 appVersion: latest
 maintainers:
@@ -11,3 +18,7 @@ dependencies:
   - name: common
     repository: https://bjw-s.github.io/helm-charts
     version: 0.1.0
+  - name: postgresql
+    repository: https://charts.bitnami.com/bitnami
+    version: 12.2.0
+    condition: postgresql.enabled

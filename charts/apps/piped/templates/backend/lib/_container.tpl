@@ -16,7 +16,7 @@
     {{- if kindIs "string" . }}
     - {{ . }}
     {{- else }}
-    {{ toYaml . | nindent 4 }}
+    {{- toYaml . | nindent 4 }}
     {{- end }}
   {{- end }}
   {{- with .Values.backend.securityContext }}
@@ -48,7 +48,11 @@
         name: {{ include "backend.names.fullname" . }}
     {{- end }}
   {{- end }}
-  {{- include "backend.controller.probes" . | trim | nindent 2 }}
   ports:
   {{- include "backend.controller.ports" . | trim | nindent 4 }}
+  {{- with (include "backend.controller.volumeMounts" . | trim) }}
+  volumeMounts:
+    {{- nindent 4 . }}
+  {{- end }}
+  {{- include "backend.controller.probes" . | trim | nindent 2 }}
 {{- end -}}

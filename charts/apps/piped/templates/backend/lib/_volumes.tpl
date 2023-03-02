@@ -65,4 +65,7 @@ Volumes included by the controller.
   {{- end }}
 {{- end }}
 {{- end }}
+- name: config-volume
+  configMap:
+   name: {{ include "backend.names.fullname" . }}-config
 {{- end }}
