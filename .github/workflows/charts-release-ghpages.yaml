@@ -62,7 +62,7 @@ jobs:
         shell: bash
         working-directory: dest
         run: |
-          helm repo index . --url https://teampiped.github.io/Piped-Kubernetes/
+          helm repo index . --url https://helm.piped.video
       - name: Commit changes
         shell: bash
         working-directory: dest
