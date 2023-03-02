@@ -3,7 +3,7 @@ entries:
   piped:
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-02T01:00:30.418953519Z"
+    created: "2023-03-02T01:19:17.557720686Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -14,7 +14,35 @@ entries:
       version: 12.2.0
     description: Piped is an alternative privacy-friendly YouTube frontend which is
       efficient by design.
-    digest: f963375b1626e3667cbf9217503a099b914b5e654ff2d50bc73f3b6000bc09e1
+    digest: 4ad9cb08248de98b10e34996d53a71a2331a1fabb675fc578fadeab21cd8c2d6
+    home: https://github.com/TeamPiped/Piped-Kubernetes
+    keywords:
+    - streaming
+    maintainers:
+    - email: samip5@users.noreply.github.com
+      name: Skyler Mäntysaari
+    name: piped
+    sources:
+    - https://github.com/TeamPiped/Piped
+    - https://github.com/TeamPiped/Piped-Backend
+    - https://github.com/TeamPiped/piped-proxy
+    urls:
+    - https://teampiped.github.io/Piped-Kubernetes/apps/piped-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: latest
+    created: "2023-03-02T01:19:17.548397936Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts
+      version: 0.1.0
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.2.0
+    description: Piped is an alternative privacy-friendly YouTube frontend which is
+      efficient by design.
+    digest: ae2306ecab56156e25641cde59cde8694429465a75bcf50d84de9cfe36ca20de
     home: https://github.com/TeamPiped/Piped-Kubernetes
     keywords:
     - streaming
@@ -29,4 +57,4 @@ entries:
     urls:
     - https://teampiped.github.io/Piped-Kubernetes/apps/piped-0.0.1.tgz
     version: 0.0.1
-generated: "2023-03-02T01:00:30.406578167Z"
+generated: "2023-03-02T01:19:17.539178985Z"
