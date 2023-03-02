@@ -3,7 +3,7 @@ entries:
   piped:
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-02T01:32:55.568352443Z"
+    created: "2023-03-02T01:36:46.820100902Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -14,7 +14,7 @@ entries:
       version: 12.2.0
     description: Piped is an alternative privacy-friendly YouTube frontend which is
       efficient by design.
-    digest: 70f4a724fb12081e35f1dc43816662b80ac374660cf7251efcc1d2c68b8496ab
+    digest: 2a506fbc13eeb7bc9d5b3c80bba6beb6bc65d38fe189d8fc0a6593d169ff806f
     home: https://github.com/TeamPiped/Piped-Kubernetes
     keywords:
     - streaming
@@ -31,7 +31,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-02T01:32:55.556365427Z"
+    created: "2023-03-02T01:36:46.811485323Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -57,4 +57,4 @@ entries:
     urls:
     - https://teampiped.github.io/Piped-Kubernetes/apps/piped-0.0.1.tgz
     version: 0.0.1
-generated: "2023-03-02T01:32:55.547497941Z"
+generated: "2023-03-02T01:36:46.802582939Z"
