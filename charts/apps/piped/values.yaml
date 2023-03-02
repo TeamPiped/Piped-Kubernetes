@@ -40,8 +40,8 @@ frontend:
     # -- image pull policy
     pullPolicy: IfNotPresent
 
-  env:
-    BACKEND_HOSTNAME: pipedapi.example.org
+  #env:
+  #  BACKEND_HOSTNAME: pipedapi.example.org
 
   command: "/bin/ash"
   args:
@@ -96,11 +96,11 @@ backend:
     #API_URL: https://BACKEND_HOSTNAME
     #FRONTEND_URL: https://FRONTEND_HOSTNAME
     # Enable haveibeenpwned compromised password API
-    COMPROMISED_PASSWORD_CHECK: true
+    #COMPROMISED_PASSWORD_CHECK: true
     # Disable Registration
-    DISABLE_REGISTRATION: false
+    #DISABLE_REGISTRATION: false
     # Feed Retention Time in Days
-    FEED_RETENTION: 30
+    #FEED_RETENTION: 30
     #database:
     #  connection_url: jdbc:postgresql://postgres:5432/piped
     #  driver_class: org.postgresql.Driver
