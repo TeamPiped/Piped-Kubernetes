@@ -18,8 +18,8 @@ data:
     {{ end }}
     {{- if .Values.backend.config.PROXY_PART }}
     PROXY_PART: {{.Values.backend.config.PROXY_PART }}
-    {{- else if .Values.ingress.ytproxy.enabled}}
-    PROXY_PART: {{ index (index .Values.ingress.ytproxy.hosts 0) "host" }}
+    {{- else if .Values.ingress.ytproxy.enabled and .Values.ingress.ytproxy.tls }}
+    PROXY_PART: https://{{ index (index .Values.ingress.ytproxy.hosts 0) "host" }}
     {{- else }}
      {{- fail "PROXY_PART needs to be set in config values or ytproxy ingress must be enabled."}}
     {{ end }}

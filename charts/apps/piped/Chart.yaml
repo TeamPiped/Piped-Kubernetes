@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 0.0.3
+version: 0.0.4
 appVersion: latest
 maintainers:
   - name: Skyler Mäntysaari
