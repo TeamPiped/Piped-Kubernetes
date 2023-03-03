@@ -1,0 +1,37 @@
+---
+name: Feature request
+description: Suggest an idea for this project
+title: '[<chart name>] Concise description of the enhancement'
+labels: ["enhancement"]
+
+# Header
+
+body:
+  - type: markdown
+
+  # Helm Chart details
+
+  - type: input
+    id: chart-name
+    attributes:
+      label: Helm chart name
+      description: Name of the Helm chart this issue relates to
+      placeholder: e.g. piped
+    validations:
+      required: true
+
+  # Enhancement details
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear and concise description of what you want to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: other-info
+    attributes:
+      label: Additional Information
+      description: Anything to give further context to the requested new feature

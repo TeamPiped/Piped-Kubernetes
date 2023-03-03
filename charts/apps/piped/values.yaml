@@ -84,9 +84,9 @@ backend:
 #    - sleep infinity
 
   # If the hostnames are not set for backend, proxy and API, they will be automatically fetched from their ingresses.
-  #config:
-    #PORT: 8080
-    #HTTP_WORKERS: 2
+  config:
+    PORT: 8080
+    HTTP_WORKERS: 2
     #PROXY_PART: https://PROXY_HOSTNAME
     # Outgoing HTTP Proxy - eg: 127.0.0.1:8118
     #HTTP_PROXY: 127.0.0.1:8118
@@ -147,7 +147,7 @@ ytproxy:
 ingress:
   main:
     enabled: true
-    primary: false
+    primary: true
     hosts:
       - host: piped.video
         paths:
@@ -192,7 +192,7 @@ probes:
   # @default -- See below
   liveness:
     # -- Enable the liveness probe
-    enabled: false
+    enabled: true
     # -- Set this to `true` if you wish to specify your own livenessProbe
     custom: false
     # -- The spec field contains the values for the default livenessProbe.
@@ -208,7 +208,7 @@ probes:
   # @default -- See below
   readiness:
     # -- Enable the readiness probe
-    enabled: false
+    enabled: true
     # -- Set this to `true` if you wish to specify your own readinessProbe
     custom: false
     # -- The spec field contains the values for the default readinessProbe.
@@ -224,7 +224,7 @@ probes:
   # @default -- See below
   startup:
     # -- Enable the startup probe
-    enabled: false
+    enabled: true
     # -- Set this to `true` if you wish to specify your own startupProbe
     custom: false
     # -- The spec field contains the values for the default startupProbe.
