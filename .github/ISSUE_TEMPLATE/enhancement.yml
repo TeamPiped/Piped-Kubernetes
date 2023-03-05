@@ -8,6 +8,9 @@ labels: ["enhancement"]
 
 body:
   - type: markdown
+    attributes:
+      value: |
+        Please search issues before opening a new feature request.
 
   # Helm Chart details
 
