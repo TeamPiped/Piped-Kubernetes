@@ -107,6 +107,9 @@ backend:
     #  dialect: org.hibernate.dialect.PostgreSQLDialect
     #  username: piped
     #  password: changeme
+    #  Please only provide the secret name (it should already exist),
+    # it should only include database.username and database.password as others will be taken from above.
+    # secret: secret-name
 
 
   image:

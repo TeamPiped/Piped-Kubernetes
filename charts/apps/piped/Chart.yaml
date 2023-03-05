@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 1.0.0
+version: 1.1.0
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -26,7 +26,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: changed
-      description: Updated to common v1.3.2 which bumps kubeVersion to 1.22.
-    - kind: changed
-      description: Enabled the probes by default.
+    - kind: added
+      description: Ability to use a secret for backend database credentials
