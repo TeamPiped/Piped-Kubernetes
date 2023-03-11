@@ -1,6 +1,6 @@
 # piped
 
-![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -76,20 +76,6 @@ helm install piped TeamPiped/piped -f values.yaml
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| backend.args[0] | string | `"-server"` |  |
-| backend.args[10] | string | `"-Xtune:virtualized"` |  |
-| backend.args[11] | string | `"-jar"` |  |
-| backend.args[12] | string | `"/app/piped.jar"` |  |
-| backend.args[1] | string | `"-Xmx1G"` |  |
-| backend.args[2] | string | `"-Xaggressive"` |  |
-| backend.args[3] | string | `"-XX:+UnlockExperimentalVMOptions"` |  |
-| backend.args[4] | string | `"-XX:+OptimizeStringConcat"` |  |
-| backend.args[5] | string | `"-XX:+UseStringDeduplication"` |  |
-| backend.args[6] | string | `"-XX:+UseCompressedOops"` |  |
-| backend.args[7] | string | `"-XX:+UseNUMA"` |  |
-| backend.args[8] | string | `"-Xgcpolicy:gencon"` |  |
-| backend.args[9] | string | `"-Xshareclasses:allowClasspaths"` |  |
-| backend.command | string | `"/opt/java/openjdk/bin/java"` |  |
 | backend.config.HTTP_WORKERS | int | `2` |  |
 | backend.config.PORT | int | `8080` |  |
 | backend.enabled | bool | `true` |  |
@@ -174,7 +160,7 @@ helm install piped TeamPiped/piped -f values.yaml
 
 ## Changelog
 
-### Version 1.1.1
+### Version 2.0.0
 
 #### Added
 
@@ -182,11 +168,11 @@ N/A
 
 #### Changed
 
-N/A
+* The backend uses the CMD line from the Dockerfile.
 
 #### Fixed
 
-* Frontend probe definitions
+N/A
 
 ## Support
 
