@@ -2,7 +2,7 @@
 Probes selection logic.
 */}}
 {{- define "frontend.controller.probes" -}}
-{{- $primaryService := get .Values.backend.service (include "frontend.service.primary" .) -}}
+{{- $primaryService := get .Values.frontend.service (include "frontend.service.primary" .) -}}
 {{- $primaryPort := "" -}}
 {{- if $primaryService -}}
   {{- $primaryPort = get $primaryService.ports (include "frontend.classes.service.ports.primary" (dict "serviceName" (include "frontend.service.primary" .) "values" $primaryService)) -}}
