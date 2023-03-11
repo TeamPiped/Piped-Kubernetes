@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 1.1.1
+version: 2.0.0
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -26,5 +26,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: fixed
-      description: Frontend probe definitions
+    - kind: changed
+      description: The backend uses the CMD line from the Dockerfile.

@@ -62,22 +62,6 @@ backend:
           port: 8080
           protocol: HTTP
 
-  command: "/opt/java/openjdk/bin/java"
-  args:
-    - -server
-    - -Xmx1G
-    - -Xaggressive
-    - -XX:+UnlockExperimentalVMOptions
-    - -XX:+OptimizeStringConcat
-    - -XX:+UseStringDeduplication
-    - -XX:+UseCompressedOops
-    - -XX:+UseNUMA
-    - -Xgcpolicy:gencon
-    - -Xshareclasses:allowClasspaths
-    - -Xtune:virtualized
-    - -jar
-    - /app/piped.jar
-
 #  command: "/bin/sh"
 #  args:
 #    - -c
