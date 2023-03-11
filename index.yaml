@@ -3,11 +3,11 @@ entries:
   piped:
   - annotations:
       artifacthub.io/changes: |-
-        - kind: added
-          description: Ability to use a secret for backend database credentials
+        - kind: fixed
+          description: Frontend probe definitions
     apiVersion: v2
     appVersion: latest
-    created: "2023-03-05T07:19:31.921420143Z"
+    created: "2023-03-11T14:09:56.51566997Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -18,7 +18,41 @@ entries:
       version: 12.2.0
     description: Piped is an alternative privacy-friendly YouTube frontend which is
       efficient by design.
-    digest: d0f473d288785a5b7b8b564cdd5ded69b1ad95a389212751335145d487e27942
+    digest: b1c371e47abe363a11ce3fbaa2237110369a81e221dfaeb7e14739fd13780f84
+    home: https://github.com/TeamPiped/Piped-Kubernetes
+    keywords:
+    - streaming
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: samip5@users.noreply.github.com
+      name: Skyler Mäntysaari
+      url: https://github.com/samip5
+    name: piped
+    sources:
+    - https://github.com/TeamPiped/Piped
+    - https://github.com/TeamPiped/Piped-Backend
+    - https://github.com/TeamPiped/piped-proxy
+    urls:
+    - https://helm.piped.video/apps/piped-1.1.1.tgz
+    version: 1.1.1
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: added
+          description: Ability to use a secret for backend database credentials
+    apiVersion: v2
+    appVersion: latest
+    created: "2023-03-11T14:09:56.506463965Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts
+      version: 1.3.2
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.2.0
+    description: Piped is an alternative privacy-friendly YouTube frontend which is
+      efficient by design.
+    digest: 9b3f3a7997dff2e1842726ada21182262baafc53eb0361b4f657fd5e55b1333c
     home: https://github.com/TeamPiped/Piped-Kubernetes
     keywords:
     - streaming
@@ -43,7 +77,7 @@ entries:
           description: Enabled the probes by default.
     apiVersion: v2
     appVersion: latest
-    created: "2023-03-05T07:19:31.911520517Z"
+    created: "2023-03-11T14:09:56.494535728Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -73,7 +107,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-05T07:19:31.902178592Z"
+    created: "2023-03-11T14:09:56.486689938Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -101,7 +135,7 @@ entries:
     version: 0.0.4
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-05T07:19:31.893942971Z"
+    created: "2023-03-11T14:09:56.477416532Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -129,7 +163,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-05T07:19:31.883636743Z"
+    created: "2023-03-11T14:09:56.467106915Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -157,7 +191,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: latest
-    created: "2023-03-05T07:19:31.87488702Z"
+    created: "2023-03-11T14:09:56.459447527Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -183,4 +217,4 @@ entries:
     urls:
     - https://helm.piped.video/apps/piped-0.0.1.tgz
     version: 0.0.1
-generated: "2023-03-05T07:19:31.865132594Z"
+generated: "2023-03-11T14:09:56.447023585Z"
