@@ -27,4 +27,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: fixed
-      description: The backend configmap generation (GH issue: https://github.com/TeamPiped/Piped-Kubernetes/issues/2)
+      description: "The backend configmap generation (GH issue: https://github.com/TeamPiped/Piped-Kubernetes/issues/2)"
