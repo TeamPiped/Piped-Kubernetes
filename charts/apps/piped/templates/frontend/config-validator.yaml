@@ -1,0 +1,7 @@
+{{- if .Values.frontend.env }}
+{{- $envVar := .Values.frontend.env.BACKEND_HOSTNAME }}
+{{ else if .Values.ingress.main.enabled }}
+  {{- $envVar := index (index .Values.ingress.main.hosts 0) "host" }}
+{{- else }}
+  {{- fail "Frontend container environment is missing a required variable BACKEND_HOSTNAME or main ingress is not enabled." .Values.frontend.env }}
+{{- end }}

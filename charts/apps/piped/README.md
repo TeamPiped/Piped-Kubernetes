@@ -1,6 +1,6 @@
 # piped
 
-![Version: 2.0.1](https://img.shields.io/badge/Version-2.0.1-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 2.0.2](https://img.shields.io/badge/Version-2.0.2-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -160,7 +160,7 @@ helm install piped TeamPiped/piped -f values.yaml
 
 ## Changelog
 
-### Version 2.0.1
+### Version 2.0.2
 
 #### Added
 
@@ -168,11 +168,11 @@ N/A
 
 #### Changed
 
-N/A
+* Added a config validator for frontend.
 
 #### Fixed
 
-- The backend configmap generation (GH issue: https://github.com/TeamPiped/Piped-Kubernetes/issues/2)
+* Allow specifying of resource limits.
 
 ## Support
 
