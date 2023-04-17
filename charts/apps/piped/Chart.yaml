@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 2.0.0
+version: 2.0.1
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -26,5 +26,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: changed
-      description: The backend uses the CMD line from the Dockerfile.
+    - kind: fixed
+      description: The backend configmap generation (GH issue: https://github.com/TeamPiped/Piped-Kubernetes/issues/2)

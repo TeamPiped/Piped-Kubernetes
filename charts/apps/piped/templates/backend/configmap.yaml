@@ -54,10 +54,12 @@ data:
     COMPROMISED_PASSWORD_CHECK: {{ .Values.backend.config.COMPROMISED_PASSWORD_CHECK | default true }}
     DISABLE_REGISTRATION: {{ .Values.backend.config.DISABLE_REGISTRATION |  default false }}
     FEED_RETENTION: {{ .Values.backend.config.DISABLE_REGISTRATION | int | default 30 }}
-    {{- if .Values.backend.config.database }}
+    {{- if and (.Values.backend.config.database) (not .Values.postgresql.enabled) }}
     hibernate.connection.url: {{.Values.backend.config.database.connection_url }}
     hibernate.connection.driver_class: {{.Values.backend.config.database.driver_class }}
     hibernate.dialect: {{.Values.backend.config.database.dialect }}
+    hibernate.connection.username: {{.Values.backend.config.database.username }}
+    hibernate.connection.password: {{.Values.backend.config.database.password }}
     {{- if .Values.backend.config.database.secret }}
     hibernate.connection.username: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret "Key" "database.username" ) -}}
     hibernate.connection.password: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret "Key" "database.password") -}}
@@ -68,9 +70,6 @@ data:
     hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate.connection.username: {{.Values.postgresql.auth.username }}
     hibernate.connection.password: {{.Values.postgresql.auth.password }}
-    {{- else if not (.Values.postgresql.enabled .Values.backend.config.database.secret) }}
-    hibernate.connection.username: {{.Values.backend.config.database.username }}
-    hibernate.connection.password: {{.Values.backend.config.database.password }}
     {{- else }}
      {{- fail "Unable to figure out database configuration for backend configmap."}}
     {{- end }}
