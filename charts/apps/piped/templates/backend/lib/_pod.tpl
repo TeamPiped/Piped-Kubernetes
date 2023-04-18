@@ -2,50 +2,50 @@
 The pod definition included in the controller.
 */ -}}
 {{- define "backend.controller.pod" -}}
-  {{- with .Values.imagePullSecrets }}
+  {{- with .Values.backend.imagePullSecrets }}
 imagePullSecrets:
     {{- toYaml . | nindent 2 }}
   {{- end }}
 serviceAccountName: {{ include "backend.names.serviceAccountName" . }}
 automountServiceAccountToken: {{ .Values.automountServiceAccountToken }}
-  {{- with .Values.podSecurityContext }}
+  {{- with .Values.backend.podSecurityContext }}
 securityContext:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.priorityClassName }}
+  {{- with .Values.backend.priorityClassName }}
 priorityClassName: {{ . }}
   {{- end }}
-  {{- with .Values.runtimeClassName }}
+  {{- with .Values.backend.runtimeClassName }}
 runtimeClassName: {{ . }}
   {{- end }}
-  {{- with .Values.schedulerName }}
+  {{- with .Values.backend.schedulerName }}
 schedulerName: {{ . }}
   {{- end }}
-  {{- with .Values.hostNetwork }}
+  {{- with .Values.backend.hostNetwork }}
 hostNetwork: {{ . }}
   {{- end }}
-  {{- with .Values.hostname }}
+  {{- with .Values.backend.hostname }}
 hostname: {{ . }}
   {{- end }}
-  {{- if .Values.dnsPolicy }}
-dnsPolicy: {{ .Values.dnsPolicy }}
-  {{- else if .Values.hostNetwork }}
+  {{- if .Values.backend.dnsPolicy }}
+dnsPolicy: {{ .Values.backend.dnsPolicy }}
+  {{- else if .Values.backend.hostNetwork }}
 dnsPolicy: ClusterFirstWithHostNet
   {{- else }}
 dnsPolicy: ClusterFirst
   {{- end }}
-  {{- with .Values.dnsConfig }}
+  {{- with .Values.backend.dnsConfig }}
 dnsConfig:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-enableServiceLinks: {{ .Values.enableServiceLinks }}
+enableServiceLinks: {{ .Values.backend.enableServiceLinks }}
   {{- with .Values.termination.gracePeriodSeconds }}
 terminationGracePeriodSeconds: {{ . }}
   {{- end }}
-  {{- if .Values.initContainers }}
+  {{- if .Values.backend.initContainers }}
 initContainers:
     {{- $initContainers := list }}
-    {{- range $index, $key := (keys .Values.initContainers | uniq | sortAlpha) }}
+    {{- range $index, $key := (keys .Values.backend.initContainers | uniq | sortAlpha) }}
       {{- $container := get $.Values.initContainers $key }}
       {{- if not $container.name -}}
         {{- $_ := set $container "name" $key }}
@@ -82,27 +82,27 @@ containers:
 volumes:
     {{- nindent 2 . }}
   {{- end }}
-  {{- with .Values.hostAliases }}
+  {{- with .Values.backend.hostAliases }}
 hostAliases:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.nodeSelector }}
+  {{- with .Values.backend.nodeSelector }}
 nodeSelector:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.affinity }}
+  {{- with .Values.backend.affinity }}
 affinity:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.topologySpreadConstraints }}
+  {{- with .Values.backend.topologySpreadConstraints }}
 topologySpreadConstraints:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.tolerations }}
+  {{- with .Values.backend.tolerations }}
 tolerations:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.resources }}
+  {{- with .Values.backend.resources }}
 resources:
    {{- toYaml . | nindent 2 }}
   {{- end }}

@@ -48,6 +48,12 @@ frontend:
     - -c
     - "sed -i s/pipedapi.kavin.rocks/$BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh && nginx -g 'daemon off;'"
 
+  #resources:
+  #  requests:
+  #    memory: 32Mi
+  #  limits:
+  #    memory: 128Mi
+
 backend:
   enabled: true
   service:
@@ -105,6 +111,12 @@ backend:
     # -- image pull policy
     pullPolicy: IfNotPresent
 
+  #resources:
+  #  requests:
+  #    memory: 500Mi
+  #  limits:
+  #    memory: 1500Mi
+
 ytproxy:
   enabled: true
   service:
@@ -130,6 +142,12 @@ ytproxy:
     tag:
     # -- image pull policy
     pullPolicy: IfNotPresent
+
+  #resources:
+  #  requests:
+  #    memory: 32Mi
+  #  limits:
+  #    memory: 500Mi
 
 ingress:
   main:

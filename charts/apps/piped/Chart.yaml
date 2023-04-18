@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 2.0.2
+version: 2.1.0
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -27,6 +27,6 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: fixed
-      description: Allow specifying of resource limits.
-    - kind: changed
-      description: Added a config validator for frontend.
+      description: Pod templates that were not getting things from values
+    - kind: added
+      description: Recommended resource limits were added to values, but are not enabled by default to make it concise decision to the user.

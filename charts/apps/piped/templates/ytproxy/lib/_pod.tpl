@@ -2,50 +2,50 @@
 The pod definition included in the controller.
 */ -}}
 {{- define "ytproxy.controller.pod" -}}
-  {{- with .Values.imagePullSecrets }}
+  {{- with .Values.ytproxy.imagePullSecrets }}
 imagePullSecrets:
     {{- toYaml . | nindent 2 }}
   {{- end }}
 serviceAccountName: {{ include "ytproxy.names.serviceAccountName" . }}
 automountServiceAccountToken: {{ .Values.automountServiceAccountToken }}
-  {{- with .Values.podSecurityContext }}
+  {{- with .Values.ytproxy.podSecurityContext }}
 securityContext:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.priorityClassName }}
+  {{- with .Values.ytproxy.priorityClassName }}
 priorityClassName: {{ . }}
   {{- end }}
-  {{- with .Values.runtimeClassName }}
+  {{- with .Values.ytproxy.runtimeClassName }}
 runtimeClassName: {{ . }}
   {{- end }}
-  {{- with .Values.schedulerName }}
+  {{- with .Values.ytproxy.schedulerName }}
 schedulerName: {{ . }}
   {{- end }}
-  {{- with .Values.hostNetwork }}
+  {{- with .Values.ytproxy.hostNetwork }}
 hostNetwork: {{ . }}
   {{- end }}
-  {{- with .Values.hostname }}
+  {{- with .Values.ytproxy.hostname }}
 hostname: {{ . }}
   {{- end }}
-  {{- if .Values.dnsPolicy }}
-dnsPolicy: {{ .Values.dnsPolicy }}
-  {{- else if .Values.hostNetwork }}
+  {{- if .Values.ytproxy.dnsPolicy }}
+dnsPolicy: {{ .Values.ytproxy.dnsPolicy }}
+  {{- else if .Values.ytproxy.hostNetwork }}
 dnsPolicy: ClusterFirstWithHostNet
   {{- else }}
 dnsPolicy: ClusterFirst
   {{- end }}
-  {{- with .Values.dnsConfig }}
+  {{- with .Values.ytproxy.dnsConfig }}
 dnsConfig:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-enableServiceLinks: {{ .Values.enableServiceLinks }}
+enableServiceLinks: {{ .Values.ytproxy.enableServiceLinks }}
   {{- with .Values.termination.gracePeriodSeconds }}
 terminationGracePeriodSeconds: {{ . }}
   {{- end }}
-  {{- if .Values.initContainers }}
+  {{- if .Values.ytproxy.initContainers }}
 initContainers:
     {{- $initContainers := list }}
-    {{- range $index, $key := (keys .Values.initContainers | uniq | sortAlpha) }}
+    {{- range $index, $key := (keys .Values.ytproxy.initContainers | uniq | sortAlpha) }}
       {{- $container := get $.Values.initContainers $key }}
       {{- if not $container.name -}}
         {{- $_ := set $container "name" $key }}
