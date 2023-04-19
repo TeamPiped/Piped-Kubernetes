@@ -1,0 +1,30 @@
+name: "Pull Request: Validate"
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.head_ref }}-pr-validate
+  cancel-in-progress: true
+
+jobs:
+  pr-metadata:
+    uses: ./.github/workflows/pr-metadata.yaml
+
+  charts-changelog:
+    uses: ./.github/workflows/charts-changelog.yaml
+    needs:
+      - pr-metadata
+    with:
+      isRenovatePR: ${{ needs.pr-metadata.outputs.isRenovatePR }}
+      modifiedCharts: ${{ needs.pr-metadata.outputs.addedOrModifiedCharts }}
+
+  charts-lint:
+    uses: ./.github/workflows/charts-lint.yaml
+    needs:
+      - pr-metadata
+    with:
+      checkoutCommit: ${{ github.sha }}
+      chartsToLint: ${{ needs.pr-metadata.outputs.chartsToLint }}
+      isRenovatePR: ${{ needs.pr-metadata.outputs.isRenovatePR }}
