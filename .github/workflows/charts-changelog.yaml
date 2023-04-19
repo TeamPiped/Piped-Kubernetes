@@ -67,6 +67,12 @@ jobs:
               ./.github/scripts/renovate-releasenotes.py --debug --check-branch "$CHECK_BRANCH" "${chart_parts[0]}/${chart_parts[1]}"
               echo ""
           done
+      - name: Generate Helm docs for Renovate PR's
+        if: inputs.isRenovatePR == 'true'
+        env:
+          CHECK_BRANCH: "origin/${{ github.event.repository.default_branch }}"
+        run: |
+          ./.github/scripts/gen-helm-docs.sh
       - name: Create commit
         id: create-commit
         if: inputs.isRenovatePR == 'true'
