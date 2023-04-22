@@ -1,6 +1,6 @@
 # piped
 
-![Version: 2.1.0](https://img.shields.io/badge/Version-2.1.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 2.2.0](https://img.shields.io/badge/Version-2.2.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -20,7 +20,7 @@ Kubernetes: `>=1.22.0-0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://bjw-s.github.io/helm-charts | common | 1.3.2 |
+| https://bjw-s.github.io/helm-charts | common | 1.4.0 |
 | https://charts.bitnami.com/bitnami | postgresql | 12.2.0 |
 
 ## TL;DR
@@ -160,19 +160,19 @@ helm install piped TeamPiped/piped -f values.yaml
 
 ## Changelog
 
-### Version 2.1.0
+### Version 2.2.0
 
 #### Added
 
-* Recommended resource limits were added to values, but are not enabled by default to make it concise decision to the user.
+N/A
 
 #### Changed
 
-N/A
+* Upgraded `common` chart dependency to version 1.4.0
 
 #### Fixed
 
-* Pod templates that were not getting things from values
+N/A
 
 ## Support
 

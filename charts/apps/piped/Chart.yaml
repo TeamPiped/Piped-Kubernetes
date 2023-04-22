@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 2.1.0
+version: 2.2.0
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -19,14 +19,12 @@ maintainers:
 dependencies:
   - name: common
     repository: https://bjw-s.github.io/helm-charts
-    version: 1.3.2
+    version: 1.4.0
   - name: postgresql
     repository: https://charts.bitnami.com/bitnami
     version: 12.2.0
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: fixed
-      description: Pod templates that were not getting things from values
-    - kind: added
-      description: Recommended resource limits were added to values, but are not enabled by default to make it concise decision to the user.
+    - kind: changed
+      description: Upgraded `common` chart dependency to version 1.4.0
