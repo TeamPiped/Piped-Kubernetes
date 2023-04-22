@@ -26,7 +26,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: fixed
-      description: Pod templates that were not getting things from values
-    - kind: added
-      description: Recommended resource limits were added to values, but are not enabled by default to make it concise decision to the user.
+    - kind: changed
+      description: Upgraded `common` chart dependency to version 1.4.0
