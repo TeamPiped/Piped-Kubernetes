@@ -53,6 +53,13 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install helm-docs
+        run: |
+          cd /tmp
+          wget https://github.com/k8s-at-home/helm-docs/releases/download/v0.1.1/helm-docs_0.1.1_Linux_x86_64.tar.gz
+          tar -xvf helm-docs_0.1.1_Linux_x86_64.tar.gz
+          sudo mv helm-docs /usr/local/sbin
+
       - name: Annotate Charts.yaml for Renovate PR's
         if: inputs.isRenovatePR == 'true'
         env:
@@ -72,7 +79,6 @@ jobs:
         env:
           CHECK_BRANCH: "origin/${{ github.event.repository.default_branch }}"
         run: |
-          GO111MODULE=on go get github.com/k8s-at-home/helm-docs/cmd/helm-docs
           ./.github/scripts/gen-helm-docs.sh
       - name: Create commit
         id: create-commit
