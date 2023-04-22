@@ -59,6 +59,7 @@ jobs:
           wget https://github.com/k8s-at-home/helm-docs/releases/download/v0.1.1/helm-docs_0.1.1_Linux_x86_64.tar.gz
           tar -xvf helm-docs_0.1.1_Linux_x86_64.tar.gz
           sudo mv helm-docs /usr/local/sbin
+          sudo chmod +x /usr/local/sbin/helm-docs
 
       - name: Annotate Charts.yaml for Renovate PR's
         if: inputs.isRenovatePR == 'true'
