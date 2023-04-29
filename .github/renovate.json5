@@ -38,7 +38,7 @@
      "matchManagers": ["github-actions"],
      "automerge": true,
      "automergeType": "branch",
-     "matchUpdateTypes": ["digest"]
+     "matchUpdateTypes": ["digest"],
      "schedule": [
         "every 1 months on the first day of the month"
       ]
