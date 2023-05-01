@@ -4,10 +4,44 @@ entries:
   - annotations:
       artifacthub.io/changes: |-
         - kind: changed
+          description: Upgraded `postgresql` chart dependency to version 12.4.2
+    apiVersion: v2
+    appVersion: latest
+    created: "2023-05-01T13:36:38.286157104Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts
+      version: 1.4.0
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.4.2
+    description: Piped is an alternative privacy-friendly YouTube frontend which is
+      efficient by design.
+    digest: 4e6a7361904de5f4e8bf0168a287a252876e7382937ef046118cf7d3ead44c71
+    home: https://github.com/TeamPiped/Piped-Kubernetes
+    keywords:
+    - streaming
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: samip5@users.noreply.github.com
+      name: Skyler Mäntysaari
+      url: https://github.com/samip5
+    name: piped
+    sources:
+    - https://github.com/TeamPiped/Piped
+    - https://github.com/TeamPiped/Piped-Backend
+    - https://github.com/TeamPiped/piped-proxy
+    urls:
+    - https://helm.piped.video/apps/piped-2.3.0.tgz
+    version: 2.3.0
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: changed
           description: Upgraded `common` chart dependency to version 1.4.0
     apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.263843435Z"
+    created: "2023-05-01T13:36:38.276518994Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -43,7 +77,7 @@ entries:
           description: Recommended resource limits were added to values, but are not enabled by default to make it concise decision to the user.
     apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.252298557Z"
+    created: "2023-05-01T13:36:38.268219099Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -79,7 +113,7 @@ entries:
           description: Added a config validator for frontend.
     apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.241331582Z"
+    created: "2023-05-01T13:36:38.25867539Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -113,7 +147,7 @@ entries:
           description: The backend configmap generation (GH issue: https://github.com/TeamPiped/Piped-Kubernetes/issues/2)
     apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.231880518Z"
+    created: "2023-05-01T13:36:38.248251971Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -147,7 +181,7 @@ entries:
           description: The backend uses the CMD line from the Dockerfile.
     apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.221031845Z"
+    created: "2023-05-01T13:36:38.240129178Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -181,7 +215,7 @@ entries:
           description: Frontend probe definitions
     apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.206767548Z"
+    created: "2023-05-01T13:36:38.230097664Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -215,7 +249,7 @@ entries:
           description: Ability to use a secret for backend database credentials
     apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.19684428Z"
+    created: "2023-05-01T13:36:38.220495554Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -251,7 +285,7 @@ entries:
           description: Enabled the probes by default.
     apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.184747598Z"
+    created: "2023-05-01T13:36:38.212186659Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -281,7 +315,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.168529388Z"
+    created: "2023-05-01T13:36:38.20260215Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -309,7 +343,7 @@ entries:
     version: 0.0.4
   - apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.156916909Z"
+    created: "2023-05-01T13:36:38.193205443Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -337,7 +371,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.144192522Z"
+    created: "2023-05-01T13:36:38.184402842Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -365,7 +399,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: latest
-    created: "2023-04-22T08:58:47.135186361Z"
+    created: "2023-05-01T13:36:38.174796933Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -391,4 +425,4 @@ entries:
     urls:
     - https://helm.piped.video/apps/piped-0.0.1.tgz
     version: 0.0.1
-generated: "2023-04-22T08:58:47.12323738Z"
+generated: "2023-05-01T13:36:38.164347913Z"
