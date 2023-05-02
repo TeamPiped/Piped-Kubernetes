@@ -102,8 +102,4 @@ topologySpreadConstraints:
 tolerations:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.backend.resources }}
-resources:
-   {{- toYaml . | nindent 2 }}
-  {{- end }}
 {{- end -}}

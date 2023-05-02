@@ -3,6 +3,10 @@
 - name: {{ include "frontend.names.fullname" . }}
   image: {{ printf "%s:%s" .Values.frontend.image.repository (default .Chart.AppVersion .Values.frontend.image.tag) | quote }}
   imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+  {{- with .Values.frontend.resources }}
+  resources:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   {{- with .Values.frontend.command }}
   command:
     {{- if kindIs "string" . }}

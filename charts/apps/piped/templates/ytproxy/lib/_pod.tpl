@@ -82,28 +82,24 @@ containers:
 volumes:
     {{- nindent 2 . }}
   {{- end }}
-  {{- with .Values.hostAliases }}
+  {{- with .Values.ytproxy.hostAliases }}
 hostAliases:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.nodeSelector }}
+  {{- with .Values.ytproxy.nodeSelector }}
 nodeSelector:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.affinity }}
+  {{- with .Values.ytproxy.affinity }}
 affinity:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.topologySpreadConstraints }}
+  {{- with .Values.ytproxy.topologySpreadConstraints }}
 topologySpreadConstraints:
     {{- toYaml . | nindent 2 }}
   {{- end }}
-  {{- with .Values.tolerations }}
+  {{- with .Values.ytproxy.tolerations }}
 tolerations:
     {{- toYaml . | nindent 2 }}
-    {{- end -}}
-    {{- with .Values.resources }}
-resources:
-   {{- toYaml . | nindent 2 }}
-  {{- end }}
+  {{- end -}}
 {{- end -}}
