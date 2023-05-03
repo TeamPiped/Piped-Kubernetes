@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 2.3.0
+version: 2.4.0
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -26,5 +26,10 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
+    - kind: fixed
+      description: Missing .ytproxy in pod template
+    - kind: fixed
+      description: resource definitions in templates
     - kind: changed
-      description: Upgraded `postgresql` chart dependency to version 12.4.2
+      description: Added resources limits to container definitions
+

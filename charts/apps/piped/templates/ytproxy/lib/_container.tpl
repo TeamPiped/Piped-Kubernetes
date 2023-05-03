@@ -3,6 +3,10 @@
 - name: {{ include "ytproxy.names.fullname" . }}
   image: {{ printf "%s:%s" .Values.ytproxy.image.repository (default .Chart.AppVersion .Values.ytproxy.image.tag) | quote }}
   imagePullPolicy: {{ .Values.ytproxy.image.pullPolicy }}
+  {{- with .Values.ytproxy.resources }}
+  resources:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   {{- with .Values.ytproxy.command }}
   command:
     {{- if kindIs "string" . }}
