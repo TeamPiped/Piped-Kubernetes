@@ -1,6 +1,6 @@
 # piped
 
-![Version: 2.3.0](https://img.shields.io/badge/Version-2.3.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 2.4.0](https://img.shields.io/badge/Version-2.4.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -160,7 +160,7 @@ helm install piped TeamPiped/piped -f values.yaml
 
 ## Changelog
 
-### Version 2.3.0
+### Version 2.4.0
 
 #### Added
 
@@ -168,11 +168,12 @@ N/A
 
 #### Changed
 
-* Upgraded `postgresql` chart dependency to version 12.4.2
+* Added resources limits to container definitions
 
 #### Fixed
 
-N/A
+* Missing .ytproxy in pod template
+* resource definitions in templates
 
 ## Support
 
