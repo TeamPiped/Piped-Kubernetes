@@ -26,10 +26,6 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: fixed
-      description: Missing .ytproxy in pod template
-    - kind: fixed
-      description: resource definitions in templates
     - kind: changed
-      description: Added resources limits to container definitions
+      description: Upgraded `common` chart dependency to version 1.5.0
 
