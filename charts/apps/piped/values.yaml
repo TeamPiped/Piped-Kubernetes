@@ -5,9 +5,9 @@ global:
   # -- Set the entire name definition
   fullnameOverride:
   # -- Set additional global labels. Helm templates can be used.
-  labels: { }
+  labels: {}
   # -- Set additional global annotations. Helm templates can be used.
-  annotations: { }
+  annotations: {}
 
 controller:
   # -- enable the controller.
@@ -40,7 +40,7 @@ frontend:
     # -- image pull policy
     pullPolicy: IfNotPresent
 
-  #env:
+  # env:
   #  BACKEND_HOSTNAME: pipedapi.example.org
 
   command: "/bin/ash"
@@ -48,7 +48,7 @@ frontend:
     - -c
     - "sed -i s/pipedapi.kavin.rocks/$BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh && nginx -g 'daemon off;'"
 
-  #resources:
+  # resources:
   #  requests:
   #    memory: 32Mi
   #  limits:
@@ -68,36 +68,36 @@ backend:
           port: 8080
           protocol: HTTP
 
-#  command: "/bin/sh"
-#  args:
-#    - -c
-#    - sleep infinity
+  #  command: "/bin/sh"
+  #  args:
+  #    - -c
+  #    - sleep infinity
 
   # If the hostnames are not set for backend, proxy and API, they will be automatically fetched from their ingresses.
   config:
     PORT: 8080
     HTTP_WORKERS: 2
-    #PROXY_PART: https://PROXY_HOSTNAME
+    # PROXY_PART: https://PROXY_HOSTNAME
     # Outgoing HTTP Proxy - eg: 127.0.0.1:8118
-    #HTTP_PROXY: 127.0.0.1:8118
+    # HTTP_PROXY: 127.0.0.1:8118
     # Captcha Parameters
-    #CAPTCHA_BASE_URL: https://api.capmonster.cloud/
-    #CAPTCHA_API_KEY: INSERT_HERE
-    #API_URL: https://BACKEND_HOSTNAME
-    #FRONTEND_URL: https://FRONTEND_HOSTNAME
+    # CAPTCHA_BASE_URL: https://api.capmonster.cloud/
+    # CAPTCHA_API_KEY: INSERT_HERE
+    # API_URL: https://BACKEND_HOSTNAME
+    # FRONTEND_URL: https://FRONTEND_HOSTNAME
     # Enable haveibeenpwned compromised password API
-    #COMPROMISED_PASSWORD_CHECK: true
+    # COMPROMISED_PASSWORD_CHECK: true
     # Disable Registration
-    #DISABLE_REGISTRATION: false
+    # DISABLE_REGISTRATION: false
     # Feed Retention Time in Days
-    #FEED_RETENTION: 30
-    #database:
-    #  connection_url: jdbc:postgresql://postgres:5432/piped
-    #  driver_class: org.postgresql.Driver
-    #  dialect: org.hibernate.dialect.PostgreSQLDialect
-    #  username: piped
-    #  password: changeme
-    #  Please only provide the secret name (it should already exist),
+    # FEED_RETENTION: 30
+    # database:
+    # connection_url: jdbc:postgresql://postgres:5432/piped
+    # driver_class: org.postgresql.Driver
+    # dialect: org.hibernate.dialect.PostgreSQLDialect
+    # username: piped
+    # password: changeme
+    # Please only provide the secret name (it should already exist),
     # it should only include database.username and database.password as others will be taken from above.
     # secret: secret-name
 
@@ -111,7 +111,7 @@ backend:
     # -- image pull policy
     pullPolicy: IfNotPresent
 
-  #resources:
+  # resources:
   #  requests:
   #    memory: 500Mi
   #  limits:
@@ -143,7 +143,7 @@ ytproxy:
     # -- image pull policy
     pullPolicy: IfNotPresent
 
-  #resources:
+  # resources:
   #  requests:
   #    memory: 32Mi
   #  limits:
@@ -244,6 +244,3 @@ probes:
 
 termination:
   gracePeriodSeconds:
-
-
-

@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 2.6.1
+version: 2.6.2
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -26,6 +26,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: changed
-      description: Upgraded `common` chart dependency to version 1.5.1
-
+    - kind: fixed
+      description: ytproxy ingress, GH issue 29
