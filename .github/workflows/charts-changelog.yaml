@@ -27,12 +27,14 @@ jobs:
       - name: Check changelog annotations
         if: inputs.isRenovatePR != 'true'
         run: |
+          UP_CHARTS_DIR="charts"
           IN_CHARTS=(${{ inputs.modifiedCharts }})
           CHARTS=($(python -c 'import sys;a=sys.argv[1].translate(str.maketrans("","","[]")).split(",");print(" ".join(a))' $IN_CHARTS))
-          for i in charts/"${CHARTS[@]}"
+          for i in "${CHARTS[@]}"
           do
               IFS='/' read -r -a chart_parts <<< "$i"
-              ./.github/scripts/check-releasenotes.sh "${chart_parts[0]}/${chart_parts[1]}"
+              chart_path="$UP_CHARTS_DIR/${chart_parts[0]}/${chart_parts[1]}"
+              ./.github/scripts/check-releasenotes.sh "$chart_path"
               echo ""
           done
   generate-changelog:
