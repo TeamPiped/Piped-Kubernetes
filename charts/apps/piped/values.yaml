@@ -157,7 +157,7 @@ ingress:
       - host: piped.video
         paths:
           - path: "/"
-    tls: [ ]
+    tls: []
 
   backend:
     enabled: true
