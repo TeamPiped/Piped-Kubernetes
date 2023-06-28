@@ -27,6 +27,7 @@ jobs:
       - name: Check changelog annotations
         if: inputs.isRenovatePR != 'true'
         run: |
+          pwd
           IN_CHARTS=(${{ inputs.modifiedCharts }})
           CHARTS=($(python -c 'import sys;a=sys.argv[1].translate(str.maketrans("","","[]")).split(",");print(" ".join(a))' $IN_CHARTS))
           for i in "${CHARTS[@]}"
