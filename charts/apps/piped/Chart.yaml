@@ -28,4 +28,3 @@ annotations:
   artifacthub.io/changes: |-
     - kind: fixed
       description: ytproxy ingress, GH issue 29
-
