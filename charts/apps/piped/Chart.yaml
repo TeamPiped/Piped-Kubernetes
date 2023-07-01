@@ -26,5 +26,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: fixed
-      description: ytproxy ingress, GH issue 29
+    - kind: changed
+      description: Upgraded `postgresql` chart dependency to version 12.6.0
