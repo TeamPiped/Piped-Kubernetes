@@ -46,7 +46,7 @@ frontend:
   command: "/bin/ash"
   args:
     - -c
-    - "sed -i s/pipedapi.kavin.rocks/$BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh && nginx -g 'daemon off;'"
+    - "sed -i s/pipedapi.kavin.rocks/$BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh nginx -g 'daemon off;'"
 
   # resources:
   #  requests:
