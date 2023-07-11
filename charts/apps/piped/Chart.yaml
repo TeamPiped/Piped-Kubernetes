@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 2.7.0
+version: 2.7.1
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -26,5 +26,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: changed
-      description: Upgraded `postgresql` chart dependency to version 12.6.0
+    - kind: fixed
+      description: Made frontend nginx entrypoint run docker-entrypoint.d scripts
