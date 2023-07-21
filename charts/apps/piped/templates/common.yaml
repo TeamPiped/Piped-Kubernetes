@@ -1,4 +1,3 @@
----
 {{- include "bjw-s.common.values.init" . }}
 
 {{- define "common.getValueFromSecret" }}

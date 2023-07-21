@@ -1,4 +1,3 @@
----
 {{- if .Values.ingress.ytproxy.enabled }}
   {{- $fullName := include "common.names.fullname" . -}}
   {{- $ingressName := $fullName -}}
@@ -17,7 +16,6 @@
   {{- $primaryService := .Values.ytproxy.service.main -}}
   {{- $defaultServiceName := "piped-ytproxy" -}}
   {{- $defaultServicePort := get $primaryService.ports (include "bjw-s.common.lib.service.primaryPort" (dict "values" $primaryService)) -}}
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
