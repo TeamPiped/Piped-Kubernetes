@@ -78,4 +78,8 @@ data:
     {{- else }}
      {{- fail "Unable to figure out database configuration for backend configmap."}}
     {{- end }}
+    {{- if .Values.backend.config.SENTRY_DNS }}
+    SENTRY_DSN: {{.Values.backend.SENTRY_DNS }}
+    {{- else }}
     SENTRY_DSN:
+    {{- end }}
