@@ -1,6 +1,6 @@
 # piped
 
-![Version: 2.6.2](https://img.shields.io/badge/Version-2.6.2-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 2.8.0](https://img.shields.io/badge/Version-2.8.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -21,7 +21,7 @@ Kubernetes: `>=1.22.0-0`
 | Repository | Name | Version |
 |------------|------|---------|
 | https://bjw-s.github.io/helm-charts | common | 1.5.1 |
-| https://charts.bitnami.com/bitnami | postgresql | 12.5.6 |
+| https://charts.bitnami.com/bitnami | postgresql | 12.6.0 |
 
 ## TL;DR
 
@@ -91,7 +91,7 @@ helm install piped TeamPiped/piped -f values.yaml
 | backend.service.main.type | string | `"ClusterIP"` |  |
 | controller.enabled | bool | `false` | enable the controller. |
 | frontend.args[0] | string | `"-c"` |  |
-| frontend.args[1] | string | `"sed -i s/pipedapi.kavin.rocks/$BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh && nginx -g 'daemon off;'"` |  |
+| frontend.args[1] | string | `"sed -i s/pipedapi.kavin.rocks/$BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh nginx -g 'daemon off;'"` |  |
 | frontend.command | string | `"/bin/ash"` |   BACKEND_HOSTNAME: pipedapi.example.org |
 | frontend.enabled | bool | `true` |  |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
@@ -160,7 +160,7 @@ helm install piped TeamPiped/piped -f values.yaml
 
 ## Changelog
 
-### Version 2.6.2
+### Version 2.8.0
 
 #### Added
 
@@ -168,11 +168,11 @@ N/A
 
 #### Changed
 
-N/A
+* Backend configmap was changed to not require driver_class nor dialect but rather specify them by default.
 
 #### Fixed
 
-* ytproxy ingress, GH issue 29
+* Backend configmap wasn't getting feed retention correctly passed.
 
 ## Support
 
