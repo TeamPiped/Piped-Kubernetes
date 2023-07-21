@@ -13,7 +13,7 @@ version: 2.8.0
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
-  - name: samip5 # Skyler Mäntysaari
+  - name: samip5  # Skyler Mäntysaari
     email: samip5@users.noreply.github.com
     url: https://github.com/samip5
 dependencies:
