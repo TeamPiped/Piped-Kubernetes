@@ -1,6 +1,6 @@
 # piped
 
-![Version: 3.0.0](https://img.shields.io/badge/Version-3.0.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 3.0.1](https://img.shields.io/badge/Version-3.0.1-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -160,7 +160,7 @@ helm install piped TeamPiped/piped -f values.yaml
 
 ## Changelog
 
-### Version 3.0.0
+### Version 3.0.1
 
 #### Added
 
@@ -168,11 +168,11 @@ N/A
 
 #### Changed
 
-* Backend configmap secret fetching uses now DB_USERNAME and DB_PASSWORD keys.
+N/A
 
 #### Fixed
 
-N/A
+* Init containers
 
 ## Support
 
