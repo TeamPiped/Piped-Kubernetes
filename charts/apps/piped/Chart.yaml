@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 3.0.1
+version: 3.0.2
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -28,4 +28,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: fixed
-      description: Init containers
+      description: backend configmap with secrets
