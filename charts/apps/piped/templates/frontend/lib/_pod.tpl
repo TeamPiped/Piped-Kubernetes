@@ -46,7 +46,7 @@ terminationGracePeriodSeconds: {{ . }}
 initContainers:
     {{- $initContainers := list }}
     {{- range $index, $key := (keys .Values.frontend.initContainers | uniq | sortAlpha) }}
-      {{- $container := get $.Values.initContainers $key }}
+      {{- $container := get $.Values.frontend.initContainers $key }}
       {{- if not $container.name -}}
         {{- $_ := set $container "name" $key }}
       {{- end }}
