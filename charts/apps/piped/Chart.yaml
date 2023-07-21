@@ -9,7 +9,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 2.7.1
+version: 2.8.0
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -26,5 +26,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: fixed
-      description: Made frontend nginx entrypoint run docker-entrypoint.d scripts
+    - kind: changed
+      description: Backend configmap was changed to not require driver_class nor dialect but rather specify them by default.

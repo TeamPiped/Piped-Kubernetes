@@ -56,10 +56,14 @@ data:
     FEED_RETENTION: {{ .Values.backend.config.DISABLE_REGISTRATION | int | default 30 }}
     {{- if and (.Values.backend.config.database) (not .Values.postgresql.enabled) }}
     hibernate.connection.url: {{.Values.backend.config.database.connection_url }}
+    {{- else if and (.Values.backend.config.database.driver_class) (.Values.backend.config.database.dialect)}}
     hibernate.connection.driver_class: {{.Values.backend.config.database.driver_class }}
     hibernate.dialect: {{.Values.backend.config.database.dialect }}
     hibernate.connection.username: {{.Values.backend.config.database.username }}
     hibernate.connection.password: {{.Values.backend.config.database.password }}
+    {{- else if (not .Values.backend.config.database.driver_class) (not .Values.backend.config.database.dialect) }}
+    hibernate.connection.driver_class: org.postgresql.Driver
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
     {{- if .Values.backend.config.database.secret }}
     hibernate.connection.username: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret "Key" "database.username" ) -}}
     hibernate.connection.password: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret "Key" "database.password") -}}
