@@ -172,7 +172,7 @@ N/A
 
 #### Fixed
 
-N/A
+* Backend configmap wasn't getting feed retention correctly passed.
 
 ## Support
 

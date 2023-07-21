@@ -28,3 +28,5 @@ annotations:
   artifacthub.io/changes: |-
     - kind: changed
       description: Backend configmap was changed to not require driver_class nor dialect but rather specify them by default.
+    - kind: fixed
+      description: Backend configmap wasn't getting feed retention correctly passed.
