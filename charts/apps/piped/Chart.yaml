@@ -27,5 +27,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: fixed
-      description: backend configmap with secrets
+    - kind: changed
+      description: Upgraded `postgresql` chart dependency to version 12.6.9
