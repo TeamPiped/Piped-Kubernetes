@@ -1,4 +1,4 @@
-GitPython==3.1.37
+GitPython==3.1.40
 loguru==0.7.2
 ruamel.yaml==0.17.34
 ruamel.yaml.string==0.1.1
