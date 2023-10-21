@@ -183,7 +183,7 @@ ingress:
 postgresql:
   enabled: true
   image:
-    tag: 11.19.0-debian-11-r4
+    tag: 12.10.0-debian-10-r93
   auth:
     database: piped
     username: piped
