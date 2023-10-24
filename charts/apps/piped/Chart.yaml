@@ -27,5 +27,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: upgraded
+    - kind: changed
       description: Postgres version from 12 to 13
