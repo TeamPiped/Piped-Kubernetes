@@ -1,6 +1,6 @@
 # piped
 
-![Version: 3.0.2](https://img.shields.io/badge/Version-3.0.2-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 4.1.0](https://img.shields.io/badge/Version-4.1.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -21,7 +21,7 @@ Kubernetes: `>=1.22.0-0`
 | Repository | Name | Version |
 |------------|------|---------|
 | https://bjw-s.github.io/helm-charts | common | 1.5.1 |
-| https://charts.bitnami.com/bitnami | postgresql | 12.6.0 |
+| https://charts.bitnami.com/bitnami | postgresql | 13.2.0 |
 
 ## TL;DR
 
@@ -129,7 +129,7 @@ helm install piped TeamPiped/piped -f values.yaml
 | postgresql.auth.password | string | `"changemepiped"` |  |
 | postgresql.auth.username | string | `"piped"` |  |
 | postgresql.enabled | bool | `true` |  |
-| postgresql.image.tag | string | `"11.19.0-debian-11-r4"` |  |
+| postgresql.image.tag | string | `"13.12.0-debian-11-r58"` |  |
 | probes | object | See below | Probe configuration -- [[ref]](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) |
 | probes.liveness | object | See below | Liveness probe configuration |
 | probes.liveness.custom | bool | `false` | Set this to `true` if you wish to specify your own livenessProbe |
@@ -160,7 +160,7 @@ helm install piped TeamPiped/piped -f values.yaml
 
 ## Changelog
 
-### Version 3.0.2
+### Version 4.1.0
 
 #### Added
 
@@ -168,11 +168,11 @@ N/A
 
 #### Changed
 
-N/A
+* Upgraded `postgresql` chart dependency to version 13.2.0
 
 #### Fixed
 
-* backend configmap with secrets
+N/A
 
 ## Support
 
