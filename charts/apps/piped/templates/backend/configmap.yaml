@@ -65,9 +65,9 @@ data:
     hibernate.connection.username: {{.Values.backend.config.database.username }}
     hibernate.connection.password: {{.Values.backend.config.database.password }}
     {{ end }}
-    {{- if .Values.backend.config.database.secret }}
-    hibernate.connection.username: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret "Key" "DB_USERNAME" ) }}
-    hibernate.connection.password: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret "Key" "DB_PASSWORD") }}
+    {{- if and (.Values.backend.config.database.secret) (.Values.backend.config.database.secret.name) }}
+    hibernate.connection.username: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret.name "Key" (.Values.backend.config.database.secret.username | default "DB_USERNAME")) }}
+    hibernate.connection.password: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret.name "Key" (.Values.backend.config.database.secret.password | default "DB_PASSWORD")) }}
     {{- end }}
     {{- else if .Values.postgresql.enabled }}
     hibernate.connection.url: jdbc:postgresql://piped-postgresql/{{ .Values.postgresql.auth.database}}
