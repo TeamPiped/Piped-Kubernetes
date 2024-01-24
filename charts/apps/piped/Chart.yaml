@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 4.1.2
+version: 5.0.0
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -28,4 +28,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Upgraded `postgresql` chart dependency to version 13.2.27
+      description: Change database values configuration to allow overriding of secret keys for database
