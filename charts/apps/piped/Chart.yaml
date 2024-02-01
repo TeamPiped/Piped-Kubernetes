@@ -28,4 +28,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Change database values configuration to allow overriding of secret keys for database
+      description: Upgraded `postgresql` chart dependency to version 13.2.30
