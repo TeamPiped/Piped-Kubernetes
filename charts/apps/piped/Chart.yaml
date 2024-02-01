@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 5.0.0
+version: 5.0.1
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -23,9 +23,9 @@ dependencies:
     version: 1.5.1
   - name: postgresql
     repository: https://charts.bitnami.com/bitnami
-    version: 13.2.27
+    version: 13.2.30
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Change database values configuration to allow overriding of secret keys for database
+      description: Upgraded `postgresql` chart dependency to version 13.2.30
