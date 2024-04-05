@@ -62,9 +62,10 @@ initContainers:
   {{- end }}
 containers:
   {{- include "backend.controller.mainContainer" . | nindent 2 }}
-  {{- with .Values.additionalContainers }}
+  {{- if .Values.backend.additionalContainers }}
     {{- $additionalContainers := list }}
-    {{- range $name, $container := . }}
+    {{- range $index, $key :=  (keys .Values.backend.additionalContainers | uniq | sortAlpha) }}
+    {{- $container := get $.Values.backend.initContainers $key }}
       {{- if not $container.name -}}
         {{- $_ := set $container "name" $name }}
       {{- end }}

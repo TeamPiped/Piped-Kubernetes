@@ -62,9 +62,10 @@ initContainers:
   {{- end }}
 containers:
   {{- include "ytproxy.controller.mainContainer" . | nindent 2 }}
-  {{- with .Values.additionalContainers }}
+  {{- if .Values.ytproxy.additionalContainers }}
     {{- $additionalContainers := list }}
-    {{- range $name, $container := . }}
+    {{- range $index, $key :=  (keys .Values.ytproxy.additionalContainers | uniq | sortAlpha) }}
+    {{- $container := get $.Values.ytproxy.additionalContainers $key }}
       {{- if not $container.name -}}
         {{- $_ := set $container "name" $name }}
       {{- end }}
