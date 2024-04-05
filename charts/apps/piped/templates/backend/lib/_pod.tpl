@@ -67,7 +67,7 @@ containers:
     {{- range $index, $key :=  (keys .Values.backend.additionalContainers | uniq | sortAlpha) }}
     {{- $container := get $.Values.backend.initContainers $key }}
       {{- if not $container.name -}}
-        {{- $_ := set $container "name" $name }}
+        {{- $_ := set $container "name" $key }}
       {{- end }}
       {{- if $container.env -}}
         {{- $_ := set $ "ObjectValues" (dict "env" $container.env) -}}

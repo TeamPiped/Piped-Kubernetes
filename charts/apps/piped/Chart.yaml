@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 5.1.0
+version: 5.1.1
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -28,4 +28,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: fixed
-      description: Pod templates for addionalContainers values.
+      description: Pod templates for addionalContainers values, part two.
