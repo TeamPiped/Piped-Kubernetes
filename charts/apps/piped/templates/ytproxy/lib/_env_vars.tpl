@@ -2,7 +2,7 @@
 Environment variables used by containers.
 */}}
 {{- define "ytproxy.controller.env_vars" -}}
-  {{- $values := merge .Values.ytproxy.env .Values.common_env  -}}
+  {{- $values := merge .Values.ytproxy.env  -}}
   {{- if hasKey . "ObjectValues" -}}
     {{- with .ObjectValues.env -}}
       {{- $values = . -}}
