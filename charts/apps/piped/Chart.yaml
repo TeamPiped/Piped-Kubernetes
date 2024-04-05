@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 5.1.3
+version: 5.1.4
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
