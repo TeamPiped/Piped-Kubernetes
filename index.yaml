@@ -3,11 +3,46 @@ entries:
   piped:
   - annotations:
       artifacthub.io/changes: |-
+        - kind: fixed
+          description: ytproxy env variable template
+    apiVersion: v2
+    appVersion: latest
+    created: "2024-04-05T02:13:04.534356689Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts
+      version: 1.5.1
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.2.30
+    description: Piped is an alternative privacy-friendly YouTube frontend which is
+      efficient by design.
+    digest: a9678ece2afa76a12040eb85a4a46340a8ba20b8305fd0608bdcc4e51c7e6224
+    home: https://github.com/TeamPiped/Piped-Kubernetes
+    icon: https://raw.githubusercontent.com/TeamPiped/Piped/master/public/img/icons/logo.svg
+    keywords:
+    - streaming
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: samip5@users.noreply.github.com
+      name: samip5
+      url: https://github.com/samip5
+    name: piped
+    sources:
+    - https://github.com/TeamPiped/Piped
+    - https://github.com/TeamPiped/Piped-Backend
+    - https://github.com/TeamPiped/piped-proxy
+    urls:
+    - https://helm.piped.video/apps/piped-5.0.2.tgz
+    version: 5.0.2
+  - annotations:
+      artifacthub.io/changes: |-
         - kind: changed
           description: Upgraded `postgresql` chart dependency to version 13.2.30
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.13152238Z"
+    created: "2024-04-05T02:13:04.527420172Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -42,7 +77,7 @@ entries:
           description: Change database values configuration to allow overriding of secret keys for database
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.124638933Z"
+    created: "2024-04-05T02:13:04.520320681Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -77,7 +112,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 13.2.27
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.117895806Z"
+    created: "2024-04-05T02:13:04.513374397Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -112,7 +147,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 13.2.23
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.111778111Z"
+    created: "2024-04-05T02:13:04.506069465Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -147,7 +182,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 13.2.0
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.104916669Z"
+    created: "2024-04-05T02:13:04.49981309Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -182,7 +217,7 @@ entries:
           description: Postgres version from 12 to 13
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.098004768Z"
+    created: "2024-04-05T02:13:04.492547348Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -217,7 +252,7 @@ entries:
           description: Postgres image in values
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.09107657Z"
+    created: "2024-04-05T02:13:04.485482328Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -252,7 +287,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.10.2
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.08453776Z"
+    created: "2024-04-05T02:13:04.478082838Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -287,7 +322,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.10.0
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.077489469Z"
+    created: "2024-04-05T02:13:04.471870615Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -322,7 +357,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.6.9
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.070774089Z"
+    created: "2024-04-05T02:13:04.464642226Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -357,7 +392,7 @@ entries:
           description: backend configmap with secrets
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.065011596Z"
+    created: "2024-04-05T02:13:04.458186744Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -392,7 +427,7 @@ entries:
           description: Init containers
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.058338988Z"
+    created: "2024-04-05T02:13:04.451408993Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -427,7 +462,7 @@ entries:
           description: Backend configmap secret fetching uses now DB_USERNAME and DB_PASSWORD keys.
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.051875668Z"
+    created: "2024-04-05T02:13:04.445567025Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -464,7 +499,7 @@ entries:
           description: Backend configmap wasn't getting feed retention correctly passed.
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.045510481Z"
+    created: "2024-04-05T02:13:04.438905706Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -499,7 +534,7 @@ entries:
           description: Made frontend nginx entrypoint run docker-entrypoint.d scripts
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.03898789Z"
+    created: "2024-04-05T02:13:04.432285421Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -533,7 +568,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.6.0
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.033253749Z"
+    created: "2024-04-05T02:13:04.425747409Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -567,7 +602,7 @@ entries:
           description: ytproxy ingress, GH issue 29
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.026552596Z"
+    created: "2024-04-05T02:13:04.419644952Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -601,7 +636,7 @@ entries:
           description: Upgraded `common` chart dependency to version 1.5.1
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.020166036Z"
+    created: "2024-04-05T02:13:04.412734197Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -635,7 +670,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.5.6
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.013470065Z"
+    created: "2024-04-05T02:13:04.405945094Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -669,7 +704,7 @@ entries:
           description: Upgraded `common` chart dependency to version 1.5.0
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.007779456Z"
+    created: "2024-04-05T02:13:04.39923961Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -707,7 +742,7 @@ entries:
           description: Added resources limits to container definitions
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:12.001412363Z"
+    created: "2024-04-05T02:13:04.393369689Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -741,7 +776,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.4.2
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.995139118Z"
+    created: "2024-04-05T02:13:04.385635206Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -775,7 +810,7 @@ entries:
           description: Upgraded `common` chart dependency to version 1.4.0
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.989384108Z"
+    created: "2024-04-05T02:13:04.378969591Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -811,7 +846,7 @@ entries:
           description: Recommended resource limits were added to values, but are not enabled by default to make it concise decision to the user.
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.983055395Z"
+    created: "2024-04-05T02:13:04.372214246Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -847,7 +882,7 @@ entries:
           description: Added a config validator for frontend.
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.976416206Z"
+    created: "2024-04-05T02:13:04.366300322Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -881,7 +916,7 @@ entries:
           description: The backend configmap generation (GH issue: https://github.com/TeamPiped/Piped-Kubernetes/issues/2)
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.970119937Z"
+    created: "2024-04-05T02:13:04.359374745Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -915,7 +950,7 @@ entries:
           description: The backend uses the CMD line from the Dockerfile.
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.963245891Z"
+    created: "2024-04-05T02:13:04.352265055Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -949,7 +984,7 @@ entries:
           description: Frontend probe definitions
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.957537248Z"
+    created: "2024-04-05T02:13:04.345760119Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -983,7 +1018,7 @@ entries:
           description: Ability to use a secret for backend database credentials
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.950932312Z"
+    created: "2024-04-05T02:13:04.339887092Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -1019,7 +1054,7 @@ entries:
           description: Enabled the probes by default.
     apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.944351547Z"
+    created: "2024-04-05T02:13:04.333081703Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -1049,7 +1084,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.938003799Z"
+    created: "2024-04-05T02:13:04.326214823Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -1077,7 +1112,7 @@ entries:
     version: 0.0.4
   - apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.931749282Z"
+    created: "2024-04-05T02:13:04.319861405Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -1105,7 +1140,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.925551238Z"
+    created: "2024-04-05T02:13:04.313423642Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -1133,7 +1168,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: latest
-    created: "2024-02-01T12:06:11.919990582Z"
+    created: "2024-04-05T02:13:04.307731595Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -1159,4 +1194,4 @@ entries:
     urls:
     - https://helm.piped.video/apps/piped-0.0.1.tgz
     version: 0.0.1
-generated: "2024-02-01T12:06:11.913110184Z"
+generated: "2024-04-05T02:13:04.300687436Z"
