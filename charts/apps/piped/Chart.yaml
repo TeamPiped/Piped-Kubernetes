@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 5.1.4
+version: 5.1.5
 appVersion: latest
 kubeVersion: ">=1.22.0-0"
 maintainers:
@@ -27,5 +27,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: fixed
-      description: backend env var related templates
+    - kind: added
+      description: Support for more backend config options.

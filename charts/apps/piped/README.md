@@ -1,6 +1,6 @@
 # piped
 
-![Version: 5.1.3](https://img.shields.io/badge/Version-5.1.3-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 5.1.5](https://img.shields.io/badge/Version-5.1.5-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
