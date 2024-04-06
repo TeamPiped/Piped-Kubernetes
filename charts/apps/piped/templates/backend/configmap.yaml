@@ -32,9 +32,16 @@ data:
     {{- else }}
      {{- fail "PROXY_PART needs to be set in config values or ytproxy ingress must be enabled."}}
     {{ end }}
+    {{- if (and .Values.backend.config.REQWEST_PROXY .Values.backend.config.REQWEST_PROXY_USER .Values.backend.config.REQWEST_PROXY_PASS) }}
+    REQWEST_PROXY: {{ .Values.backend.config.REQWEST_PROXY }}
+    REQWEST_PROXY_USER: {{ .Values.backend.config.REQWEST_PROXY_USER }}
+    REQWEST_PROXY_PASS: {{ .Values.backend.config.REQWEST_PROXY_PASS }}
+    {{- else if and (not .Values.backend.config.REQWEST_PROXY_USER) (not .Values.backend.config.REQWEST_PROXY_PASS) (.Values.backend.config.REQWEST_PROXY) }}
+    REQWEST_PROXY: {{ .Values.backend.config.REQWEST_PROXY }}
+    {{- end }}
     {{- if .Values.backend.config.CAPTCHA_BASE_URL }}
     CAPTCHA_BASE_URL: {{ .Values.backend.config.CAPTCHA_BASE_URL }}
-    {{- else if (and .Values.backend.config.CAPTCHA_BASE_URL .Values.backend.config.CAPTCHA_API_KEY )}}
+    {{- else if (and .Values.backend.config.CAPTCHA_BASE_URL .Values.backend.config.CAPTCHA_API_KEY) }}
     CAPTCHA_BASE_URL: {{ .Values.backend.config.CAPTCHA_BASE_URL }}
     CAPTCHA_API_KEY: {{ .Values.backend.config.CAPTCHA_API_KEY }}
     {{- end}}
