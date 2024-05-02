@@ -32,6 +32,19 @@ data:
     {{- else }}
      {{- fail "PROXY_PART needs to be set in config values or ytproxy ingress must be enabled."}}
     {{ end }}
+    {{- if (and .Values.backend.config.REQWEST_PROXY .Values.backend.config.REQWEST_PROXY_USER .Values.backend.config.REQWEST_PROXY_PASS) }}
+    REQWEST_PROXY: {{ .Values.backend.config.REQWEST_PROXY }}
+    REQWEST_PROXY_USER: {{ .Values.backend.config.REQWEST_PROXY_USER }}
+    REQWEST_PROXY_PASS: {{ .Values.backend.config.REQWEST_PROXY_PASS }}
+    {{- else if and (not .Values.backend.config.REQWEST_PROXY_USER) (not .Values.backend.config.REQWEST_PROXY_PASS) (.Values.backend.config.REQWEST_PROXY) }}
+    REQWEST_PROXY: {{ .Values.backend.config.REQWEST_PROXY }}
+    {{- end }}
+    {{- if .Values.backend.config.CAPTCHA_BASE_URL }}
+    CAPTCHA_BASE_URL: {{ .Values.backend.config.CAPTCHA_BASE_URL }}
+    {{- else if (and .Values.backend.config.CAPTCHA_BASE_URL .Values.backend.config.CAPTCHA_API_KEY) }}
+    CAPTCHA_BASE_URL: {{ .Values.backend.config.CAPTCHA_BASE_URL }}
+    CAPTCHA_API_KEY: {{ .Values.backend.config.CAPTCHA_API_KEY }}
+    {{- end}}
     {{- if .Values.backend.config.API_URL }}
     API_URL: {{ .Values.backend.config.API_URL }}
     {{- else if (and .Values.ingress.backend.enabled .Values.ingress.backend.tls) }}
@@ -72,7 +85,6 @@ data:
     {{- else if .Values.postgresql.enabled }}
     hibernate.connection.url: jdbc:postgresql://piped-postgresql/{{ .Values.postgresql.auth.database}}
     hibernate.connection.driver_class: org.postgresql.Driver
-    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate.connection.username: {{.Values.postgresql.auth.username }}
     hibernate.connection.password: {{.Values.postgresql.auth.password }}
     {{- else }}
@@ -83,3 +95,10 @@ data:
     {{- else }}
     SENTRY_DSN:
     {{- end }}
+    {{- if (and .Values.backend.config.MATRIX_SERVER .Values.backend.config.MATRIX_TOKEN) }}
+    MATRIX_SERVER: {{.Values.backend.config.MATRIX_SERVER }}
+    MATRIX_TOKEN: {{ .Values.backend.config.MATRIX_TOKEN }}
+    {{- else if (not .Values.backend.config.MATRIX_TOKEN) }}
+    MATRIX_SERVER: https://matrix-client.matrix.org
+    {{- end }}
+
