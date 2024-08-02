@@ -34,7 +34,7 @@ jobs:
           fetch-depth: 0
 
       - name: Collect charts to release
-        uses: bjw-s/helm-charts-actions/collect-charts@2f3cae860610fbfd83944d88841335ab119ee2e4
+        uses: bjw-s/helm-charts-actions/collect-charts@a8eaf6315b4231f659cc9986b06ffcf242158ca9
         id: collect-charts
         with:
           repoConfigFile: ./.ci/repo-config.yaml
