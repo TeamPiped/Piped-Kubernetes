@@ -1,7 +1,7 @@
 ---
 name: Bug report
 description: Create a report to help us improve
-title: '[<chart name>] Concise description of the issue'
+title: 'Concise description of the issue'
 labels: ["bug"]
 
 # Header
@@ -13,15 +13,6 @@ body:
         Please search issues and discussions before opening a new bug report.
 
   # Helm Chart details
-
-  - type: input
-    id: chart-name
-    attributes:
-      label: Helm chart name
-      description: Name of the Helm chart this issue relates to
-      placeholder: e.g. piped
-    validations:
-      required: true
 
   - type: input
     id: chart-version
