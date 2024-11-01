@@ -1,7 +1,7 @@
 ---
 name: Feature request
 description: Suggest an idea for this project
-title: '[<chart name>] Concise description of the enhancement'
+title: 'Concise description of the enhancement'
 labels: ["enhancement"]
 
 # Header
@@ -11,17 +11,6 @@ body:
     attributes:
       value: |
         Please search issues before opening a new feature request.
-
-  # Helm Chart details
-
-  - type: input
-    id: chart-name
-    attributes:
-      label: Helm chart name
-      description: Name of the Helm chart this issue relates to
-      placeholder: e.g. piped
-    validations:
-      required: true
 
   # Enhancement details
 
