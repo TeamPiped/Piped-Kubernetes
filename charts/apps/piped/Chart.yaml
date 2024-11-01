@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 6.1.0
+version: 6.1.1
 appVersion: latest
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -28,6 +28,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Default helm values now include current latest manifest index of the image
-    - kind: changed
-      description: Only support Kubernetes 1.26 and above.
+      description: Updated readme

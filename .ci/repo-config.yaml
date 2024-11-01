@@ -1,3 +1,4 @@
-excluded-charts-lint: []
-
-excluded-charts-install: []
+excluded-charts-lint:
+   - chart1
+excluded-charts-install:
+   - chart2

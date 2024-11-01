@@ -35,7 +35,6 @@ frontend:
     # -- image repository
     repository: 1337kavin/piped-frontend
     # -- image tag
-    # yamllint disable-line rule:line-length
     tag: "latest@sha256:96b746dc7a538d0f5a658864d9162be542c2db49f16f3cc8214878e39dec8504"  # Manifest index
     # -- image pull policy
     pullPolicy: IfNotPresent
