@@ -35,8 +35,8 @@ frontend:
     # -- image repository
     repository: 1337kavin/piped-frontend
     # -- image tag
-    # @chart.appVersion
-    tag:
+    # yamllint disable-line rule:line-length
+    tag: "latest@sha256:96b746dc7a538d0f5a658864d9162be542c2db49f16f3cc8214878e39dec8504"  # Manifest index
     # -- image pull policy
     pullPolicy: IfNotPresent
 
@@ -111,7 +111,7 @@ backend:
     repository: 1337kavin/piped
     # -- image tag
     # @chart.appVersion
-    tag:
+    tag: "latest@sha256:18e77857414236edc7245bebb3fb8ab3ac49c44bd76701bfce24f6ba0170d4b8"  # Manifest index
     # -- image pull policy
     pullPolicy: IfNotPresent
 
@@ -142,8 +142,7 @@ ytproxy:
     # -- image repository
     repository: 1337kavin/piped-proxy
     # -- image tag
-    # @chart.appVersion
-    tag:
+    tag: "latest@sha256:833ca24c048619c9cd6fe58e2d210bfc7b1e43875ba5108aeddea0b171f04dbd"  # Manifest index
     # -- image pull policy
     pullPolicy: IfNotPresent
 

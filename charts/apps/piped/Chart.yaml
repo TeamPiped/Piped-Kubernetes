@@ -10,9 +10,9 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 6.0.4
+version: 6.1.0
 appVersion: latest
-kubeVersion: ">=1.22.0-0"
+kubeVersion: ">=1.26.0-0"
 maintainers:
   - name: samip5  # Skyler Mäntysaari
     email: samip5@users.noreply.github.com
@@ -28,4 +28,6 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Upgraded `postgresql` chart dependency to version 15.5.38
+      description: Default helm values now include current latest manifest index of the image
+    - kind: changed
+      description: Only support Kubernetes 1.26 and above.
