@@ -28,4 +28,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Updated readme
+      description: Upgraded `postgresql` chart dependency to version 16.3.4
