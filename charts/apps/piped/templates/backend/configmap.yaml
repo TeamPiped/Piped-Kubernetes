@@ -54,6 +54,9 @@ data:
     {{- else }}
      {{- fail "API_URL needs to be set in config values or backend ingress must be enabled."}}
     {{ end }}
+    {{- if .Values.backend.config.BG_HELPER_URL }}
+    BG_HELPER_URL: {{ .Values.backend.config.BG_HELPER_URL }}
+    {{ end }}
     {{- if .Values.backend.config.FRONTEND_URL }}
     FRONTEND_URL: {{.Values.backend.config.FRONTEND_URL }}
     {{- else if (and .Values.ingress.main.enabled .Values.ingress.main.tls) }}

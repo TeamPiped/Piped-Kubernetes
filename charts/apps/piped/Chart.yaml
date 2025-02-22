@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 7.0.2
+version: 7.1.0
 appVersion: latest
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -27,5 +27,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: changed
-      description: Upgraded `postgresql` chart dependency to version 16.3.5
+    - kind: added
+      description: ability to set BG_HELPER_URL.
