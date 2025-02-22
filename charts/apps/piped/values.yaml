@@ -83,6 +83,7 @@ backend:
     # CAPTCHA_BASE_URL: https://api.capmonster.cloud/
     # CAPTCHA_API_KEY: INSERT_HERE
     # API_URL: https://BACKEND_HOSTNAME
+    # BG_HELPER_URL: http://BG_HELPER_HOSTNAME
     # FRONTEND_URL: https://FRONTEND_HOSTNAME
     # Enable haveibeenpwned compromised password API
     # COMPROMISED_PASSWORD_CHECK: true
