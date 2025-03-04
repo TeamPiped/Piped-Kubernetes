@@ -27,5 +27,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: added
-      description: ability to set BG_HELPER_URL.
+    - kind: changed
+      description: Upgraded `postgresql` chart dependency to version 16.4.16
