@@ -1,6 +1,6 @@
 # piped
 
-![Version: 7.1.0](https://img.shields.io/badge/Version-7.1.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 7.2.0](https://img.shields.io/badge/Version-7.2.0-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -19,7 +19,7 @@ Kubernetes: `>=1.26.0-0`
 | Repository | Name | Version |
 |------------|------|---------|
 | https://bjw-s.github.io/helm-charts | common | 1.5.1 |
-| https://charts.bitnami.com/bitnami | postgresql | 16.3.5 |
+| https://charts.bitnami.com/bitnami | postgresql | 16.4.16 |
 
 ## Installing the Chart
 
@@ -45,7 +45,7 @@ The following table contains an overview of available values and their descripti
 | backend.enabled | bool | `true` |  |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | backend.image.repository | string | `"1337kavin/piped"` | image repository |
-| backend.image.tag | string | `"latest@sha256:4640c0a7c2ec920a7e1c42db94cab41c1da08ae04e307620c5d9a619b0e3bffc"` | image tag @chart.appVersion |
+| backend.image.tag | string | `"latest@sha256:759979280703ba11e4069405d21c2fed62a902d135fcea25d76fa13a12f278d7"` | image tag @chart.appVersion |
 | backend.service.main.enabled | bool | `true` |  |
 | backend.service.main.ports.http.enabled | bool | `true` |  |
 | backend.service.main.ports.http.port | int | `8080` |  |
@@ -60,7 +60,7 @@ The following table contains an overview of available values and their descripti
 | frontend.enabled | bool | `true` |  |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | frontend.image.repository | string | `"1337kavin/piped-frontend"` | image repository |
-| frontend.image.tag | string | `"latest@sha256:96b746dc7a538d0f5a658864d9162be542c2db49f16f3cc8214878e39dec8504"` | image tag |
+| frontend.image.tag | string | `"latest@sha256:614fa1e70285307ed64d39c76675d787cad9c429307c58b71352d1f72bfb2ac1"` | image tag |
 | frontend.service.main.enabled | bool | `true` |  |
 | frontend.service.main.ports.http.enabled | bool | `true` |  |
 | frontend.service.main.ports.http.port | int | `80` |  |
@@ -113,7 +113,7 @@ The following table contains an overview of available values and their descripti
 | ytproxy.enabled | bool | `true` |  |
 | ytproxy.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | ytproxy.image.repository | string | `"1337kavin/piped-proxy"` | image repository |
-| ytproxy.image.tag | string | `"latest@sha256:833ca24c048619c9cd6fe58e2d210bfc7b1e43875ba5108aeddea0b171f04dbd"` | image tag |
+| ytproxy.image.tag | string | `"latest@sha256:4a77a613b33d8e8628463044a070a2c6ac353a5d8963f4abc1efccf00754ce09"` | image tag |
 | ytproxy.service.main.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.port | int | `8080` |  |

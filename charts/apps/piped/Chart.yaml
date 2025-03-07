@@ -27,5 +27,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: Updated
-      description: piped image.
+    - kind: changed
+      description: Upgraded `postgresql` chart dependency to version 16.4.16
