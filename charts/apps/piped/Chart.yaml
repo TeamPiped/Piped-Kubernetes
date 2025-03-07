@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 7.1.1
+version: 7.2.0
 appVersion: latest
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -23,9 +23,9 @@ dependencies:
     version: 1.5.1
   - name: postgresql
     repository: https://charts.bitnami.com/bitnami
-    version: 16.3.5
+    version: 16.4.16
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: Updated
-      description: piped image.
+    - kind: changed
+      description: Upgraded `postgresql` chart dependency to version 16.4.16
