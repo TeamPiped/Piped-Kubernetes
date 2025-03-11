@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 7.2.0
+version: 7.2.1
 appVersion: latest
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -28,4 +28,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Upgraded `postgresql` chart dependency to version 16.4.16
+      description: Upgraded `piped-frontend` to current release.
