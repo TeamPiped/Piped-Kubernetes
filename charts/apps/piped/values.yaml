@@ -35,7 +35,7 @@ frontend:
     # -- image repository
     repository: 1337kavin/piped-frontend
     # -- image tag
-    tag: "latest@sha256:614fa1e70285307ed64d39c76675d787cad9c429307c58b71352d1f72bfb2ac1"  # Manifest index
+    tag: "latest@sha256:95d42ad855681cc8abcc12f95687b1508f71dcb635eaf2ead4335ae43b851269"  # Manifest index
     # -- image pull policy
     pullPolicy: IfNotPresent
 
