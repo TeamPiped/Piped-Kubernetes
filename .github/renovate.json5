@@ -9,7 +9,10 @@
   ],
   prConcurrentLimit: 5,
   'helm-values': {
-    enabled: false,
+    enabled: true,
+    fileMatch: [
+      'charts/.+/values\\.yaml$',
+    ],
   },
   helmv3: {
     fileMatch: [
