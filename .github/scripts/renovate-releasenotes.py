@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import os
 import sys
 import typer
@@ -75,9 +73,14 @@ def main(
             raise typer.Exit(1)
 
         chart_metadata_file = chart_folder.joinpath('Chart.yaml')
+        values_file = chart_folder.joinpath('values.yaml')
 
         if not chart_metadata_file.is_file():
             logger.error(f"Could not find file {str(chart_metadata_file)}")
+            raise typer.Exit(1)
+
+        if not values_file.is_file():
+            logger.error(f"Could not find file {str(values_file)}")
             raise typer.Exit(1)
 
         logger.info(f"Updating changelog annotation for chart {chart_folder}")
@@ -92,6 +95,11 @@ def main(
             git_repository.git.show(f"{branch}:{chart_metadata_file}")
         )
         new_chart_metadata = yaml.load(chart_metadata_file.read_text())
+
+        old_values = yaml.load(
+            git_repository.git.show(f"{branch}:{values_file}")
+        )
+        new_values = yaml.load(values_file.read_text())
 
         try:
             old_chart_dependencies = old_chart_metadata["dependencies"]
@@ -136,6 +144,18 @@ def main(
                         "kind": "changed",
                         "description": f"Upgraded `{dependency['name']}` chart dependency to version {dependency['version']}"
                     })
+
+        # Compare image digests in values.yaml
+        old_images = old_values.get("image", {})
+        new_images = new_values.get("image", {})
+
+        for image_key, new_image in new_images.items():
+            old_image = old_images.get(image_key)
+            if old_image and old_image != new_image:
+                annotations.append({
+                    "kind": "changed",
+                    "description": f"Updated image `{image_key}` to digest {new_image}"
+                })
 
         if annotations:
             annotations = YAML(typ=['rt', 'string']
