@@ -24,6 +24,7 @@ jobs:
     uses: ./.github/workflows/charts-lint.yaml
     needs:
       - pr-metadata
+      - charts-changelog
     with:
       checkoutCommit: ${{ github.sha }}
       chartsToLint: ${{ needs.pr-metadata.outputs.chartsToLint }}

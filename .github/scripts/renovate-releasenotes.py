@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import io
 import typer
 
 from git import Repo
@@ -189,9 +190,11 @@ def main(
                     })
 
         if annotations:
-            # Instead of trying to dump the list of annotations directly, we'll treat it as a string
-            annotations_list = [yaml.dump(item).rstrip() for item in annotations]
-            annotations_string = "\n".join(annotations_list)
+            annotations_stream = io.StringIO()
+            yaml.dump(annotations, annotations_stream)
+
+            annotations_string = annotations_stream.getvalue()
+            annotations_stream.close()
 
             if "annotations" not in new_chart_metadata:
                 new_chart_metadata["annotations"] = CommentedMap()
@@ -200,7 +203,7 @@ def main(
 
             new_chart_metadata = bump_patch_version(new_chart_metadata)
 
-        with chart_metadata_file.open('w') as f:
+        with chart_metadata_file.open("w") as f:
             yaml.dump(new_chart_metadata, f)
 
 
