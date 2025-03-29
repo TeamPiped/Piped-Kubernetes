@@ -112,7 +112,7 @@ def main(
 
         yaml = YAML(typ=['rt', 'string'])
         yaml.indent(mapping=2, sequence=4, offset=2)
-        yaml.explicit_start = False
+        yaml.explicit_start = True
         yaml.preserve_quotes = True
         yaml.width = 4096
 
@@ -191,6 +191,7 @@ def main(
 
         if annotations:
             annotations_stream = io.StringIO()
+            yaml.explicit_start = False
             yaml.dump(annotations, annotations_stream)
 
             annotations_string = annotations_stream.getvalue()
