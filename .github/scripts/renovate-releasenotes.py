@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import os
 import sys
 import typer
 
@@ -31,6 +30,30 @@ def _setup_logging(debug):
         format="<level>{message}</level>",
         level=log_level,
     )
+
+
+def extract_images(images_dict):
+    images = {}
+    for key, value in images_dict.items():
+        if isinstance(value, dict) and 'image' in value:
+            image_info = value['image']
+            if isinstance(image_info, dict):
+                images[key] = {
+                    'repository': image_info.get('repository'),
+                    'tag': image_info.get('tag')
+                }
+    return images
+
+def bump_patch_version(chart_metadata):
+    """
+    Bump the patch version in the chart metadata.
+    """
+    version = chart_metadata.get("version", "0.0.0")  # Default to 0.0.0 if not present
+    major, minor, patch = map(int, version.split('.'))
+    patch += 1  # Increment the patch version
+    new_version = f"{major}.{minor}.{patch}"
+    chart_metadata["version"] = new_version
+    return chart_metadata
 
 
 @app.command()
@@ -147,27 +170,37 @@ def main(
                     })
 
         # Compare image digests in values.yaml
-        old_images = old_values.get("image", {})
-        new_images = new_values.get("image", {})
+        old_images = extract_images(old_values)
+        new_images = extract_images(new_values)
 
-        for image_key, new_image in new_images.items():
-            old_image = old_images.get(image_key)
-            if old_image and old_image != new_image:
+        for component, new_image in new_images.items():
+            old_image = old_images.get(component)
+
+            if old_image is None:
                 annotations.append({
-                    "kind": "changed",
-                    "description": f"Updated image `{image_key}` to digest {new_image}"
+                    "kind": "added",
+                    "description": f"Added new image for `{component}` with repository {new_image['repository']} and tag {new_image['tag']}"
                 })
+            else:
+                if old_image['repository'] != new_image['repository'] or old_image['tag'] != new_image['tag']:
+                    annotations.append({
+                        "kind": "changed",
+                        "description": f"Updated image for `{component}` from {old_image['tag']} to {new_image['tag']}"
+                    })
 
         if annotations:
-            annotations = YAML(typ=['rt', 'string']
-                               ).dump_to_string(annotations)
+            annotations_string = yaml.dump(annotations)
 
-            if not "annotations" in new_chart_metadata:
+            if "annotations" not in new_chart_metadata:
                 new_chart_metadata["annotations"] = CommentedMap()
 
-            new_chart_metadata["annotations"]["artifacthub.io/changes"] = LiteralScalarString(
-                annotations)
-            yaml.dump(new_chart_metadata, chart_metadata_file)
+            new_chart_metadata["annotations"]["artifacthub.io/changes"] = LiteralScalarString(annotations_string)
+
+            new_chart_metadata = bump_patch_version(new_chart_metadata)
+
+        with chart_metadata_file.open('w') as f:
+            yaml.dump(new_chart_metadata, f)
+
 
 
 if __name__ == "__main__":
