@@ -191,7 +191,6 @@ def main(
 
         if annotations:
             annotations_stream = io.StringIO()
-            yaml.explicit_start = False
             yaml.dump(annotations, annotations_stream)
 
             annotations_string = annotations_stream.getvalue()
@@ -201,6 +200,9 @@ def main(
                 new_chart_metadata["annotations"] = CommentedMap()
 
             new_chart_metadata["annotations"]["artifacthub.io/changes"] = LiteralScalarString(annotations_string)
+
+            logger.debug(f"Annotations: {annotations_string}")
+            logger.debug(new_chart_metadata)
 
             new_chart_metadata = bump_patch_version(new_chart_metadata)
 
