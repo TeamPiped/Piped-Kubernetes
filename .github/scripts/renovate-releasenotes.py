@@ -199,7 +199,7 @@ def main(
             if "annotations" not in new_chart_metadata:
                 new_chart_metadata["annotations"] = CommentedMap()
 
-            new_chart_metadata["annotations"]["artifacthub.io/changes"] = LiteralScalarString(annotations_string)
+            new_chart_metadata["annotations"]["artifacthub.io/changes"] = LiteralScalarString(annotations_string.strip())
 
             logger.debug(f"Annotations: {annotations_string}")
             logger.debug(new_chart_metadata)
@@ -207,6 +207,7 @@ def main(
             new_chart_metadata = bump_patch_version(new_chart_metadata)
 
         with chart_metadata_file.open("w") as f:
+            yaml.exclude_start = False
             yaml.dump(new_chart_metadata, f)
 
 
