@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 7.2.4
+version: 7.3.0
 appVersion: latest
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -27,5 +27,7 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: changed
-      description: Updated image for `ytproxy` from latest@sha256:880b1117b6087e32b82c0204a96210fb87de61a874a3a2681361cc6d905e4d0e to latest@sha256:53575a0aa0f5ea81f66f6f43d4c74333559efd62c99c21588dfee0aacbab2265
+    - kind: fixed
+      description: templating of environment variables for backend init-containers.
+    - kind: fixed
+      description: templating of environment variables for frontend init-containers.
