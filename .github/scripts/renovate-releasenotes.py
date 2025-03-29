@@ -9,7 +9,7 @@ from pathlib import Path
 
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap
-from ruamel.yaml.scalarstring import LiteralScalarString
+from ruamel.yaml.scalarstring import LiteralScalarString, PreservedScalarString
 from typing import List
 
 app = typer.Typer(add_completion=False)
@@ -191,15 +191,15 @@ def main(
 
         if annotations:
             annotations_stream = io.StringIO()
-            yaml.dump(annotations, annotations_stream)
+            yaml.dump_all([annotations], annotations_stream)
 
-            annotations_string = annotations_stream.getvalue()
+            annotations_string = annotations_stream.getvalue().strip()
             annotations_stream.close()
 
             if "annotations" not in new_chart_metadata:
                 new_chart_metadata["annotations"] = CommentedMap()
 
-            new_chart_metadata["annotations"]["artifacthub.io/changes"] = LiteralScalarString(annotations_string.strip())
+            new_chart_metadata["annotations"]["artifacthub.io/changes"] = LiteralScalarString(annotations_string)
 
             logger.debug(f"Annotations: {annotations_string}")
             logger.debug(new_chart_metadata)
