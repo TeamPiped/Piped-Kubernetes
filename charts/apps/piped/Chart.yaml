@@ -10,7 +10,7 @@ sources:
   - https://github.com/TeamPiped/piped-proxy
 keywords:
   - streaming
-version: 7.3.0
+version: 7.4.0
 appVersion: latest
 kubeVersion: ">=1.26.0-0"
 maintainers:
@@ -27,7 +27,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: fixed
-      description: templating of environment variables for backend init-containers.
-    - kind: fixed
-      description: templating of environment variables for frontend init-containers.
+    - kind: added
+      description: ability to figure out the backend host for the frontend config automatically

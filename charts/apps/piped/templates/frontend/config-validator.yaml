@@ -1,7 +1,17 @@
-{{- if .Values.frontend.env }}
-{{- $envVar := .Values.frontend.env.BACKEND_HOSTNAME }}
-{{ else if .Values.ingress.main.enabled }}
-  {{- $envVar := index (index .Values.ingress.main.hosts 0) "host" }}
-{{- else }}
-  {{- fail "Frontend container environment is missing a required variable BACKEND_HOSTNAME or main ingress is not enabled." .Values.frontend.env }}
+{{- define "frontend.configValidation" }}
+  {{- $envVar := "" }}
+  {{- if .Values.frontend.env }}
+    {{- $envVar = .Values.frontend.env.BACKEND_HOSTNAME }}
+  {{- else if .Values.ingress.backend.enabled }}
+    {{- if (and (hasKey .Values.ingress.backend "hosts") (gt (len .Values.ingress.backend.hosts) 0)) }}
+      {{- $envVar = index (index .Values.ingress.backend.hosts 0) "host" }}
+    {{- end }}
+  {{- else if .Values.ingress.main.enabled }}
+    {{- if (and (hasKey .Values.ingress.main "hosts") (gt (len .Values.ingress.main.hosts) 0)) }}
+      {{- $envVar = index (index .Values.ingress.main.hosts 0) "host" }}
+    {{- end }}
+  {{- else }}
+    {{- fail "Frontend container environment is missing a required variable BACKEND_HOSTNAME, main or backend ingress is not enabled." .Values.frontend.env }}
+  {{- end }}
+  {{- $envVar }}  # Return the value of $envVar
 {{- end }}
