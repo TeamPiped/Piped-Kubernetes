@@ -189,7 +189,9 @@ def main(
                     })
 
         if annotations:
-            annotations_string = yaml.dump(annotations)
+            # Instead of trying to dump the list of annotations directly, we'll treat it as a string
+            annotations_list = [yaml.dump(item).rstrip() for item in annotations]
+            annotations_string = "\n".join(annotations_list)
 
             if "annotations" not in new_chart_metadata:
                 new_chart_metadata["annotations"] = CommentedMap()
