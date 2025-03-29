@@ -9,7 +9,7 @@ from pathlib import Path
 
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap
-from ruamel.yaml.scalarstring import LiteralScalarString, PreservedScalarString
+from ruamel.yaml.scalarstring import PreservedScalarString
 from typing import List
 
 app = typer.Typer(add_completion=False)
@@ -190,17 +190,27 @@ def main(
                     })
 
         if annotations:
-            annotations_stream = io.StringIO()
-            yaml.exclude_start = False
-            yaml.dump_all([annotations], annotations_stream)
+            annotations_data = [
+                {"kind": annotation["kind"], "description": annotation["description"]}
+                for annotation in annotations
+            ]
 
-            annotations_string = annotations_stream.getvalue().strip()
-            annotations_stream.close()
+            with io.StringIO() as annotations_stream:
+                yaml.explicit_start = False  # You likely want this to be false so that the output doesn't have '---'
+
+                for annotation in annotations_data:
+                    annotations_stream.write(
+                        f"- kind: {annotation['kind']}\n"
+                        f"  description: {annotation['description']}\n"
+                    )
+
+                # Get the final YAML string and strip leading/trailing whitespace
+                annotations_string = annotations_stream.getvalue().strip()
 
             if "annotations" not in new_chart_metadata:
                 new_chart_metadata["annotations"] = CommentedMap()
 
-            new_chart_metadata["annotations"]["artifacthub.io/changes"] = LiteralScalarString(annotations_string)
+            new_chart_metadata["annotations"]["artifacthub.io/changes"] = PreservedScalarString(annotations_string)
 
             logger.debug(f"Annotations: {annotations_string}")
             logger.debug(new_chart_metadata)
@@ -208,7 +218,7 @@ def main(
             new_chart_metadata = bump_patch_version(new_chart_metadata)
 
         with chart_metadata_file.open("w") as f:
-            yaml.exclude_start = False
+            yaml.explicit_start = True
             yaml.dump(new_chart_metadata, f)
 
 
