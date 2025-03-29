@@ -191,6 +191,7 @@ def main(
 
         if annotations:
             annotations_stream = io.StringIO()
+            yaml.exclude_start = False
             yaml.dump_all([annotations], annotations_stream)
 
             annotations_string = annotations_stream.getvalue().strip()
