@@ -2,7 +2,9 @@
 Environment variables used by containers.
 */}}
 {{- define "frontend.controller.env_vars" -}}
-  {{- $values := merge .Values.frontend.env  -}}
+  {{- $envVar := include "frontend.configValidation" .  | trim | quote }}
+  {{- $values := merge .Values.frontend.env (dict "BACKEND_HOSTNAME" $envVar) -}}
+
   {{- if hasKey . "ObjectValues" -}}
     {{- with .ObjectValues.env -}}
       {{- $values = . -}}
