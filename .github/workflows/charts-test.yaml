@@ -20,7 +20,7 @@ on:
 jobs:
   install-chart:
     name: Install chart
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     if: ${{ inputs.charts != '[]' && inputs.charts != '' }}
     strategy:
       matrix:
@@ -89,7 +89,7 @@ jobs:
 
   unittest-chart:
     name: Unit-test chart
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     if: ${{ inputs.charts != '[]' && inputs.charts != '' }}
     strategy:
       matrix:
