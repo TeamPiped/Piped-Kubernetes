@@ -58,7 +58,7 @@ jobs:
       - name: Set up chart-testing
         uses: helm/chart-testing-action@v2.7.0
 
-      - name: Run chart-testing (install)
+      - name: Run chart-testing
         run: ct lint --config .ci/ct/ct.yaml --charts "charts/${{ matrix.chart }}"
 
   # Summarize matrix https://github.community/t/status-check-for-a-matrix-jobs/127354/7
