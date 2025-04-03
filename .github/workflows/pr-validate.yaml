@@ -2,6 +2,11 @@ name: "Pull Request: Validate"
 
 on:
   pull_request:
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+      - synchronize
   workflow_dispatch:
 
 concurrency:
@@ -9,23 +14,100 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  pr-metadata:
-    uses: ./.github/workflows/pr-metadata.yaml
+  prepare:
+    name: Prepare data required for workflow
+    runs-on: ubuntu-22.04
+    outputs:
+      isRenovatePR: ${{ startsWith(steps.branch-name.outputs.current_branch, 'renovate/') }}
+      repoConfiguration: ${{ steps.repo-config.outputs.config }}
+      addedOrModifiedFiles: ${{ steps.added-modified-files.outputs.all_changed_files }}
+      chartsToLint: ${{ steps.charts-to-lint.outputs.filteredCharts }}
+      chartsToInstall: ${{ steps.charts-to-install.outputs.filteredCharts }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Grab repository configuration
+        id: repo-config
+        shell: bash
+        run: |
+          echo "config=$(yq '.' '.ci/repo-config.yaml' -o json -I=0)" >> "$GITHUB_OUTPUT"
+          
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v6.5
+
+      - name: Get all added or modified files
+        id: added-modified-files
+        uses: tj-actions/changed-files@v45
+
+      - name: Get changed charts
+        id: changed-charts
+        uses: tj-actions/changed-files@v45
+        with:
+          matrix: true
+          path: charts
+          dir_names: true
+          dir_names_max_depth: 2
+
+      - name: Determine charts to lint
+        id: charts-to-lint
+        uses: actions/github-script@v7
+        with:
+          script: |
+            var changedCharts = ${{ steps.changed-charts.outputs.all_changed_files }};
+            var chartsToFilter = ${{ toJSON(fromJSON(steps.repo-config.outputs.config).excluded-charts-lint) }};
+            let filteredCharts = changedCharts.filter(item => chartsToFilter.indexOf(item) < 0);
+            core.setOutput("filteredCharts", filteredCharts);
+
+      - name: Determine charts to install
+        id: charts-to-install
+        uses: actions/github-script@v7
+        with:
+          script: |
+            var changedCharts = ${{ steps.changed-charts.outputs.all_changed_files }};
+            var chartsToFilter = ${{ toJSON(fromJSON(steps.repo-config.outputs.config).excluded-charts-install) }};
+            let filteredCharts = changedCharts.filter(item => chartsToFilter.indexOf(item) < 0);
+            core.setOutput("filteredCharts", filteredCharts);
+
+  pre-commit-check:
+    name: Perform Pre-Commit check
+    runs-on: ubuntu-22.04
+    needs:
+      - prepare
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run against changes
+        uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: --files ${{ needs.prepare.outputs.addedOrModifiedFiles }} --config .ci/pre-commit/config.yaml
 
   charts-changelog:
     uses: ./.github/workflows/charts-changelog.yaml
     needs:
-      - pr-metadata
+      - prepare
     with:
-      isRenovatePR: ${{ needs.pr-metadata.outputs.isRenovatePR }}
-      modifiedCharts: ${{ needs.pr-metadata.outputs.addedOrModifiedCharts }}
+      isRenovatePR: ${{ needs.prepare.outputs.isRenovatePR }}
+      modifiedCharts: ${{ needs.prepare.outputs.addedOrModifiedCharts }}
 
   charts-lint:
     uses: ./.github/workflows/charts-lint.yaml
     needs:
-      - pr-metadata
+      - prepare
       - charts-changelog
     with:
       checkoutCommit: ${{ github.sha }}
-      chartsToLint: ${{ needs.pr-metadata.outputs.chartsToLint }}
-      isRenovatePR: ${{ needs.pr-metadata.outputs.isRenovatePR }}
+      chartsToLint: ${{ needs.prepare.outputs.chartsToLint }}
+      isRenovatePR: ${{ needs.prepare.outputs.isRenovatePR }}
+
+  charts-test:
+    name: Test charts
+    uses: ./.github/workflows/charts-test.yaml
+    needs:
+      - prepare
+    with:
+      charts: ${{ needs.prepare.outputs.chartsToInstall }}

@@ -1,0 +1,146 @@
+name: "Charts: Test (Reusable)"
+
+on:
+  workflow_call:
+    inputs:
+      charts:
+        description: >
+          Json encoded list of Helm charts to release.
+          Defaults to releasing everything.
+        default: "[]"
+        required: true
+        type: string
+      helmVersion:
+        description: >
+          Helm version to use.
+        default: "latest"
+        required: false
+        type: string
+
+jobs:
+  install-chart:
+    name: Install chart
+    runs-on: ubuntu-22.04
+    if: ${{ inputs.charts != '[]' && inputs.charts != '' }}
+    strategy:
+      matrix:
+        chart: ${{ fromJSON(inputs.charts) }}
+        k8s_version:
+          [
+            "v1.29.13",
+            "v1.30.9",
+            "v1.31.5",
+            "v1.32.1",
+          ]
+      fail-fast: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate prerequisite folders
+        working-directory: "charts/${{ matrix.chart }}"
+        run: |
+          CHART_TYPE=$(yq '.type // "application"' Chart.yaml)
+
+      - name: Install Kubernetes tools
+        uses: yokawasa/action-setup-kube-tools@v0.11.2
+        with:
+          setup-tools: |
+            helmv3
+            kubectl
+          helm: "${{ inputs.helmVersion }}"
+          kubectl: "${{ matrix.k8s_version }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up chart-testing
+        uses: helm/chart-testing-action@v2.6.1
+
+      - name: Create k3d cluster
+        uses: nolar/setup-k3d-k3s@v1
+        with:
+          version: ${{ matrix.k8s_version }}
+
+      - name: Remove node taints
+        run: |
+          kubectl taint --all=true nodes node.cloudprovider.kubernetes.io/uninitialized- || true
+
+      - name: Run chart-testing (install)
+        working-directory: "charts/${{ matrix.chart }}"
+        run: |
+          ct install --config "$GITHUB_WORKSPACE/.ci/ct/ct.yaml" --charts .
+
+  install_success:
+    needs:
+      - install-chart
+    if: ${{ !cancelled() }}
+    name: Install successful
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check matrix status
+        if: >-
+          ${{
+              (inputs.chartsToTest != '' && inputs.chartsToTest != '[]') &&
+              contains(needs.*.result, 'failure')
+          }}
+        run: exit 1
+
+  unittest-chart:
+    name: Unit-test chart
+    runs-on: ubuntu-22.04
+    if: ${{ inputs.charts != '[]' && inputs.charts != '' }}
+    strategy:
+      matrix:
+        chart: ${{ fromJSON(inputs.charts) }}
+      fail-fast: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate prerequisite folders
+        working-directory: "charts/${{ matrix.chart }}"
+        run: |
+          CHART_TYPE=$(yq '.type // "application"' Chart.yaml)
+
+      - name: Install Kubernetes tools
+        uses: yokawasa/action-setup-kube-tools@v0.11.2
+        with:
+          setup-tools: |
+            helmv3
+          helm: "${{ inputs.helmVersion }}"
+
+#      - name: Dereference JSON schema
+#        uses: bjw-s/helm-charts-actions/dereference-json-schema@main
+#        with:
+#          schemaFile: "charts/${{ matrix.chart }}/values.schema.json"
+#          outputFile: "charts/${{ matrix.chart }}/values.schema.json"
+#          allowFileNotFound: true
+
+      - name: Run tests
+        working-directory: "charts/${{ matrix.chart }}"
+        run: |
+          if [[ ! -d "unittests" ]]; then
+            echo "No unit tests found for chart ${{ matrix.chart }}"
+            exit 0
+          fi
+
+          helm plugin install https://github.com/helm-unittest/helm-unittest.git
+          helm dep update
+          helm unittest -f "unittests/**/*_test.yaml" .
+
+  unittest_success:
+    needs:
+      - unittest-chart
+    if: ${{ !cancelled() }}
+    name: Unittest successful
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check matrix status
+        if: >-
+          ${{
+              (inputs.chartsToTest != '' && inputs.chartsToTest != '[]') &&
+              contains(needs.*.result, 'failure')
+          }}
+        run: exit 1
