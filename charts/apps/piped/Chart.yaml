@@ -19,7 +19,7 @@ maintainers:
     url: https://github.com/samip5
 dependencies:
   - name: common
-    repository: https://bjw-s.github.io/helm-charts
+    repository: https://bjw-s-labs.github.io/helm-charts
     version: 1.5.1
   - name: postgresql
     repository: https://charts.bitnami.com/bitnami
