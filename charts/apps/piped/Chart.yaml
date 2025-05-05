@@ -8,11 +8,12 @@ sources:
   - https://github.com/TeamPiped/Piped
   - https://github.com/TeamPiped/Piped-Backend
   - https://github.com/TeamPiped/piped-proxy
+  - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 7.3.4
+version: 7.3.5
 appVersion: latest
-kubeVersion: ">=1.26.0-0"
+kubeVersion: ">=1.29.0"
 maintainers:
   - name: samip5  # Skyler Mäntysaari
     email: samip5@users.noreply.github.com
@@ -28,4 +29,6 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Updated image for `ytproxy` from latest@sha256:02065eac66d6b0c6922b64f907c16f13fcff5a4933e5bbf87b77de0ebfcd92c7 to latest@sha256:9fd917ba759dae1465415288e4d880e86b57ec385afa700fd33e13c54e61e352
+      description: Updated dependency url for `common` due to it moving
+    - kind: changed
+      description: Uptdated chart vendored dependencies to match requirements
