@@ -2,6 +2,9 @@
 chart-yaml-schema: .ci/ct/chart_schema.yaml
 lint-conf: .ci/ct/lintconf.yaml
 
+show-all-resources: true
+
+
 remote: origin
 target-branch: main
 

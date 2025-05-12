@@ -92,7 +92,7 @@ jobs:
       - prepare
     with:
       isRenovatePR: ${{ needs.prepare.outputs.isRenovatePR }}
-      modifiedCharts: ${{ needs.prepare.outputs.all_changed_files }}
+      modifiedCharts: ${{ needs.prepare.outputs.chartsToLint }}
 
   charts-lint:
     uses: ./.github/workflows/charts-lint.yaml
