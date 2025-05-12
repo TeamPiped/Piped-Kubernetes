@@ -11,7 +11,7 @@ sources:
   - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 7.3.5
+version: 7.4.0
 appVersion: latest
 kubeVersion: ">=1.29.0"
 maintainers:
@@ -28,7 +28,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: changed
-      description: Updated dependency url for `common` due to it moving
-    - kind: changed
-      description: Uptdated chart vendored dependencies to match requirements
+    - kind: added
+      description: ability to figure out the backend host for the frontend config automatically
