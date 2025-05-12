@@ -20,7 +20,7 @@ on:
 jobs:
   install-chart:
     name: Install chart
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     if: ${{ inputs.charts != '[]' && inputs.charts != '' }}
     strategy:
       matrix:
@@ -53,10 +53,10 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.13"
 
       - name: Set up chart-testing
-        uses: helm/chart-testing-action@v2.6.1
+        uses: helm/chart-testing-action@v2.7.0
 
       - name: Create k3d cluster
         uses: nolar/setup-k3d-k3s@v1
@@ -89,7 +89,7 @@ jobs:
 
   unittest-chart:
     name: Unit-test chart
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     if: ${{ inputs.charts != '[]' && inputs.charts != '' }}
     strategy:
       matrix:

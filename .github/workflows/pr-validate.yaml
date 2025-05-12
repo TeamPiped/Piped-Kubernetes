@@ -16,7 +16,7 @@ concurrency:
 jobs:
   prepare:
     name: Prepare data required for workflow
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       isRenovatePR: ${{ startsWith(steps.branch-name.outputs.current_branch, 'renovate/') }}
       repoConfiguration: ${{ steps.repo-config.outputs.config }}
@@ -74,7 +74,7 @@ jobs:
 
   pre-commit-check:
     name: Perform Pre-Commit check
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs:
       - prepare
     steps:
@@ -92,7 +92,7 @@ jobs:
       - prepare
     with:
       isRenovatePR: ${{ needs.prepare.outputs.isRenovatePR }}
-      modifiedCharts: ${{ needs.prepare.outputs.addedOrModifiedCharts }}
+      modifiedCharts: ${{ needs.prepare.outputs.chartsToLint }}
 
   charts-lint:
     uses: ./.github/workflows/charts-lint.yaml

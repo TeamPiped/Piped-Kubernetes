@@ -8,18 +8,19 @@ sources:
   - https://github.com/TeamPiped/Piped
   - https://github.com/TeamPiped/Piped-Backend
   - https://github.com/TeamPiped/piped-proxy
+  - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 7.4.0
+version: 7.3.5
 appVersion: latest
-kubeVersion: ">=1.26.0-0"
+kubeVersion: ">=1.29.0"
 maintainers:
   - name: samip5  # Skyler Mäntysaari
     email: samip5@users.noreply.github.com
     url: https://github.com/samip5
 dependencies:
   - name: common
-    repository: https://bjw-s.github.io/helm-charts
+    repository: https://bjw-s-labs.github.io/helm-charts
     version: 1.5.1
   - name: postgresql
     repository: https://charts.bitnami.com/bitnami
@@ -27,5 +28,7 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: added
-      description: ability to figure out the backend host for the frontend config automatically
+    - kind: changed
+      description: Updated dependency url for `common` due to it moving
+    - kind: changed
+      description: Uptdated chart vendored dependencies to match requirements
