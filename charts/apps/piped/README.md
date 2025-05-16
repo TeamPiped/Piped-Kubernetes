@@ -1,6 +1,6 @@
 # piped
 
-![Version: 7.3.6](https://img.shields.io/badge/Version-7.3.6-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 8.0.1](https://img.shields.io/badge/Version-8.0.1-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -19,8 +19,8 @@ Kubernetes: `>=1.29.0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://bjw-s-labs.github.io/helm-charts | common | 1.5.1 |
-| https://charts.bitnami.com/bitnami | postgresql | 16.4.16 |
+| https://bjw-s-labs.github.io/helm-charts | common | 4.0.1 |
+| https://charts.bitnami.com/bitnami | postgresql | 16.7.2 |
 
 ## Installing the Chart
 
