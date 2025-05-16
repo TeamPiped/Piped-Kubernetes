@@ -11,7 +11,7 @@ sources:
   - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 7.4.0
+version: 7.5.0
 appVersion: latest
 kubeVersion: ">=1.29.0"
 maintainers:
@@ -28,5 +28,5 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: changed
-      description: Upgraded `postgresql` chart dependency to version 16.7.2
+    - kind: added
+      description: Ability to figure out the backend url from ingress for frontend
