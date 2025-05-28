@@ -142,7 +142,7 @@ ytproxy:
     # -- image repository
     repository: 1337kavin/piped-proxy
     # -- image tag
-    tag: "latest@sha256:ee7d304c7307248ef5d990a290ffaf0aaeca952c02728f77f4d90ec957aae977"  # Manifest index / Index Digest
+    tag: "latest@sha256:6a6bacf5e94022b01cf25b18c5af27ab49c1d1ed3abe573c1a64377b9e25326e"  # Manifest index / Index Digest
     # -- image pull policy
     pullPolicy: IfNotPresent
 
