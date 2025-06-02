@@ -1,6 +1,6 @@
 # piped
 
-![Version: 7.4.8](https://img.shields.io/badge/Version-7.4.8-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 7.4.9](https://img.shields.io/badge/Version-7.4.9-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -114,7 +114,7 @@ The following table contains an overview of available values and their descripti
 | ytproxy.enabled | bool | `true` |  |
 | ytproxy.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | ytproxy.image.repository | string | `"1337kavin/piped-proxy"` | image repository |
-| ytproxy.image.tag | string | `"latest@sha256:31da5e7e3a657950cfcfbfc0e532372a0d97d729bc915f0f6a2a7afdbb48e2e5"` | image tag |
+| ytproxy.image.tag | string | `"latest@sha256:2bace4d945ca80ef88c3f46cf3b70c891739d54a6faa87bb532024bb4e76d329"` | image tag |
 | ytproxy.service.main.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.port | int | `8080` |  |
