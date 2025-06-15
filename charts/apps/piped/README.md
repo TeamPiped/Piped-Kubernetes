@@ -1,6 +1,6 @@
 # piped
 
-![Version: 7.4.12](https://img.shields.io/badge/Version-7.4.12-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 7.4.13](https://img.shields.io/badge/Version-7.4.13-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -61,7 +61,7 @@ The following table contains an overview of available values and their descripti
 | frontend.enabled | bool | `true` |  |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | frontend.image.repository | string | `"1337kavin/piped-frontend"` | image repository |
-| frontend.image.tag | string | `"latest@sha256:ded263e7b89400f4b20ed89557717e235ada26a54473682af407b1078635acb0"` | image tag |
+| frontend.image.tag | string | `"latest@sha256:80f3f8b265f20d751aed39d9858054c7621458c42e9386dc3313c6806ff94cf8"` | image tag |
 | frontend.service.main.enabled | bool | `true` |  |
 | frontend.service.main.ports.http.enabled | bool | `true` |  |
 | frontend.service.main.ports.http.port | int | `80` |  |
