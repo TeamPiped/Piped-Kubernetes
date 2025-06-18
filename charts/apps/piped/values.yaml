@@ -111,7 +111,7 @@ backend:
     repository: 1337kavin/piped
     # -- image tag
     # @chart.appVersion
-    tag: "latest@sha256:1db03dbc96a04618a710ed7d330b69435c9897bd46303d727ab7670d6fe32930"  # Manifest index / Index Digest
+    tag: "latest@sha256:d8e2b08fc164b4d2dce4c62b62d273dfc75918e1b91b4c92c38dafe2b647bf11"  # Manifest index / Index Digest
     # -- image pull policy
     pullPolicy: IfNotPresent
 
