@@ -11,7 +11,7 @@ sources:
   - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 7.4.15
+version: 7.4.16
 appVersion: latest
 kubeVersion: ">=1.29.0"
 maintainers:
@@ -29,4 +29,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Updated image for `frontend` from latest@sha256:c5b6f70ebc494d20e7a8b00a39d8d25a238b7a5b5956e526d99859b0a9c9935d to latest@sha256:5453de4bd9358cf3d5af78737733c806dc68a73ae44a66c63a64ca4d8de125e6
+      description: Updated image for `backend` from latest@sha256:1db03dbc96a04618a710ed7d330b69435c9897bd46303d727ab7670d6fe32930 to latest@sha256:121d56e14a3eccfc107cf5bab084772ba16b395e243b65076a6fa73f8fa0e8b2
