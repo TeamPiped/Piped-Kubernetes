@@ -1,6 +1,6 @@
 # piped
 
-![Version: 7.4.21](https://img.shields.io/badge/Version-7.4.21-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 8.0.1](https://img.shields.io/badge/Version-8.0.1-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -20,7 +20,6 @@ Kubernetes: `>=1.29.0`
 | Repository | Name | Version |
 |------------|------|---------|
 | https://bjw-s-labs.github.io/helm-charts | common | 1.5.1 |
-| https://charts.bitnami.com/bitnami | postgresql | 16.7.8 |
 
 ## Installing the Chart
 
@@ -90,11 +89,6 @@ The following table contains an overview of available values and their descripti
 | ingress.ytproxy.ingressClassName | string | `"nginx"` |  |
 | ingress.ytproxy.primary | bool | `false` |  |
 | ingress.ytproxy.tls | list | `[]` |  |
-| postgresql.auth.database | string | `"piped"` |  |
-| postgresql.auth.password | string | `"changemepiped"` |  |
-| postgresql.auth.username | string | `"piped"` |  |
-| postgresql.enabled | bool | `true` |  |
-| postgresql.image.tag | string | `"13.12.0-debian-11-r58"` |  |
 | probes | object | See below | [[ref]](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) |
 | probes.liveness | object | See below | Liveness probe configuration |
 | probes.liveness.custom | bool | `false` | Set this to `true` if you wish to specify your own livenessProbe |
@@ -114,7 +108,7 @@ The following table contains an overview of available values and their descripti
 | ytproxy.enabled | bool | `true` |  |
 | ytproxy.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | ytproxy.image.repository | string | `"1337kavin/piped-proxy"` | image repository |
-| ytproxy.image.tag | string | `"latest@sha256:f924f385b03a2b4faf130b9be82f034869a34b81e116472e3448f93ecc942bc3"` | image tag |
+| ytproxy.image.tag | string | `"latest@sha256:ecc6e930645b6445ba013a26ffcf5c1785bfc3ce4a6d1866279a496937e8774d"` | image tag |
 | ytproxy.service.main.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.port | int | `8080` |  |

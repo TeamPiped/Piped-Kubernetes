@@ -11,7 +11,7 @@ sources:
   - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 8.0.0
+version: 8.0.1
 appVersion: latest
 kubeVersion: ">=1.29.0"
 maintainers:
@@ -24,5 +24,5 @@ dependencies:
     version: 1.5.1
 annotations:
   artifacthub.io/changes: |-
-    - kind: removed
-      description: Bitnami PostgreSQL chart dependency has been removed.
+    - kind: changed
+      description: Updated image for `ytproxy` from latest@sha256:f924f385b03a2b4faf130b9be82f034869a34b81e116472e3448f93ecc942bc3 to latest@sha256:ecc6e930645b6445ba013a26ffcf5c1785bfc3ce4a6d1866279a496937e8774d
