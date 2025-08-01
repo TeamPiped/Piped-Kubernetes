@@ -11,7 +11,7 @@ sources:
   - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 7.4.21
+version: 8.0.0
 appVersion: latest
 kubeVersion: ">=1.29.0"
 maintainers:
@@ -22,11 +22,7 @@ dependencies:
   - name: common
     repository: https://bjw-s-labs.github.io/helm-charts
     version: 1.5.1
-  - name: postgresql
-    repository: https://charts.bitnami.com/bitnami
-    version: 16.7.8
-    condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |-
-    - kind: changed
-      description: Updated image for `ytproxy` from latest@sha256:940216912f46f936632d3c1fa77fb7f7b246328d9e3bf652e07393618761764e to latest@sha256:f924f385b03a2b4faf130b9be82f034869a34b81e116472e3448f93ecc942bc3
+    - kind: removed
+      description: Bitnami PostgreSQL chart dependency has been removed.
