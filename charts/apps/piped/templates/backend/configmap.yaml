@@ -85,11 +85,6 @@ data:
     hibernate.connection.username: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret.name "Key" (.Values.backend.config.database.secret.username | default "DB_USERNAME")) }}
     hibernate.connection.password: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret.name "Key" (.Values.backend.config.database.secret.password | default "DB_PASSWORD")) }}
     {{- end }}
-    {{- else if .Values.postgresql.enabled }}
-    hibernate.connection.url: jdbc:postgresql://piped-postgresql/{{ .Values.postgresql.auth.database}}
-    hibernate.connection.driver_class: org.postgresql.Driver
-    hibernate.connection.username: {{.Values.postgresql.auth.username }}
-    hibernate.connection.password: {{.Values.postgresql.auth.password }}
     {{- else }}
      {{- fail "Unable to figure out database configuration for backend configmap."}}
     {{- end }}
