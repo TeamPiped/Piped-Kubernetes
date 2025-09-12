@@ -69,13 +69,13 @@ data:
     COMPROMISED_PASSWORD_CHECK: {{ .Values.backend.config.COMPROMISED_PASSWORD_CHECK | default true }}
     DISABLE_REGISTRATION: {{ .Values.backend.config.DISABLE_REGISTRATION |  default false }}
     FEED_RETENTION: {{ .Values.backend.config.FEED_RETENTION | default 30 | int }}
-    {{- if and (.Values.backend.config.database) (not .Values.postgresql.enabled) }}
+    {{- if .Values.backend.config.database }}
     hibernate.connection.url: {{.Values.backend.config.database.connection_url }}
     {{- if and (not .Values.backend.config.database.driver_class) (not .Values.backend.config.database.dialect) }}
     hibernate.connection.driver_class: org.postgresql.Driver
     hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
     {{ end }}
-    {{- if and (.Values.backend.config.database) (.Values.backend.config.database.driver_class) (.Values.backend.config.database.dialect) (not .Values.postgresql.enabled)}}
+    {{- if and (.Values.backend.config.database) (.Values.backend.config.database.driver_class) (.Values.backend.config.database.dialect)}}
     hibernate.connection.driver_class: {{.Values.backend.config.database.driver_class }}
     hibernate.dialect: {{.Values.backend.config.database.dialect }}
     hibernate.connection.username: {{.Values.backend.config.database.username }}
