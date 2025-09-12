@@ -35,7 +35,7 @@ frontend:
     # -- image repository
     repository: 1337kavin/piped-frontend
     # -- image tag
-    tag: "latest@sha256:6f3661ad13407be47eba6f570ec137791d827535024a11a601e4005eaa42251d"  # Manifest index / Index Digest
+    tag: "latest@sha256:a81829f384abfa670587c4c9cbaf89a078eddb15354453b8c0e6edc6737baaa6"  # Manifest index / Index Digest
     # -- image pull policy
     pullPolicy: IfNotPresent
 
@@ -111,7 +111,7 @@ backend:
     repository: 1337kavin/piped
     # -- image tag
     # @chart.appVersion
-    tag: "latest@sha256:121d56e14a3eccfc107cf5bab084772ba16b395e243b65076a6fa73f8fa0e8b2"  # Manifest index / Index Digest
+    tag: "latest@sha256:8d43187b250b5fab56cc294c978cd20862ae19dac2ae779f2b48de8984cc20a1"  # Manifest index / Index Digest
     # -- image pull policy
     pullPolicy: IfNotPresent
 
@@ -142,7 +142,7 @@ ytproxy:
     # -- image repository
     repository: 1337kavin/piped-proxy
     # -- image tag
-    tag: "latest@sha256:ecc6e930645b6445ba013a26ffcf5c1785bfc3ce4a6d1866279a496937e8774d"  # Manifest index / Index Digest
+    tag: "latest@sha256:45cc822ceb166ca1b50212a25846893b780d03afedb6d8d328fc2f75596f931b"  # Manifest index / Index Digest
     # -- image pull policy
     pullPolicy: IfNotPresent
 

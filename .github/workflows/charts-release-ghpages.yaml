@@ -24,14 +24,14 @@ jobs:
         run: export OPENSSL_CONF=/dev/null
 
       - name: Checkout charts branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           path: "src"
           fetch-depth: 0
 
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN}}
           path: "dest"
