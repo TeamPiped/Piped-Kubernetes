@@ -11,7 +11,7 @@ sources:
   - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 8.0.14
+version: 8.0.15
 appVersion: latest
 kubeVersion: ">=1.29.0"
 maintainers:
@@ -25,4 +25,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Updated image for `backend` from latest@sha256:8d43187b250b5fab56cc294c978cd20862ae19dac2ae779f2b48de8984cc20a1 to latest@sha256:1f38b992ce02a50afddbbf68be1ac11cff6953d36fd8fa2b98c08a19f8ef06e7
+      description: Updated image for `ytproxy` from latest@sha256:15069c4aa75d04b8cd8d1520b9a57d67750374ecff381cf7c436f37ae32c9efb to latest@sha256:f40446b05c0144f2e5317fd449591a915d0f2f44627c1f2e8be1793e05687a99
