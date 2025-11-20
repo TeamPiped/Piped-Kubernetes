@@ -25,7 +25,7 @@ jobs:
       chartsToInstall: ${{ steps.charts-to-install.outputs.filteredCharts }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -79,7 +79,7 @@ jobs:
       - prepare
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Run against changes
         uses: pre-commit/action@v3.0.1
