@@ -2,7 +2,7 @@
 {{ define "backend.controller.mainContainer" -}}
 - name: {{ include "backend.names.fullname" . }}
   image: {{ printf "%s:%s" .Values.backend.image.repository (default .Chart.AppVersion .Values.backend.image.tag) | quote }}
-  {{- if Values.global.image.pullPolicy }}
+  {{- if .Values.global.image.pullPolicy }}
   imagePullPolicy: {{ .Values.global.image.pullPolicy | default .Values.backend.image.pullPolicy }}
   {{- end }}
   {{- with .Values.backend.resources }}

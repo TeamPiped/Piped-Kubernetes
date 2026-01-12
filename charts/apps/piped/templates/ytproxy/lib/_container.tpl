@@ -2,7 +2,7 @@
 {{ define "ytproxy.controller.mainContainer" -}}
 - name: {{ include "ytproxy.names.fullname" . }}
   image: {{ printf "%s:%s" .Values.ytproxy.image.repository (default .Chart.AppVersion .Values.ytproxy.image.tag) | quote }}
-  {{- if Values.global.image.pullPolicy }}
+  {{- if .Values.global.image.pullPolicy }}
   imagePullPolicy: {{ .Values.global.image.pullPolicy | default .Values.backend.image.pullPolicy }}
   {{- end }}
   {{- with .Values.ytproxy.resources }}
