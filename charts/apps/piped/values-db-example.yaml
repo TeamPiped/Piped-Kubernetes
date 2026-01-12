@@ -1,0 +1,138 @@
+---
+global:
+  # -- Set an override for the prefix of the fullname
+  nameOverride:
+  # -- Set the entire name definition
+  fullnameOverride:
+  # -- Set additional global labels. Helm templates can be used.
+  labels: {}
+  # -- Set additional global annotations. Helm templates can be used.
+  annotations: {}
+
+controller:
+  # -- enable the controller.
+  enabled: false
+
+serviceAccount:
+  create: false
+
+
+frontend:
+  enabled: true
+  service:
+    main:
+      enabled: true
+      primary: true
+      type: ClusterIP
+      ports:
+        http:
+          enabled: true
+          primary: true
+          port: 80
+          protocol: HTTP
+
+  image:
+    # -- image repository
+    repository: 1337kavin/piped-frontend
+    # -- image tag
+    tag: "latest@sha256:72316c7009b841f45939beb6946bbba2343b66a12e256d61346521b415e3c438"  # Manifest index / Index Digest
+    # -- image pull policy
+    pullPolicy: IfNotPresent
+
+  # env:
+  #  BACKEND_HOSTNAME: pipedapi.example.org
+
+  command: "/bin/ash"
+  args:
+    - -c
+    - "sed -i s/pipedapi.kavin.rocks/$BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh nginx -g 'daemon off;'"
+
+backend:
+  enabled: true
+  service:
+    main:
+      enabled: true
+      primary: true
+      type: ClusterIP
+      ports:
+        http:
+          enabled: true
+          primary: true
+          port: 8080
+          protocol: HTTP
+
+  config:
+    PORT: 8080
+    HTTP_WORKERS: 2
+    database:
+      connection_url: jdbc:postgresql://postgres:5432/piped
+      driver_class: org.postgresql.Driver
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      username: piped
+      password: changeme
+      # Or instead of username/password above, use:
+      # secret:
+      #   name: secret-name
+      #   username: DB_USERNAME
+      #   password: DB_PASSWORD
+
+
+  image:
+    # -- image repository
+    repository: 1337kavin/piped
+    tag: "latest@sha256:1f38b992ce02a50afddbbf68be1ac11cff6953d36fd8fa2b98c08a19f8ef06e7"  # Manifest index / Index Digest
+    pullPolicy: IfNotPresent
+
+
+ytproxy:
+  enabled: true
+  service:
+    main:
+      enabled: true
+      primary: true
+      type: ClusterIP
+      ports:
+        http:
+          enabled: true
+          primary: true
+          port: 8080
+          protocol: HTTP
+
+  command: "/app/piped-proxy"
+
+
+  image:
+    repository: 1337kavin/piped-proxy
+    tag: "latest@sha256:199711bc95858588f2cbb504debe2aa7dee0fd8084d10d347b51a3fc4dbdf4e5"  # Manifest index / Index Digest
+    pullPolicy: IfNotPresent
+
+
+ingress:
+  main:
+    enabled: true
+    primary: true
+    hosts:
+      - host: piped.video
+        paths:
+          - path: "/"
+    tls: []
+
+  backend:
+    enabled: true
+    ingressClassName: nginx
+    primary: false
+    hosts:
+      - host: pipedapi.piped.video
+        paths:
+          - path: "/"
+    tls: []
+
+  ytproxy:
+    enabled: true
+    ingressClassName: nginx
+    primary: false
+    hosts:
+      - host: ytproxy.piped.video
+        paths:
+          - path: "/"
+    tls: []

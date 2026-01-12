@@ -26,3 +26,5 @@ annotations:
   artifacthub.io/changes: |-
     - kind: changed
       description: Improved backend database configuration error message to clearly document required values under backend.config.database and the need for an external database.
+    - kind: added
+      description: Example values for external database
