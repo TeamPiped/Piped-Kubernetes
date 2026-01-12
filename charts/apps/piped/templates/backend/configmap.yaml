@@ -86,7 +86,7 @@ data:
     hibernate.connection.password: {{ include "common.getValueFromSecret" (dict "Namespace" .Release.Namespace "Name" .Values.backend.config.database.secret.name "Key" (.Values.backend.config.database.secret.password | default "DB_PASSWORD")) }}
     {{- end }}
     {{- else }}
-     {{- fail "Unable to figure out database configuration for backend configmap."}}
+     {{ fail "Unable to construct database configuration. Set backend.config.database.connection_url, driver_class, dialect, username and password, or configure backend.config.database.secret.{name,username,password} to point at an existing Secret. This chart does not deploy a database; it must point to an external one." }}
     {{- end }}
     {{- if .Values.backend.config.SENTRY_DNS }}
     SENTRY_DSN: {{.Values.backend.SENTRY_DNS }}
