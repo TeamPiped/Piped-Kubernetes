@@ -79,6 +79,7 @@ backend:
     HTTP_WORKERS: 2
     database:
       connection_url: jdbc:postgresql://postgres.default.svc:5432/testdb
+      driver_class: org.postgresql.Driver
       dialect: org.hibernate.dialect.PostgreSQLDialect
       username: testuser
       password: testpass
