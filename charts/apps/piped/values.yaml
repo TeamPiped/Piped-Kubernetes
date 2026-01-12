@@ -9,6 +9,9 @@ global:
   # -- Set additional global annotations. Helm templates can be used.
   annotations: {}
 
+  image:
+    pullPolicy: ""
+
 controller:
   # -- enable the controller.
   enabled: false
@@ -36,8 +39,6 @@ frontend:
     repository: 1337kavin/piped-frontend
     # -- image tag
     tag: "latest@sha256:72316c7009b841f45939beb6946bbba2343b66a12e256d61346521b415e3c438"  # Manifest index / Index Digest
-    # -- image pull policy
-    pullPolicy: IfNotPresent
 
   # env:
   #  BACKEND_HOSTNAME: pipedapi.example.org
@@ -113,7 +114,7 @@ backend:
     # @chart.appVersion
     tag: "latest@sha256:1f38b992ce02a50afddbbf68be1ac11cff6953d36fd8fa2b98c08a19f8ef06e7"  # Manifest index / Index Digest
     # -- image pull policy
-    pullPolicy: IfNotPresent
+    pullPolicy: ""
 
   # resources:
   #  requests:
@@ -144,7 +145,7 @@ ytproxy:
     # -- image tag
     tag: "latest@sha256:199711bc95858588f2cbb504debe2aa7dee0fd8084d10d347b51a3fc4dbdf4e5"  # Manifest index / Index Digest
     # -- image pull policy
-    pullPolicy: IfNotPresent
+    pullPolicy: ""
 
   # resources:
   #  requests:

@@ -1,8 +1,10 @@
 {{- /* The main container included in the controller */ -}}
-{{- define "frontend.controller.mainContainer" -}}
+{{ define "frontend.controller.mainContainer" -}}
 - name: {{ include "frontend.names.fullname" . }}
   image: {{ printf "%s:%s" .Values.frontend.image.repository (default .Chart.AppVersion .Values.frontend.image.tag) | quote }}
-  imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+  {{- if Values.global.image.pullPolicy }}
+  imagePullPolicy: {{ .Values.global.image.pullPolicy | default .Values.frontend.image.pullPolicy }}
+  {{- end }}
   {{- with .Values.frontend.resources }}
   resources:
     {{- toYaml . | nindent 4 }}
