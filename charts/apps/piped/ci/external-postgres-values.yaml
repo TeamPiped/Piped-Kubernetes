@@ -78,7 +78,7 @@ backend:
     PORT: 8080
     HTTP_WORKERS: 2
     database:
-      connection_url: jdbc:postgresql://postgres:5432/testdb
+      connection_url: jdbc:postgresql://postgres.default.svc:5432/testdb
       dialect: org.hibernate.dialect.PostgreSQLDialect
       username: testuser
       password: testpass
