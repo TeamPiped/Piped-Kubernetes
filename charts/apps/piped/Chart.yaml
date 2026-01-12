@@ -11,7 +11,7 @@ sources:
   - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 8.0.35
+version: 8.1.0
 appVersion: latest
 kubeVersion: ">=1.29.0"
 maintainers:
@@ -25,6 +25,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Improved backend database configuration error message to clearly document required values under backend.config.database and the need for an external database.
-    - kind: added
-      description: Example values for external database
+      description: Updated image pull policy configuration for backend, frontend, and ytproxy containers to allow more explicit control over image update behaviour.

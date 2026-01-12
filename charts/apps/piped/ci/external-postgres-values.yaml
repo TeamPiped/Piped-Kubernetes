@@ -77,6 +77,14 @@ backend:
   config:
     PORT: 8080
     HTTP_WORKERS: 2
+    database:
+      connection_url: jdbc:postgresql://postgres.default.svc:5432/testdb
+      driver_class: org.postgresql.Driver
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      username: testuser
+      password: testpass
+
+
     # PROXY_PART: https://PROXY_HOSTNAME
     # Outgoing HTTP Proxy - eg: 127.0.0.1:8118
     # HTTP_PROXY: 127.0.0.1:8118
