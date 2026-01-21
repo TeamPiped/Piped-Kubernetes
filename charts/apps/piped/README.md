@@ -1,6 +1,6 @@
 # piped
 
-![Version: 8.0.34](https://img.shields.io/badge/Version-8.0.34-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 8.1.1](https://img.shields.io/badge/Version-8.1.1-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -43,7 +43,7 @@ The following table contains an overview of available values and their descripti
 | backend.config.HTTP_WORKERS | int | `2` |  |
 | backend.config.PORT | int | `8080` |  |
 | backend.enabled | bool | `true` |  |
-| backend.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
+| backend.image.pullPolicy | string | `""` | image pull policy |
 | backend.image.repository | string | `"1337kavin/piped"` | image repository |
 | backend.image.tag | string | `"latest@sha256:1f38b992ce02a50afddbbf68be1ac11cff6953d36fd8fa2b98c08a19f8ef06e7"` | image tag @chart.appVersion |
 | backend.service.main.enabled | bool | `true` |  |
@@ -58,7 +58,6 @@ The following table contains an overview of available values and their descripti
 | frontend.args[1] | string | `"sed -i s/pipedapi.kavin.rocks/$BACKEND_HOSTNAME/g /usr/share/nginx/html/assets/* && /docker-entrypoint.sh nginx -g 'daemon off;'"` |  |
 | frontend.command | string | `"/bin/ash"` |  |
 | frontend.enabled | bool | `true` |  |
-| frontend.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | frontend.image.repository | string | `"1337kavin/piped-frontend"` | image repository |
 | frontend.image.tag | string | `"latest@sha256:72316c7009b841f45939beb6946bbba2343b66a12e256d61346521b415e3c438"` | image tag |
 | frontend.service.main.enabled | bool | `true` |  |
@@ -70,6 +69,7 @@ The following table contains an overview of available values and their descripti
 | frontend.service.main.type | string | `"ClusterIP"` |  |
 | global.annotations | object | `{}` | Set additional global annotations. Helm templates can be used. |
 | global.fullnameOverride | string | `nil` | Set the entire name definition |
+| global.image.pullPolicy | string | `""` |  |
 | global.labels | object | `{}` | Set additional global labels. Helm templates can be used. |
 | global.nameOverride | string | `nil` | Set an override for the prefix of the fullname |
 | ingress.backend.enabled | bool | `true` |  |
@@ -106,9 +106,9 @@ The following table contains an overview of available values and their descripti
 | termination.gracePeriodSeconds | string | `nil` |  |
 | ytproxy.command | string | `"/app/piped-proxy"` |  |
 | ytproxy.enabled | bool | `true` |  |
-| ytproxy.image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
+| ytproxy.image.pullPolicy | string | `""` | image pull policy |
 | ytproxy.image.repository | string | `"1337kavin/piped-proxy"` | image repository |
-| ytproxy.image.tag | string | `"latest@sha256:199711bc95858588f2cbb504debe2aa7dee0fd8084d10d347b51a3fc4dbdf4e5"` | image tag |
+| ytproxy.image.tag | string | `"latest@sha256:1f8218cbab061dbb2287cd3d8f594eda2f8a53d9a30ebf20de82d1ce2adb2df5"` | image tag |
 | ytproxy.service.main.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.port | int | `8080` |  |
