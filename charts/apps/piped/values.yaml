@@ -38,7 +38,7 @@ frontend:
     # -- image repository
     repository: 1337kavin/piped-frontend
     # -- image tag
-    tag: "latest@sha256:72316c7009b841f45939beb6946bbba2343b66a12e256d61346521b415e3c438"  # Manifest index / Index Digest
+    tag: "latest@sha256:8cb104f54608315b3e254c9487a005eaec6cd437359ef90be3b30556cc953a47"  # Manifest index / Index Digest
 
   # env:
   #  BACKEND_HOSTNAME: pipedapi.example.org
