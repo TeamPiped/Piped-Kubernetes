@@ -4,10 +4,42 @@ entries:
   - annotations:
       artifacthub.io/changes: |-
         - kind: changed
+          description: Updated image for `backend` from latest@sha256:1f38b992ce02a50afddbbf68be1ac11cff6953d36fd8fa2b98c08a19f8ef06e7 to latest@sha256:9ad2ed9ff568c40bfa50ea4bf07957f7bc2ae0768ce1f494f9fa99598f8c368b
+    apiVersion: v2
+    appVersion: latest
+    created: "2026-02-08T05:20:55.419606194Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts
+      version: 1.5.1
+    description: Piped is an alternative privacy-friendly YouTube frontend which is
+      efficient by design.
+    digest: 4f0ddf1124816827a3679d9771da265bc71fa050616fb087e0e7a71138e83c80
+    home: https://github.com/TeamPiped/Piped-Kubernetes
+    icon: https://raw.githubusercontent.com/TeamPiped/Piped/master/public/img/icons/logo.svg
+    keywords:
+    - streaming
+    kubeVersion: '>=1.29.0'
+    maintainers:
+    - email: samip5@users.noreply.github.com
+      name: samip5
+      url: https://github.com/samip5
+    name: piped
+    sources:
+    - https://github.com/TeamPiped/Piped
+    - https://github.com/TeamPiped/Piped-Backend
+    - https://github.com/TeamPiped/piped-proxy
+    - https://github.com/TeamPiped/Piped-Kubernetes
+    urls:
+    - https://helm.piped.video/apps/piped-8.1.5.tgz
+    version: 8.1.5
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: changed
           description: Updated image for `frontend` from latest@sha256:72316c7009b841f45939beb6946bbba2343b66a12e256d61346521b415e3c438 to latest@sha256:8cb104f54608315b3e254c9487a005eaec6cd437359ef90be3b30556cc953a47
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:03.019483874Z"
+    created: "2026-02-08T05:20:55.416452326Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -39,7 +71,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:4eeb51a862102807b1e16e5d5f5b071e9e377b4a0fc425c16a081b1efcf68643 to latest@sha256:66045558c629911e305c094a259779a138beea266540d68ec47c083b05e6b5f7
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:03.016629374Z"
+    created: "2026-02-08T05:20:55.41356381Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -71,7 +103,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:1f8218cbab061dbb2287cd3d8f594eda2f8a53d9a30ebf20de82d1ce2adb2df5 to latest@sha256:4eeb51a862102807b1e16e5d5f5b071e9e377b4a0fc425c16a081b1efcf68643
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:03.011374067Z"
+    created: "2026-02-08T05:20:55.410947833Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -103,7 +135,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:199711bc95858588f2cbb504debe2aa7dee0fd8084d10d347b51a3fc4dbdf4e5 to latest@sha256:1f8218cbab061dbb2287cd3d8f594eda2f8a53d9a30ebf20de82d1ce2adb2df5
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:03.006488152Z"
+    created: "2026-02-08T05:20:55.408304775Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -135,7 +167,7 @@ entries:
           description: Updated image pull policy configuration for backend, frontend, and ytproxy containers to allow more explicit control over image update behaviour.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:03.001810522Z"
+    created: "2026-02-08T05:20:55.404808584Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -169,7 +201,7 @@ entries:
           description: Example values for external database
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.983154115Z"
+    created: "2026-02-08T05:20:55.387115007Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -201,7 +233,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:6578a01a7791c73112b16011f762c21f8fdd4c2310f77bd7bb49021808b62216 to latest@sha256:199711bc95858588f2cbb504debe2aa7dee0fd8084d10d347b51a3fc4dbdf4e5
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.979398912Z"
+    created: "2026-02-08T05:20:55.384480485Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -233,7 +265,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:74ece9c7bb40f121cc4bc81287753019acd8b31c21e0cf3812f8cf11b5776cc0 to latest@sha256:6578a01a7791c73112b16011f762c21f8fdd4c2310f77bd7bb49021808b62216
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.976703977Z"
+    created: "2026-02-08T05:20:55.381707174Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -265,7 +297,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:ab63a0e2312ed0504afe39cd71234eb9c452be74be4c5ee24ea6255ae560a918 to latest@sha256:74ece9c7bb40f121cc4bc81287753019acd8b31c21e0cf3812f8cf11b5776cc0
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.974067901Z"
+    created: "2026-02-08T05:20:55.378122513Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -297,7 +329,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:76255a10df7f7f3d256a049beea89cad49edcee94444807a9bfbf787cd803439 to latest@sha256:ab63a0e2312ed0504afe39cd71234eb9c452be74be4c5ee24ea6255ae560a918
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.97033685Z"
+    created: "2026-02-08T05:20:55.375414645Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -329,7 +361,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:969ce1b9b4171c3e01071e66fb43085f7f681176b6fcc73d4d8bb12c50861a1c to latest@sha256:76255a10df7f7f3d256a049beea89cad49edcee94444807a9bfbf787cd803439
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.967682361Z"
+    created: "2026-02-08T05:20:55.372790372Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -361,7 +393,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:bfabd81091a2f86609640e24ef02310921077a38fa98466ec84e34432a7479ec to latest@sha256:969ce1b9b4171c3e01071e66fb43085f7f681176b6fcc73d4d8bb12c50861a1c
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.961178115Z"
+    created: "2026-02-08T05:20:55.366523815Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -393,7 +425,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:3ea927b63486402eb34539bd3f5eff64f9672c59eef2c90e08b5f5520bd71832 to latest@sha256:bfabd81091a2f86609640e24ef02310921077a38fa98466ec84e34432a7479ec
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.958485314Z"
+    created: "2026-02-08T05:20:55.363884855Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -425,7 +457,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:bcdee42a4ba34d40aac3fd4bda76301987ef9f3bb6e31b29f9946f364424b1b5 to latest@sha256:3ea927b63486402eb34539bd3f5eff64f9672c59eef2c90e08b5f5520bd71832
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.955791381Z"
+    created: "2026-02-08T05:20:55.360426164Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -457,7 +489,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:09350af3de62c4000c7bd7ddab5e6c09ea98295ce4aafaf74c43dc6c164d5c45 to latest@sha256:bcdee42a4ba34d40aac3fd4bda76301987ef9f3bb6e31b29f9946f364424b1b5
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.952154293Z"
+    created: "2026-02-08T05:20:55.357780251Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -489,7 +521,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:a01df077da7d46f924eefc0ea1f63b35628a9a75c711c50af51da0d4a91773d4 to latest@sha256:09350af3de62c4000c7bd7ddab5e6c09ea98295ce4aafaf74c43dc6c164d5c45
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.949513488Z"
+    created: "2026-02-08T05:20:55.355113999Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -521,7 +553,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:e948c7274443d467468a8a7c251b381a2a93640613d264a801bbedc20b2651a2 to latest@sha256:a01df077da7d46f924eefc0ea1f63b35628a9a75c711c50af51da0d4a91773d4
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.946855722Z"
+    created: "2026-02-08T05:20:55.351828649Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -553,7 +585,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:c73262cf945e9195d7df491e01d9d95dc4990e2de8870b403693eabcd8ad8a1e to latest@sha256:e948c7274443d467468a8a7c251b381a2a93640613d264a801bbedc20b2651a2
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.943278802Z"
+    created: "2026-02-08T05:20:55.349213874Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -585,7 +617,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:c46d67af3c5e1b8dca0d53b1496488d3992fae8bb9bb89dc5d9aea3d5bc2a4c3 to latest@sha256:c73262cf945e9195d7df491e01d9d95dc4990e2de8870b403693eabcd8ad8a1e
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.940600558Z"
+    created: "2026-02-08T05:20:55.346314007Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -617,7 +649,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:8bf0e44e697d9bc8b451d05a5e4ae83252102e3eeeaf29bd207161f9f2a76e66 to latest@sha256:c46d67af3c5e1b8dca0d53b1496488d3992fae8bb9bb89dc5d9aea3d5bc2a4c3
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.937906164Z"
+    created: "2026-02-08T05:20:55.342681902Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -649,7 +681,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:80db56ca662e231ab21f7d16234fb5806c944343e26242fc4b236d3cabfc6408 to latest@sha256:72316c7009b841f45939beb6946bbba2343b66a12e256d61346521b415e3c438
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.934234439Z"
+    created: "2026-02-08T05:20:55.339870871Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -681,7 +713,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:9d09aeed7839f7ce6e8d545598b6d0cd4c729b91dcd8f7da18124d577ab39ad6 to latest@sha256:8bf0e44e697d9bc8b451d05a5e4ae83252102e3eeeaf29bd207161f9f2a76e66
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.928929828Z"
+    created: "2026-02-08T05:20:55.334334429Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -713,7 +745,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:284bb03d7fff2210d2f851630d36463a69f806d781c475a6cd6771af98ae760c to latest@sha256:9d09aeed7839f7ce6e8d545598b6d0cd4c729b91dcd8f7da18124d577ab39ad6
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.925442566Z"
+    created: "2026-02-08T05:20:55.331190316Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -745,7 +777,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:f40446b05c0144f2e5317fd449591a915d0f2f44627c1f2e8be1793e05687a99 to latest@sha256:284bb03d7fff2210d2f851630d36463a69f806d781c475a6cd6771af98ae760c
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.92279541Z"
+    created: "2026-02-08T05:20:55.328581823Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -777,7 +809,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:a81829f384abfa670587c4c9cbaf89a078eddb15354453b8c0e6edc6737baaa6 to latest@sha256:80db56ca662e231ab21f7d16234fb5806c944343e26242fc4b236d3cabfc6408
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.92015158Z"
+    created: "2026-02-08T05:20:55.325098128Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -809,7 +841,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:15069c4aa75d04b8cd8d1520b9a57d67750374ecff381cf7c436f37ae32c9efb to latest@sha256:f40446b05c0144f2e5317fd449591a915d0f2f44627c1f2e8be1793e05687a99
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.916513826Z"
+    created: "2026-02-08T05:20:55.322512747Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -841,7 +873,7 @@ entries:
           description: Updated image for `backend` from latest@sha256:8d43187b250b5fab56cc294c978cd20862ae19dac2ae779f2b48de8984cc20a1 to latest@sha256:1f38b992ce02a50afddbbf68be1ac11cff6953d36fd8fa2b98c08a19f8ef06e7
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.913894492Z"
+    created: "2026-02-08T05:20:55.319894486Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -873,7 +905,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:fd81c39840f958a57f3ace0ff0fbac7f973e54685b6cbe8436f43f5c10d3a8ab to latest@sha256:15069c4aa75d04b8cd8d1520b9a57d67750374ecff381cf7c436f37ae32c9efb
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.911253317Z"
+    created: "2026-02-08T05:20:55.316391707Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -905,7 +937,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:bad463a95f37982312b694a7e243205bec4c4cef3286e9f57d1436efeee73ffc to latest@sha256:fd81c39840f958a57f3ace0ff0fbac7f973e54685b6cbe8436f43f5c10d3a8ab
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.90761522Z"
+    created: "2026-02-08T05:20:55.313790708Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -937,7 +969,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:45cc822ceb166ca1b50212a25846893b780d03afedb6d8d328fc2f75596f931b to latest@sha256:bad463a95f37982312b694a7e243205bec4c4cef3286e9f57d1436efeee73ffc
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.904966962Z"
+    created: "2026-02-08T05:20:55.310449435Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -969,7 +1001,7 @@ entries:
           description: Removed nil postgres references from configmap template due to bitnami dep removal
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.902131857Z"
+    created: "2026-02-08T05:20:55.307745564Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1001,7 +1033,7 @@ entries:
           description: Updated image for `backend` from latest@sha256:121d56e14a3eccfc107cf5bab084772ba16b395e243b65076a6fa73f8fa0e8b2 to latest@sha256:8d43187b250b5fab56cc294c978cd20862ae19dac2ae779f2b48de8984cc20a1
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.997757761Z"
+    created: "2026-02-08T05:20:55.402144617Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1033,7 +1065,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:ecc6e930645b6445ba013a26ffcf5c1785bfc3ce4a6d1866279a496937e8774d to latest@sha256:45cc822ceb166ca1b50212a25846893b780d03afedb6d8d328fc2f75596f931b
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.99505454Z"
+    created: "2026-02-08T05:20:55.399506749Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1065,7 +1097,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:f6bfbce8634991de39f46d3dd905c4c6d314c52271e9cfa8a9c28129b04b3440 to latest@sha256:a81829f384abfa670587c4c9cbaf89a078eddb15354453b8c0e6edc6737baaa6
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.992331073Z"
+    created: "2026-02-08T05:20:55.395990205Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1097,7 +1129,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:6f3661ad13407be47eba6f570ec137791d827535024a11a601e4005eaa42251d to latest@sha256:f6bfbce8634991de39f46d3dd905c4c6d314c52271e9cfa8a9c28129b04b3440
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.988508488Z"
+    created: "2026-02-08T05:20:55.393384045Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1129,7 +1161,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:2b4b19505fa77b71a03acbd1454e6ff193c8c7093d1ea5f85de6382d0637d201 to latest@sha256:6f3661ad13407be47eba6f570ec137791d827535024a11a601e4005eaa42251d
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.985825345Z"
+    created: "2026-02-08T05:20:55.390736178Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1161,7 +1193,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:5098c7dca244fa9591d64af056d753c3938652899ecc5cef3d100e3a80312048 to latest@sha256:2b4b19505fa77b71a03acbd1454e6ff193c8c7093d1ea5f85de6382d0637d201
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.964859248Z"
+    created: "2026-02-08T05:20:55.369169197Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1193,7 +1225,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:5453de4bd9358cf3d5af78737733c806dc68a73ae44a66c63a64ca4d8de125e6 to latest@sha256:5098c7dca244fa9591d64af056d753c3938652899ecc5cef3d100e3a80312048
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.931586692Z"
+    created: "2026-02-08T05:20:55.337234506Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1225,7 +1257,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:f924f385b03a2b4faf130b9be82f034869a34b81e116472e3448f93ecc942bc3 to latest@sha256:ecc6e930645b6445ba013a26ffcf5c1785bfc3ce4a6d1866279a496937e8774d
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.898448374Z"
+    created: "2026-02-08T05:20:55.305009873Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1257,7 +1289,7 @@ entries:
           description: Bitnami PostgreSQL chart dependency has been removed.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.895703958Z"
+    created: "2026-02-08T05:20:55.301508285Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1289,7 +1321,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:940216912f46f936632d3c1fa77fb7f7b246328d9e3bf652e07393618761764e to latest@sha256:f924f385b03a2b4faf130b9be82f034869a34b81e116472e3448f93ecc942bc3
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.838513363Z"
+    created: "2026-02-08T05:20:55.246187598Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1325,7 +1357,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:41906d82543a857db660fecc11c76ae82b6507d9ddacc20f522794e35c41aabe to latest@sha256:940216912f46f936632d3c1fa77fb7f7b246328d9e3bf652e07393618761764e
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.830833696Z"
+    created: "2026-02-08T05:20:55.238923376Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1361,7 +1393,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:bcf02e06ac3f64c4310dda76ce05fd5faf9b7e38d0c9a692e0a1a2498f8433b4 to latest@sha256:41906d82543a857db660fecc11c76ae82b6507d9ddacc20f522794e35c41aabe
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.816139566Z"
+    created: "2026-02-08T05:20:55.22349457Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1397,7 +1429,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:d535ad0972a5f77c7a4830d544874ef1b013f63c70880de571b97cebc05717f5 to latest@sha256:bcf02e06ac3f64c4310dda76ce05fd5faf9b7e38d0c9a692e0a1a2498f8433b4
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.808136163Z"
+    created: "2026-02-08T05:20:55.216764491Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1433,7 +1465,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:7a5f44fe8a2159f175619e03b6e28ecd13e3ec6e2dd7846052ea48605d47bb82 to latest@sha256:d535ad0972a5f77c7a4830d544874ef1b013f63c70880de571b97cebc05717f5
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.800349311Z"
+    created: "2026-02-08T05:20:55.209033397Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1469,7 +1501,7 @@ entries:
           description: Updated image for `backend` from latest@sha256:1db03dbc96a04618a710ed7d330b69435c9897bd46303d727ab7670d6fe32930 to latest@sha256:121d56e14a3eccfc107cf5bab084772ba16b395e243b65076a6fa73f8fa0e8b2
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.79263909Z"
+    created: "2026-02-08T05:20:55.20134791Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1505,7 +1537,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:c5b6f70ebc494d20e7a8b00a39d8d25a238b7a5b5956e526d99859b0a9c9935d to latest@sha256:5453de4bd9358cf3d5af78737733c806dc68a73ae44a66c63a64ca4d8de125e6
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.784835143Z"
+    created: "2026-02-08T05:20:55.193632653Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1541,7 +1573,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:8ba6574e216ba65d9e43f82f961f6392f51648b458238ed71f7a52f909552a4f to latest@sha256:7a5f44fe8a2159f175619e03b6e28ecd13e3ec6e2dd7846052ea48605d47bb82
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.77719095Z"
+    created: "2026-02-08T05:20:55.185914643Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1577,7 +1609,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:ded263e7b89400f4b20ed89557717e235ada26a54473682af407b1078635acb0 to latest@sha256:c5b6f70ebc494d20e7a8b00a39d8d25a238b7a5b5956e526d99859b0a9c9935d
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.769572461Z"
+    created: "2026-02-08T05:20:55.178299472Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1613,7 +1645,7 @@ entries:
           description: Updated image for `backend` from latest@sha256:85120f7413bc7cd1c145fc0f952e49d86486796ba5491650f6cc4b96aab13be9 to latest@sha256:1db03dbc96a04618a710ed7d330b69435c9897bd46303d727ab7670d6fe32930
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.761947568Z"
+    created: "2026-02-08T05:20:55.170798298Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1649,7 +1681,7 @@ entries:
           description: Updated image for `backend` from latest@sha256:2fcc0dcec2dfec853506434876219b2a8fe8715f2bdc88bbe2ce559c840d68bc to latest@sha256:85120f7413bc7cd1c145fc0f952e49d86486796ba5491650f6cc4b96aab13be9
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.754345818Z"
+    created: "2026-02-08T05:20:55.162954995Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1685,7 +1717,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:2bace4d945ca80ef88c3f46cf3b70c891739d54a6faa87bb532024bb4e76d329 to latest@sha256:8ba6574e216ba65d9e43f82f961f6392f51648b458238ed71f7a52f909552a4f
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.746743596Z"
+    created: "2026-02-08T05:20:55.155614556Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1721,7 +1753,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:31da5e7e3a657950cfcfbfc0e532372a0d97d729bc915f0f6a2a7afdbb48e2e5 to latest@sha256:2bace4d945ca80ef88c3f46cf3b70c891739d54a6faa87bb532024bb4e76d329
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.893041363Z"
+    created: "2026-02-08T05:20:55.298868623Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1757,7 +1789,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:ece7abe6ab7cbfeb66fbd6babdfd3cf16d8f9ffda1d3be7e1fbd33356c0a43e0 to latest@sha256:31da5e7e3a657950cfcfbfc0e532372a0d97d729bc915f0f6a2a7afdbb48e2e5
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.885037916Z"
+    created: "2026-02-08T05:20:55.291130719Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1793,7 +1825,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 16.7.8
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.876968834Z"
+    created: "2026-02-08T05:20:55.283465447Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1829,7 +1861,7 @@ entries:
           description: Updated image for `backend` from latest@sha256:759979280703ba11e4069405d21c2fed62a902d135fcea25d76fa13a12f278d7 to latest@sha256:2fcc0dcec2dfec853506434876219b2a8fe8715f2bdc88bbe2ce559c840d68bc
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.869068732Z"
+    created: "2026-02-08T05:20:55.27573972Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1865,7 +1897,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:6a6bacf5e94022b01cf25b18c5af27ab49c1d1ed3abe573c1a64377b9e25326e to latest@sha256:ece7abe6ab7cbfeb66fbd6babdfd3cf16d8f9ffda1d3be7e1fbd33356c0a43e0
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.861402767Z"
+    created: "2026-02-08T05:20:55.268205184Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1901,7 +1933,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:ee7d304c7307248ef5d990a290ffaf0aaeca952c02728f77f4d90ec957aae977 to latest@sha256:6a6bacf5e94022b01cf25b18c5af27ab49c1d1ed3abe573c1a64377b9e25326e
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.853771301Z"
+    created: "2026-02-08T05:20:55.261008246Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1937,7 +1969,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:0ca89f79fbe1e1d43d6ee29e852c0569c21151d6af8d5a2ceb24227c4d216de7 to latest@sha256:ee7d304c7307248ef5d990a290ffaf0aaeca952c02728f77f4d90ec957aae977
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.846218069Z"
+    created: "2026-02-08T05:20:55.253961147Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -1973,7 +2005,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:b495f1f79fbca8453a510196e5a1439ef0c9825e13c7ea0f0889ed82de4705ce to latest@sha256:0ca89f79fbe1e1d43d6ee29e852c0569c21151d6af8d5a2ceb24227c4d216de7
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.82295092Z"
+    created: "2026-02-08T05:20:55.231302791Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -2009,7 +2041,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:2f5a22f889f2cc131af55e2650de76af5ed7a387ab0a14b787dac99477255afc to latest@sha256:b495f1f79fbca8453a510196e5a1439ef0c9825e13c7ea0f0889ed82de4705ce
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.739200881Z"
+    created: "2026-02-08T05:20:55.148472039Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -2045,7 +2077,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 16.7.2
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.731250021Z"
+    created: "2026-02-08T05:20:55.140337432Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -2081,7 +2113,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:9fd917ba759dae1465415288e4d880e86b57ec385afa700fd33e13c54e61e352 to latest@sha256:2f5a22f889f2cc131af55e2650de76af5ed7a387ab0a14b787dac99477255afc
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.723632863Z"
+    created: "2026-02-08T05:20:55.129261363Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -2119,7 +2151,7 @@ entries:
           description: Uptdated chart vendored dependencies to match requirements
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.71590292Z"
+    created: "2026-02-08T05:20:55.11855973Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts
@@ -2155,7 +2187,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:02065eac66d6b0c6922b64f907c16f13fcff5a4933e5bbf87b77de0ebfcd92c7 to latest@sha256:9fd917ba759dae1465415288e4d880e86b57ec385afa700fd33e13c54e61e352
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.708409612Z"
+    created: "2026-02-08T05:20:55.110627995Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2190,7 +2222,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:d53bcf3eb0eb944656e0606a402c26a6e2e6247b32c4200030fa72b8ad79379f to latest@sha256:02065eac66d6b0c6922b64f907c16f13fcff5a4933e5bbf87b77de0ebfcd92c7
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.700857898Z"
+    created: "2026-02-08T05:20:55.103088067Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2225,7 +2257,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:b2c3add82a3ab35c417abbb3539fe89e51284357ddf790ba82eb6fca3006f506 to latest@sha256:d53bcf3eb0eb944656e0606a402c26a6e2e6247b32c4200030fa72b8ad79379f
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.693351584Z"
+    created: "2026-02-08T05:20:55.09553833Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2260,7 +2292,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:53575a0aa0f5ea81f66f6f43d4c74333559efd62c99c21588dfee0aacbab2265 to latest@sha256:b2c3add82a3ab35c417abbb3539fe89e51284357ddf790ba82eb6fca3006f506
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.68523353Z"
+    created: "2026-02-08T05:20:55.08775732Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2297,7 +2329,7 @@ entries:
           description: templating of environment variables for frontend init-containers.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.677438002Z"
+    created: "2026-02-08T05:20:55.08044164Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2332,7 +2364,7 @@ entries:
           description: Updated image for `ytproxy` from latest@sha256:880b1117b6087e32b82c0204a96210fb87de61a874a3a2681361cc6d905e4d0e to latest@sha256:53575a0aa0f5ea81f66f6f43d4c74333559efd62c99c21588dfee0aacbab2265
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.668937468Z"
+    created: "2026-02-08T05:20:55.073430187Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2367,7 +2399,7 @@ entries:
           description: Updated image for `frontend` from latest@sha256:95d42ad855681cc8abcc12f95687b1508f71dcb635eaf2ead4335ae43b851269 to latest@sha256:ded263e7b89400f4b20ed89557717e235ada26a54473682af407b1078635acb0
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.661701717Z"
+    created: "2026-02-08T05:20:55.065765156Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2402,7 +2434,7 @@ entries:
           description: Upgraded `piped-proxy` to current release.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.653016689Z"
+    created: "2026-02-08T05:20:55.058126647Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2437,7 +2469,7 @@ entries:
           description: Upgraded `piped-frontend` to current release.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.64514562Z"
+    created: "2026-02-08T05:20:55.050508891Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2472,7 +2504,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 16.4.16
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.638328646Z"
+    created: "2026-02-08T05:20:55.043171063Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2507,7 +2539,7 @@ entries:
           description: ability to set BG_HELPER_URL.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.630429042Z"
+    created: "2026-02-08T05:20:55.035706876Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2542,7 +2574,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 16.3.5
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.622627196Z"
+    created: "2026-02-08T05:20:55.028058332Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2577,7 +2609,7 @@ entries:
           description: Bumped Piped Backend to latest released version to fix IOS player reponse not valid.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.614762676Z"
+    created: "2026-02-08T05:20:55.020187617Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2612,7 +2644,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 16.3.4
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.606911959Z"
+    created: "2026-02-08T05:20:55.012741304Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2647,7 +2679,7 @@ entries:
           description: Updated readme
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.599040092Z"
+    created: "2026-02-08T05:20:55.004929211Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2684,7 +2716,7 @@ entries:
           description: Only support Kubernetes 1.26 and above.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.591607224Z"
+    created: "2026-02-08T05:20:54.997530934Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2719,7 +2751,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 15.5.38
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.584327925Z"
+    created: "2026-02-08T05:20:54.990732058Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2754,7 +2786,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 15.5.37
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.576867603Z"
+    created: "2026-02-08T05:20:54.982375908Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2789,7 +2821,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 15.5.27
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.569429483Z"
+    created: "2026-02-08T05:20:54.975977368Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2824,7 +2856,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 15.5.20
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.562104926Z"
+    created: "2026-02-08T05:20:54.968499799Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2859,7 +2891,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 15.5.11
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.554841273Z"
+    created: "2026-02-08T05:20:54.961321032Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2894,7 +2926,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 13.4.4
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.547136415Z"
+    created: "2026-02-08T05:20:54.954001445Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2929,7 +2961,7 @@ entries:
           description: Support for more backend config options.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.540116154Z"
+    created: "2026-02-08T05:20:54.946848501Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2964,7 +2996,7 @@ entries:
           description: backend env var related templates
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.534049921Z"
+    created: "2026-02-08T05:20:54.940050563Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -2999,7 +3031,7 @@ entries:
           description: Pod templates for addionalContainers values.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.526896502Z"
+    created: "2026-02-08T05:20:54.933459675Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3034,7 +3066,7 @@ entries:
           description: ytproxy env variable template
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.520103824Z"
+    created: "2026-02-08T05:20:54.926893753Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3069,7 +3101,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 13.2.30
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.511806774Z"
+    created: "2026-02-08T05:20:54.920105905Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3104,7 +3136,7 @@ entries:
           description: Change database values configuration to allow overriding of secret keys for database
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.499372942Z"
+    created: "2026-02-08T05:20:54.913126053Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3139,7 +3171,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 13.2.27
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.489445981Z"
+    created: "2026-02-08T05:20:54.906211454Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3174,7 +3206,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 13.2.23
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.47962466Z"
+    created: "2026-02-08T05:20:54.899393619Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3209,7 +3241,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 13.2.0
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.472402406Z"
+    created: "2026-02-08T05:20:54.89285958Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3244,7 +3276,7 @@ entries:
           description: Postgres image in values
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.465275046Z"
+    created: "2026-02-08T05:20:54.886861055Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3279,7 +3311,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.10.2
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.459194026Z"
+    created: "2026-02-08T05:20:54.87946354Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3314,7 +3346,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.10.0
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.451881672Z"
+    created: "2026-02-08T05:20:54.872782323Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3349,7 +3381,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.6.9
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.444600538Z"
+    created: "2026-02-08T05:20:54.865925228Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3384,7 +3416,7 @@ entries:
           description: backend configmap with secrets
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.437859735Z"
+    created: "2026-02-08T05:20:54.860257701Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3419,7 +3451,7 @@ entries:
           description: Init containers
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.432192442Z"
+    created: "2026-02-08T05:20:54.853296953Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3454,7 +3486,7 @@ entries:
           description: Backend configmap secret fetching uses now DB_USERNAME and DB_PASSWORD keys.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.425571756Z"
+    created: "2026-02-08T05:20:54.84687402Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3491,7 +3523,7 @@ entries:
           description: Backend configmap wasn't getting feed retention correctly passed.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.419068899Z"
+    created: "2026-02-08T05:20:54.840453064Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3526,7 +3558,7 @@ entries:
           description: Made frontend nginx entrypoint run docker-entrypoint.d scripts
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.413402998Z"
+    created: "2026-02-08T05:20:54.834266441Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3560,7 +3592,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.6.0
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.406741971Z"
+    created: "2026-02-08T05:20:54.828660148Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3594,7 +3626,7 @@ entries:
           description: ytproxy ingress, GH issue 29
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.400371055Z"
+    created: "2026-02-08T05:20:54.82206013Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3628,7 +3660,7 @@ entries:
           description: Upgraded `common` chart dependency to version 1.5.1
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.393795006Z"
+    created: "2026-02-08T05:20:54.815651363Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3662,7 +3694,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.5.6
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.388131139Z"
+    created: "2026-02-08T05:20:54.804470697Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3696,7 +3728,7 @@ entries:
           description: Upgraded `common` chart dependency to version 1.5.0
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.381517482Z"
+    created: "2026-02-08T05:20:54.79764481Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3734,7 +3766,7 @@ entries:
           description: Added resources limits to container definitions
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.375133986Z"
+    created: "2026-02-08T05:20:54.791373878Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3768,7 +3800,7 @@ entries:
           description: Upgraded `postgresql` chart dependency to version 12.4.2
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.368800233Z"
+    created: "2026-02-08T05:20:54.785578794Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3802,7 +3834,7 @@ entries:
           description: Upgraded `common` chart dependency to version 1.4.0
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.362262253Z"
+    created: "2026-02-08T05:20:54.779620424Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3838,7 +3870,7 @@ entries:
           description: Recommended resource limits were added to values, but are not enabled by default to make it concise decision to the user.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.35652519Z"
+    created: "2026-02-08T05:20:54.773034373Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3874,7 +3906,7 @@ entries:
           description: Added a config validator for frontend.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.349801349Z"
+    created: "2026-02-08T05:20:54.766710865Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3908,7 +3940,7 @@ entries:
           description: The backend uses the CMD line from the Dockerfile.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.343162291Z"
+    created: "2026-02-08T05:20:54.760291619Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3942,7 +3974,7 @@ entries:
           description: Frontend probe definitions
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.336513684Z"
+    created: "2026-02-08T05:20:54.754637707Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -3976,7 +4008,7 @@ entries:
           description: Ability to use a secret for backend database credentials
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.329807303Z"
+    created: "2026-02-08T05:20:54.747692125Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -4012,7 +4044,7 @@ entries:
           description: Enabled the probes by default.
     apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.324018183Z"
+    created: "2026-02-08T05:20:54.741093111Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -4042,7 +4074,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.317316033Z"
+    created: "2026-02-08T05:20:54.734680077Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -4070,7 +4102,7 @@ entries:
     version: 0.0.4
   - apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.310645295Z"
+    created: "2026-02-08T05:20:54.728445593Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -4098,7 +4130,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.304338639Z"
+    created: "2026-02-08T05:20:54.722838158Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -4126,7 +4158,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: latest
-    created: "2026-02-05T00:24:02.298078327Z"
+    created: "2026-02-08T05:20:54.716461877Z"
     dependencies:
     - name: common
       repository: https://bjw-s.github.io/helm-charts
@@ -4152,4 +4184,4 @@ entries:
     urls:
     - https://helm.piped.video/apps/piped-0.0.1.tgz
     version: 0.0.1
-generated: "2026-02-05T00:24:02.291285544Z"
+generated: "2026-02-08T05:20:54.709548369Z"
