@@ -25,4 +25,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Change ConfigMap templating to render the keys from an existing secret if this option is enabled. This was broken, which resulted in empty config files in the configuration.properties file, which caused the backend to fail to start.
+      description: Change ConfigMap templating to render the keys from an existing secret if this option is enabled. This was broken, which resulted in empty config keys in the configuration.properties file, which caused the backend to fail to start.
