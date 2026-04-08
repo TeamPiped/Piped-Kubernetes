@@ -73,21 +73,20 @@ data:
     hibernate.connection.url: {{.Values.backend.config.database.connection_url }}
     {{- $dbUsername := (.Values.backend.config.database.username | default "") }}
     {{- $dbPassword := (.Values.backend.config.database.password | default "") }}
-    {{- if and (not .Values.backend.config.database.driver_class) (not .Values.backend.config.database.dialect) }}
-    hibernate.connection.driver_class: org.postgresql.Driver
-    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
-    {{ end }}
-    {{- if and (.Values.backend.config.database) (.Values.backend.config.database.driver_class) (.Values.backend.config.database.dialect) }}
-    hibernate.connection.driver_class: {{.Values.backend.config.database.driver_class }}
-    hibernate.dialect: {{.Values.backend.config.database.dialect }}
-    {{ end }}
+    hibernate.connection.driver_class: {{ .Values.backend.config.database.driver_class | default "org.postgresql.Driver" }}
+    hibernate.dialect: {{ .Values.backend.config.database.dialect | default "org.hibernate.dialect.PostgreSQLDialect" }}
     {{- if and (.Values.backend.config.database.secret) (.Values.backend.config.database.secret.name) }}
     {{- $dbSecretNamespace := (.Values.backend.config.database.secret.namespace | default .Release.Namespace) }}
-    {{- $dbSecretUsername := (include "common.getValueFromSecret" (dict "Namespace" $dbSecretNamespace "Name" .Values.backend.config.database.secret.name "Key" (.Values.backend.config.database.secret.username | default "DB_USERNAME")) | trim) }}
-    {{- $dbSecretPassword := (include "common.getValueFromSecret" (dict "Namespace" $dbSecretNamespace "Name" .Values.backend.config.database.secret.name "Key" (.Values.backend.config.database.secret.password | default "DB_PASSWORD")) | trim) }}
-    {{- if and $dbSecretUsername $dbSecretPassword -}}
+    {{- $dbSecretUsernameKey := (.Values.backend.config.database.secret.username | default "DB_USERNAME") }}
+    {{- $dbSecretPasswordKey := (.Values.backend.config.database.secret.password | default "DB_PASSWORD") }}
+    {{- $dbSecretData := (lookup "v1" "Secret" $dbSecretNamespace .Values.backend.config.database.secret.name).data }}
+    {{- if and $dbSecretData (hasKey $dbSecretData $dbSecretUsernameKey) (hasKey $dbSecretData $dbSecretPasswordKey) -}}
+      {{- $dbSecretUsername := (include "common.getValueFromSecret" (dict "Namespace" $dbSecretNamespace "Name" .Values.backend.config.database.secret.name "Key" $dbSecretUsernameKey)) -}}
+      {{- $dbSecretPassword := (include "common.getValueFromSecret" (dict "Namespace" $dbSecretNamespace "Name" .Values.backend.config.database.secret.name "Key" $dbSecretPasswordKey)) -}}
       {{- $dbUsername = $dbSecretUsername -}}
       {{- $dbPassword = $dbSecretPassword -}}
+    {{- else if and $dbSecretData (or (hasKey $dbSecretData $dbSecretUsernameKey) (hasKey $dbSecretData $dbSecretPasswordKey)) -}}
+      {{- fail (printf "Database secret %q in namespace %q is missing required keys %q and/or %q" .Values.backend.config.database.secret.name $dbSecretNamespace $dbSecretUsernameKey $dbSecretPasswordKey) -}}
     {{- end -}}
     {{- end }}
     {{- if and $dbUsername $dbPassword }}
