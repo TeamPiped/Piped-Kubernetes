@@ -25,4 +25,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Updated image for `ytproxy` from latest@sha256:d21fe31af54ecc136b20405c756f6c7ae2c437376204ab099dbe930fcafff8c9 to latest@sha256:d3b953c4d15097d5b2cb79033203cc1a6e030c0220cbe5c40ab938ea9ac444d8
+      description: Change ConfigMap templating to render the keys from an existing secret if this option is enabled. This was broken, which resulted in empty config files in the configuration.properties file, which caused the backend to fail to start.
