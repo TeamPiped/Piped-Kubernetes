@@ -11,7 +11,7 @@ sources:
   - https://github.com/TeamPiped/Piped-Kubernetes
 keywords:
   - streaming
-version: 8.1.17
+version: 8.1.18
 appVersion: latest
 kubeVersion: ">=1.29.0"
 maintainers:
@@ -25,4 +25,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |-
     - kind: changed
-      description: Change ConfigMap templating to render the keys from an existing secret if this option is enabled. This was broken, which resulted in empty config keys in the configuration.properties file, which caused the backend to fail to start.
+      description: Updated image for `ytproxy` from latest@sha256:d3b953c4d15097d5b2cb79033203cc1a6e030c0220cbe5c40ab938ea9ac444d8 to latest@sha256:6f538f7b5d354c3ab9f11329a2ff1283249e388def53cef04dfa45b2fbce298c
