@@ -168,5 +168,13 @@
         '!common',
       ],
     },
-  ],
+    {
+      matchDatasources: ['docker'],
+      matchUpdateTypes: ['digest'],
+      automerge: true,
+      automergeType: 'pr',
+      groupName: 'docker digests',
+      schedule: ['every 1 weeks on monday'],
+  },
+ ],
 }
