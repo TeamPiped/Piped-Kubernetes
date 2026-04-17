@@ -21,6 +21,14 @@
   },
   packageRules: [
     {
+      matchDatasources: ['docker'],
+      matchUpdateTypes: ['digest'],
+      automerge: true,
+      automergeType: 'pr',
+      groupName: 'docker digests',
+      schedule: ['every 2 weeks on monday'],
+    },
+    {
       matchDatasources: [
         'helm',
       ],
@@ -168,13 +176,5 @@
         '!common',
       ],
     },
-    {
-      matchDatasources: ['docker'],
-      matchUpdateTypes: ['digest'],
-      automerge: true,
-      automergeType: 'pr',
-      groupName: 'docker digests',
-      schedule: ['every 1 weeks on monday'],
-  },
  ],
 }
