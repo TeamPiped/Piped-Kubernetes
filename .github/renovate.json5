@@ -10,23 +10,29 @@
   prConcurrentLimit: 5,
   'helm-values': {
     enabled: true,
-    fileMatch: [
-      'charts/.+/values\\.yaml$',
+    managerFilePatterns: [
+      '/charts/.+/values\\.yaml$/',
     ],
   },
   helmv3: {
-    fileMatch: [
-      'charts/.+/Chart\\.yaml$',
+    managerFilePatterns: [
+      '/charts/.+/Chart\\.yaml$/',
     ],
   },
   packageRules: [
     {
-      matchDatasources: ['docker'],
-      matchUpdateTypes: ['digest'],
+      matchDatasources: [
+        'docker',
+      ],
+      matchUpdateTypes: [
+        'digest',
+      ],
       automerge: true,
       automergeType: 'pr',
       groupName: 'docker digests',
-      schedule: ['every 2 weeks on monday'],
+      schedule: [
+        'every 2 weeks on monday',
+      ],
     },
     {
       matchDatasources: [
@@ -176,5 +182,5 @@
         '!common',
       ],
     },
- ],
+  ],
 }
