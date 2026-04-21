@@ -37,7 +37,7 @@ jobs:
           
       - name: Get branch name
         id: branch-name
-        uses: tj-actions/branch-names@v6.5
+        uses: tj-actions/branch-names@v9.0.2
 
       - name: Get all added or modified files
         id: added-modified-files
