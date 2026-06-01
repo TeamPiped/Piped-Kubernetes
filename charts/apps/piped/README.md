@@ -1,6 +1,6 @@
 # piped
 
-![Version: 8.1.23](https://img.shields.io/badge/Version-8.1.23-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 8.1.24](https://img.shields.io/badge/Version-8.1.24-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Piped is an alternative privacy-friendly YouTube frontend which is efficient by design.
 
@@ -45,7 +45,7 @@ The following table contains an overview of available values and their descripti
 | backend.enabled | bool | `true` |  |
 | backend.image.pullPolicy | string | `""` | image pull policy |
 | backend.image.repository | string | `"1337kavin/piped"` | image repository |
-| backend.image.tag | string | `"latest@sha256:b0462b15a951061878d13abf3e3706b60a33c1941cb28bb48f86227d0fbeb730"` | image tag @chart.appVersion |
+| backend.image.tag | string | `"latest@sha256:7747e19ee501c0a3afa94dd3d6e982dd4247f1babe03fb515b4a0f0b87f82b2e"` | image tag @chart.appVersion |
 | backend.service.main.enabled | bool | `true` |  |
 | backend.service.main.ports.http.enabled | bool | `true` |  |
 | backend.service.main.ports.http.port | int | `8080` |  |
@@ -59,7 +59,7 @@ The following table contains an overview of available values and their descripti
 | frontend.command | string | `"/bin/ash"` |  |
 | frontend.enabled | bool | `true` |  |
 | frontend.image.repository | string | `"1337kavin/piped-frontend"` | image repository |
-| frontend.image.tag | string | `"latest@sha256:7ccda9646bfde6dd19f7e63f2f1c791b801aa9b8f23e9da33bb9e51d3c7c5d47"` | image tag |
+| frontend.image.tag | string | `"latest@sha256:e811716f414b421f222994fbaecb0f6733b6d10b2cb6be8f1db3d0f208980570"` | image tag |
 | frontend.service.main.enabled | bool | `true` |  |
 | frontend.service.main.ports.http.enabled | bool | `true` |  |
 | frontend.service.main.ports.http.port | int | `80` |  |
@@ -108,7 +108,7 @@ The following table contains an overview of available values and their descripti
 | ytproxy.enabled | bool | `true` |  |
 | ytproxy.image.pullPolicy | string | `""` | image pull policy |
 | ytproxy.image.repository | string | `"1337kavin/piped-proxy"` | image repository |
-| ytproxy.image.tag | string | `"latest@sha256:d07fb0131c97e5f4d6bf62f3d54301d04bc9e9d188c678e0d118ffc2e38c7c17"` | image tag |
+| ytproxy.image.tag | string | `"latest@sha256:a83b064fe04b18f263849dd38c77dfcf135c1999a106b99eff5f6a188357ea74"` | image tag |
 | ytproxy.service.main.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.enabled | bool | `true` |  |
 | ytproxy.service.main.ports.http.port | int | `8080` |  |
