@@ -35,7 +35,7 @@ jobs:
       fail-fast: false
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Validate prerequisite folders
         working-directory: "charts/${{ matrix.chart }}"
@@ -102,7 +102,7 @@ jobs:
       fail-fast: false
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Validate prerequisite folders
         working-directory: "charts/${{ matrix.chart }}"
