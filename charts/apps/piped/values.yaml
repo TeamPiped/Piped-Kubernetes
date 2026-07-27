@@ -38,7 +38,7 @@ frontend:
     # -- image repository
     repository: 1337kavin/piped-frontend
     # -- image tag
-    tag: "latest@sha256:cd099e0a7b47dd473631bc600ca8b8e9faf3c21c834decb85b94d286e55eae48"  # Manifest index / Index Digest
+    tag: "latest@sha256:1ce67163448941627a2abc51a1d622120331d8e55ef78b85a83dc2de8811616e"  # Manifest index / Index Digest
 
   # env:
   #  BACKEND_HOSTNAME: pipedapi.example.org
@@ -143,7 +143,7 @@ ytproxy:
     # -- image repository
     repository: 1337kavin/piped-proxy
     # -- image tag
-    tag: "latest@sha256:9830472b0ef5a5ea52d686b5669d35df8377cb586ee577e1c5bb01ef51196ef7"  # Manifest index / Index Digest
+    tag: "latest@sha256:8aba8ba9d8bd3321ae9b15434b8d8bb9ffa03d699b2feb8f654f242a667e8cf2"  # Manifest index / Index Digest
     # -- image pull policy
     pullPolicy: ""
 
