@@ -1,5 +1,5 @@
 GitPython==3.2.1
-loguru==0.7.3
+loguru==0.8.0
 ruamel.yaml==0.19.1
 ruamel.yaml.string==0.1.1
 typer==0.28.0
